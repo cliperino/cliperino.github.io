@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+		
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col>
+			</ion-col>
+			<ion-col col-12 col-md-6>
+				<ion-card *ngFor="let clip of clips">
+				  <ion-row>
+				    <ion-col>
+						<ion-item>
+				    <ion-avatar item-start>
+				      <img src="{{clip.broadcaster.logo}}">
+				    </ion-avatar>
+				    <h2>{{clip.broadcaster.displayName}}</h2>
+				    <p>{{clip.createdAt | date: 'MMM dd, yyyy HH:mm'}}</p>
+				  </ion-item>
+				    </ion-col>
+				    <ion-col>
+				      
+				    </ion-col>
+				    <ion-col center text-center align-self-center>
+				      <ion-note>
+				        {{clip.views}} views
+				      </ion-note>
+				    </ion-col>
+				  </ion-row>
+
+				  <span [innerHTML]="clip.embedHtml"></span>
+
+				  <ion-card-content>
+				    <p>{{clip.title}}</p>
+				  </ion-card-content>
+
+				  <!--<ion-row>
+				    <ion-col>
+				      <button ion-button icon-start clear small>
+				        <ion-icon name="thumbs-up"></ion-icon>
+				        <div>12 Likes</div>
+				      </button>
+				    </ion-col>
+				    <ion-col>
+				      <button ion-button icon-start clear small>
+				        <ion-icon name="text"></ion-icon>
+				        <div>4 Comments</div>
+				      </button>
+				    </ion-col>
+				    <ion-col center text-center>
+				      <ion-note>
+				        
+				      </ion-note>
+				    </ion-col>
+				  </ion-row>-->
+
+				</ion-card>
+
+
+				<button (click)="loadMore()" ion-button>Load 10 more</button>
+				
+			</ion-col>
+			<ion-col>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>
