@@ -34,7 +34,7 @@ var ClipsService = /** @class */ (function () {
         var clips = new Array();
         var that = this;
         return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
-            __WEBPACK_IMPORTED_MODULE_1_unirest__["get"]('http://api.cliperino.com/api/v1/clips/trending/' + cursor)
+            __WEBPACK_IMPORTED_MODULE_1_unirest__["get"]('https://api.cliperino.com/api/v1/clips/trending/' + cursor)
                 .headers({ 'Accept': 'application/json' })
                 .send()
                 .end(function (resp) {
