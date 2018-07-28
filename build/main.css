@@ -25677,3 +25677,53 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
+
+@media (max-width: 576px) {
+  game-thumbnail-component .no-margin-xs {
+    margin: 0 !important;
+  }
+  game-thumbnail-component .no-padding-xs {
+    padding: 0 !important;
+  }
+  game-thumbnail-component .scroll-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  game-thumbnail-component .max-width {
+    width: 100% !important;
+  }
+  game-thumbnail-component .display-none-xs {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  page-clip .no-margin-xs {
+    margin: 0 !important;
+  }
+  page-clip .no-padding-xs {
+    padding: 0 !important;
+  }
+  page-clip .scroll-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  page-clip .max-width {
+    width: 100% !important;
+  }
+  page-clip .display-none-xs {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  page-games .game-wrapper {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 576px) {
+  page-games .game-wrapper {
+    margin: 0px 5px 5px 5px;
+  }
+}
