@@ -474,7 +474,8 @@ var GamesService = /** @class */ (function () {
                 .end(function (resp) {
                 if (resp && resp.body) {
                     if (typeof resp.body === 'string') {
-                        resolve(JSON.parse(resp.body.top));
+                        var body = JSON.parse(resp.body);
+                        resolve(body.top);
                     }
                     else {
                         resolve(resp.body.top);
