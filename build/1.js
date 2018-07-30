@@ -91,11 +91,6 @@ var GamesPage = /** @class */ (function () {
             });
         });
     };
-    GamesPage.prototype.goToPage = function (page) {
-        var navOptions = {};
-        navOptions.updateUrl = true;
-        this.navCtrl.setRoot(page, null, navOptions);
-    };
     GamesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-games',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\games\games.html"*/'<ion-content style="margin-top: 56px;" padding>\n  <ion-grid>\n     <ion-row justify-content-center>\n        <div class="game-wrapper" *ngFor="let gameWrapper of gameWrappers">\n           <game-thumbnail-component [gameWrapper]="gameWrapper"></game-thumbnail-component>\n        </div>\n        <!-- <div style="width: 280px; height: 260px;"></div>\n        <div style="width: 280px; height: 260px;"></div> -->\n     </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\games\games.html"*/

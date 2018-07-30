@@ -313,33 +313,11 @@ var TrendingPage = /** @class */ (function () {
         this._ngZone = _ngZone;
         this.navParams = navParams;
         this.clips = [];
-        this.game = navParams.get('game');
         this.sanitizer = _sanitizer;
         this.ngZone = _ngZone;
     }
     TrendingPage.prototype.ngOnInit = function () {
-        if (this.game) {
-            this.getTrendingByGame(this.game);
-        }
-        else {
-            this.getTrendingClips(undefined);
-        }
-    };
-    TrendingPage.prototype.getTrendingByGame = function (game) {
-        var that = this;
-        this.clipsService.getTrendingByGame(game, that.gameCursor).then(function (trendingClips) {
-            var clips = trendingClips.clips;
-            clips.forEach(function (clip) {
-                var src = 'https://clips.twitch.tv/embed?clip=' + clip.slug + '&tt_medium=clips_api&tt_content=embed&autoplay=false';
-                clip.embedHtml = that.sanitizer.bypassSecurityTrustHtml("<div style='overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0;' class='video-responsive'><iframe style='left: 0; top: 0; height: 100%; width: 100%; position: absolute;' src='" + src + "' width='100%' height='100%' frameborder='0' scrolling='no' allowfullscreen='true' preload='metadata'></iframe></div>");
-            });
-            that.ngZone.run(function () {
-                clips.forEach(function (clip) {
-                    that.clips.push(clip);
-                });
-                that.gameCursor = trendingClips.cursor;
-            });
-        });
+        this.getTrendingClips(undefined);
     };
     TrendingPage.prototype.getTrendingClips = function (cursor) {
         var that = this;
@@ -369,14 +347,6 @@ var TrendingPage = /** @class */ (function () {
     };
     TrendingPage.prototype.goToClip = function (slug) {
         this.navCtrl.push('clip', { slug: slug });
-    };
-    TrendingPage.prototype.goToGames = function () {
-        this.navCtrl.setRoot('games');
-    };
-    TrendingPage.prototype.goToPage = function (page) {
-        var navOptions = {};
-        navOptions.updateUrl = true;
-        this.navCtrl.setRoot(page, null, navOptions);
     };
     TrendingPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
@@ -567,7 +537,7 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/clip/clip.module#ClipPageModule', name: 'clip', segment: 'clip/:slug', priority: 'low', defaultHistory: ['trending'] },
                         { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trending-game/trending-game.module#TrendingGamePageModule', name: 'trending-game', segment: 'trending/game/:game', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/trending/trending.module#TrendingPageModule', name: 'trending', segment: 'trending/:game', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/trending/trending.module#TrendingPageModule', name: 'trending', segment: 'trending', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_6__pages_trending_trending_module__["TrendingPageModule"]
