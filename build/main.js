@@ -1,4 +1,4 @@
-webpackJsonp([3],{
+webpackJsonp([4],{
 
 /***/ 156:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -34,7 +34,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-;
 var ClipsService = /** @class */ (function () {
     function ClipsService() {
         this.allClips = new Map([]);
@@ -198,17 +197,21 @@ webpackEmptyAsyncContext.id = 189;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"../pages/clip/clip.module": [
+	"../pages/clip-popover/clip-popover.module": [
 		597,
-		2
-	],
-	"../pages/games/games.module": [
-		598,
 		0
 	],
-	"../pages/trending-game/trending-game.module": [
+	"../pages/clip/clip.module": [
+		598,
+		3
+	],
+	"../pages/games/games.module": [
 		599,
 		1
+	],
+	"../pages/trending-game/trending-game.module": [
+		600,
+		2
 	],
 	"../pages/trending/trending.module": [
 		295
@@ -560,6 +563,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
+                        { loadChildren: '../pages/clip-popover/clip-popover.module#ClipPopoverPageModule', name: 'clip-popover', segment: 'clip-popover', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clip/clip.module#ClipPageModule', name: 'clip', segment: 'clip/:slug', priority: 'low', defaultHistory: ['trending'] },
                         { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trending-game/trending-game.module#TrendingGamePageModule', name: 'trending-game', segment: 'trending/game/:game', priority: 'low', defaultHistory: [] },
@@ -629,7 +633,7 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewsPipe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(66);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
