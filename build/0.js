@@ -401,7 +401,7 @@ var ClipPopoverPage = /** @class */ (function () {
         this.viewCtrl.dismiss();
     };
     ClipPopoverPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip-popover\clip-popover.html"*/'<ion-list style="margin-bottom: 0px;">\n\n	<button ion-item (click)="copyLink()">Copy link to cliperino</button>\n\n</ion-list>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip-popover\clip-popover.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip-popover\clip-popover.html"*/'<ion-list style="margin-bottom: 0px;">\n\n	<button ion-item (click)="copyLink()">Copy link</button>\n\n</ion-list>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip-popover\clip-popover.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2_ngx_clipboard__["b" /* ClipboardService */]])
     ], ClipPopoverPage);
