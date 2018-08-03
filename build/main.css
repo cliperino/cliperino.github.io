@@ -25697,6 +25697,10 @@ ion-navbar.toolbar {
   }
 }
 
+page-clip ion-content div.fixed-content, page-clip ion-content div.scroll-content {
+  margin-top: 56px;
+}
+
 @media (max-width: 576px) {
   page-clip .no-margin-xs {
     margin: 0 !important;
@@ -25705,7 +25709,7 @@ ion-navbar.toolbar {
     padding: 0 !important;
   }
   page-clip .scroll-content {
-    margin: 0 !important;
+    margin: 56px 0 !important;
     padding: 0 !important;
   }
   page-clip .max-width {
