@@ -25679,6 +25679,25 @@ ion-navbar.toolbar {
 }
 
 @media (max-width: 576px) {
+  following-channel-thumbnail-component .no-margin-xs {
+    margin: 0 !important;
+  }
+  following-channel-thumbnail-component .no-padding-xs {
+    padding: 0 !important;
+  }
+  following-channel-thumbnail-component .scroll-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  following-channel-thumbnail-component .max-width {
+    width: 100% !important;
+  }
+  following-channel-thumbnail-component .display-none-xs {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
   game-thumbnail-component .no-margin-xs {
     margin: 0 !important;
   }
@@ -25717,6 +25736,18 @@ page-clip ion-content div.fixed-content, page-clip ion-content div.scroll-conten
   }
   page-clip .display-none-xs {
     display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  page-following .following-channel-wrapper {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 576px) {
+  page-following .following-channel-wrapper {
+    margin: 0px 5px 5px 5px;
   }
 }
 
