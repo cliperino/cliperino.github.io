@@ -211,11 +211,11 @@ webpackEmptyAsyncContext.id = 191;
 
 var map = {
 	"../pages/clip-popover/clip-popover.module": [
-		603,
+		602,
 		0
 	],
 	"../pages/clip/clip.module": [
-		602,
+		603,
 		5
 	],
 	"../pages/following/following.module": [
@@ -223,15 +223,15 @@ var map = {
 		4
 	],
 	"../pages/games/games.module": [
-		605,
+		606,
 		1
 	],
 	"../pages/trending-channel/trending-channel.module": [
-		607,
+		605,
 		3
 	],
 	"../pages/trending-game/trending-game.module": [
-		606,
+		607,
 		2
 	],
 	"../pages/trending/trending.module": [
@@ -702,12 +702,12 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/clip/clip.module#ClipPageModule', name: 'clip', segment: 'clip/:slug', priority: 'low', defaultHistory: ['trending'] },
                         { loadChildren: '../pages/clip-popover/clip-popover.module#ClipPopoverPageModule', name: 'clip-popover', segment: 'clip-popover', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/clip/clip.module#ClipPageModule', name: 'clip', segment: 'clip/:slug', priority: 'low', defaultHistory: ['trending'] },
                         { loadChildren: '../pages/following/following.module#FollowingPageModule', name: 'following', segment: 'following', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/trending-channel/trending-channel.module#TrendingChannelPageModule', name: 'trending-channel', segment: 'trending/channel/:channel', priority: 'low', defaultHistory: ['following'] },
                         { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trending-game/trending-game.module#TrendingGamePageModule', name: 'trending-game', segment: 'trending/game/:game', priority: 'low', defaultHistory: ['games'] },
-                        { loadChildren: '../pages/trending-channel/trending-channel.module#TrendingChannelPageModule', name: 'trending-channel', segment: 'trending/channel/:channel', priority: 'low', defaultHistory: ['following'] },
                         { loadChildren: '../pages/trending/trending.module#TrendingPageModule', name: 'trending', segment: 'trending', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -1032,7 +1032,7 @@ var MyApp = /** @class */ (function () {
 var environment = {
     production: true,
     apiAddress: 'https://api.cliperino.com',
-    authCallback: 'https://api.cliperino.com/#/auth/callback'
+    authCallback: 'https://www.cliperino.com/#/auth/callback'
 };
 //# sourceMappingURL=environment.js.map
 

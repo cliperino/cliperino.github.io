@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 602:
+/***/ 603:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClipPageModule", function() { return ClipPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clip__ = __webpack_require__(609);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clip__ = __webpack_require__(611);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__ = __webpack_require__(182);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__ = __webpack_require__(341);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -48,7 +48,7 @@ var ClipPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 609:
+/***/ 611:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
