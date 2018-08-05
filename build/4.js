@@ -1,15 +1,15 @@
 webpackJsonp([4],{
 
-/***/ 604:
+/***/ 605:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FollowingPageModule", function() { return FollowingPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__following__ = __webpack_require__(612);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(614);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__ = __webpack_require__(343);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,39 +20,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FollowingPageModule = /** @class */ (function () {
-    function FollowingPageModule() {
+var ProfilePageModule = /** @class */ (function () {
+    function ProfilePageModule() {
     }
-    FollowingPageModule = __decorate([
+    ProfilePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__following__["a" /* FollowingPage */]
+                __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__following__["a" /* FollowingPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]),
                 __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__["a" /* ComponentModule */].forRoot()
             ],
             providers: [],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_2__following__["a" /* FollowingPage */]
+                __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]
             ]
         })
-    ], FollowingPageModule);
-    return FollowingPageModule;
+    ], ProfilePageModule);
+    return ProfilePageModule;
 }());
 
-//# sourceMappingURL=following.module.js.map
+//# sourceMappingURL=profile.module.js.map
 
 /***/ }),
 
-/***/ 612:
+/***/ 614:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FollowingPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_users_service__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_localStorage_service__ = __webpack_require__(183);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65,40 +65,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /* Core */
 
 
-/* Services */
 
-var FollowingPage = /** @class */ (function () {
-    function FollowingPage(navCtrl, usersService, ngZone) {
+
+/* Models */
+/* Services */
+var ProfilePage = /** @class */ (function () {
+    function ProfilePage(navCtrl, toastCtrl, localStorageService) {
         this.navCtrl = navCtrl;
-        this.usersService = usersService;
-        this.ngZone = ngZone;
-        this.followedChannels = [];
+        this.toastCtrl = toastCtrl;
+        this.localStorageService = localStorageService;
     }
-    FollowingPage.prototype.ngOnInit = function () {
-        this.getFollowingChannels();
+    ProfilePage.prototype.ngOnInit = function () {
+        this.twitchUsername = this.localStorageService.getTwitchUsermame();
     };
-    FollowingPage.prototype.getFollowingChannels = function () {
-        var that = this;
-        var promise;
-        this.usersService.getFollowingChannelsById(26861831).then(function (channelWrapper) {
-            that.ngZone.run(function () {
-                that.followedChannels = channelWrapper.follows;
-                that.followedChannels.sort(function (a, b) {
-                    return (b.channel.followers - a.channel.followers);
-                });
-            });
+    ProfilePage.prototype.onSave = function () {
+        this.localStorageService.setTwitchUsername(this.twitchUsername);
+        this.presentToast();
+    };
+    ProfilePage.prototype.presentToast = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Information has been saved successfully.',
+            duration: 3000
         });
+        toast.present();
     };
-    FollowingPage = __decorate([
+    ProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-following',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\following\following.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title>Following</ion-title>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <div *ngFor="let followedChannel of followedChannels">\n\n      <following-channel-thumbnail-component [channel]="followedChannel.channel"></following-channel-thumbnail-component>\n\n    </div>\n\n  </ion-list>\n\n\n\n\n\n\n\n  <!-- <ion-grid>\n\n     <ion-row justify-content-center>\n\n        <div class="following-channel-wrapper" *ngFor="let followedChannel of followedChannels">\n\n           <following-channel-thumbnail-component [channel]="followedChannel.channel"></following-channel-thumbnail-component>\n\n        </div>\n\n     </ion-row>\n\n  </ion-grid> -->\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\following\following.html"*/
+            selector: 'page-profile',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\profile\profile.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title>Profile</ion-title>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n\n\n  <ion-item>\n\n    <ion-label floating>Twitch username</ion-label>\n\n    <ion-input type="text" value="{{twitchUsername}}" [(ngModel)]="twitchUsername"></ion-input>\n\n  </ion-item>\n\n\n\n  <button (click)="onSave()" ion-button clear>Save</button>\n\n\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\profile\profile.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__app_services_users_service__["a" /* UsersService */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */]])
-    ], FollowingPage);
-    return FollowingPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_2__app_services_localStorage_service__["a" /* LocalStorageService */]])
+    ], ProfilePage);
+    return ProfilePage;
 }());
 
-//# sourceMappingURL=following.js.map
+//# sourceMappingURL=profile.js.map
 
 /***/ })
 

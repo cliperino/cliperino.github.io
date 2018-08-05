@@ -5,12 +5,11 @@ webpackJsonp([5],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClipPageModule", function() { return ClipPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FollowingPageModule", function() { return FollowingPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clip__ = __webpack_require__(611);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__ = __webpack_require__(182);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__following__ = __webpack_require__(611);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__ = __webpack_require__(343);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -21,30 +20,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var ClipPageModule = /** @class */ (function () {
-    function ClipPageModule() {
+var FollowingPageModule = /** @class */ (function () {
+    function FollowingPageModule() {
     }
-    ClipPageModule = __decorate([
+    FollowingPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__clip__["a" /* ClipPage */]
+                __WEBPACK_IMPORTED_MODULE_2__following__["a" /* FollowingPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clip__["a" /* ClipPage */]),
-                __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__["a" /* PipesModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__["a" /* ComponentModule */].forRoot()
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__following__["a" /* FollowingPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__["a" /* ComponentModule */].forRoot()
             ],
             providers: [],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_2__clip__["a" /* ClipPage */]
+                __WEBPACK_IMPORTED_MODULE_2__following__["a" /* FollowingPage */]
             ]
         })
-    ], ClipPageModule);
-    return ClipPageModule;
+    ], FollowingPageModule);
+    return FollowingPageModule;
 }());
 
-//# sourceMappingURL=clip.module.js.map
+//# sourceMappingURL=following.module.js.map
 
 /***/ }),
 
@@ -52,11 +49,11 @@ var ClipPageModule = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClipPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FollowingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_clips_service__ = __webpack_require__(181);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_users_service__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_localStorage_service__ = __webpack_require__(183);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -69,49 +66,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /* Core */
 
 
-
-
 /* Services */
 
-var ClipPage = /** @class */ (function () {
-    function ClipPage(navCtrl, navParams, clipsService, _ngZone, _sanitizer, popoverCtrl) {
+
+var FollowingPage = /** @class */ (function () {
+    function FollowingPage(navCtrl, usersService, ngZone, localStorageService) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.clipsService = clipsService;
-        this._ngZone = _ngZone;
-        this._sanitizer = _sanitizer;
-        this.popoverCtrl = popoverCtrl;
-        var slug = navParams.get('slug');
-        this.slug = slug;
+        this.usersService = usersService;
+        this.ngZone = ngZone;
+        this.localStorageService = localStorageService;
+        this.followedChannels = [];
     }
-    ClipPage.prototype.ngOnInit = function () {
+    FollowingPage.prototype.ngOnInit = function () {
+        this.twitchUserId = this.localStorageService.getTwitchUserId();
+        if (this.twitchUserId) {
+            this.getFollowingChannels();
+        }
+    };
+    FollowingPage.prototype.getFollowingChannels = function () {
         var that = this;
-        this.clipsService.getBySlug(this.slug).then(function (clip) {
-            var src = 'https://clips.twitch.tv/embed?clip=' + clip.slug + '&tt_medium=clips_api&tt_content=embed&autoplay=true';
-            clip.embedHtml = that._sanitizer.bypassSecurityTrustHtml("<div style='overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0;' class='video-responsive'><iframe style='left: 0; top: 0; height: 100%; width: 100%; position: absolute;' src='" + src + "' width='100%' height='100%' muted='false' frameborder='0' scrolling='no' allowfullscreen='true' preload='metadata'></iframe></div>");
-            that._ngZone.run(function () {
-                that.clip = clip;
+        var promise;
+        this.usersService.getFollowingChannelsById(that.twitchUserId).then(function (channelWrapper) {
+            that.ngZone.run(function () {
+                that.followedChannels = channelWrapper.follows;
+                that.followedChannels.sort(function (a, b) {
+                    return (b.channel.followers - a.channel.followers);
+                });
             });
         });
     };
-    ClipPage.prototype.presentPopover = function (myEvent) {
-        var that = this;
-        var popover = this.popoverCtrl.create('clip-popover', { slug: that.slug });
-        popover.present({
-            ev: myEvent
-        });
-    };
-    ClipPage = __decorate([
+    FollowingPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-clip',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip\clip.html"*/'<ion-header>\n\n   <ion-navbar>\n\n      <ion-title>Clip</ion-title>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="no-padding-xs" padding *ngIf="clip" >\n\n	<ion-grid class="no-padding-xs">\n\n		<ion-row justify-content-center>\n\n			<ion-col class="display-none-xs"></ion-col>\n\n			<ion-col class="no-padding-xs" col-12 col-xl-9>\n\n				<ion-card class="max-width no-margin-xs">\n\n				  <ion-row>\n\n				    <ion-col>\n\n						<ion-item>\n\n				    <ion-avatar item-start>\n\n				      <img src="{{clip.broadcaster.logo}}">\n\n				    </ion-avatar>\n\n				    <h2>{{clip.broadcaster.displayName}}</h2>\n\n				    <p>{{clip.createdAt | timeAgo}}</p>\n\n				  </ion-item>\n\n				    </ion-col>\n\n				    <ion-col>\n\n\n\n				    </ion-col>\n\n				    <ion-col col-sm-3 col-md-1 center text-center align-self-center>\n\n							<div style="cursor: pointer;" (click)="presentPopover($event);">\n\n								<ion-icon ios="ios-arrow-down" md="ios-arrow-down"></ion-icon>\n\n							</div>\n\n				    </ion-col>\n\n				  </ion-row>\n\n\n\n				  <span [innerHTML]="clip.embedHtml"></span>\n\n\n\n				  <ion-card-content>\n\n				  	<ion-row>\n\n				  	<ion-col>\n\n				  		<p>{{clip.title}}</p>\n\n				    	<ion-note>{{clip.views | views}} views</ion-note>\n\n				  	</ion-col>\n\n				  	<!-- <div>\n\n				  		<button ion-button icon-start clear small>\n\n				        	<ion-icon name="thumbs-up"></ion-icon>\n\n				        	<div>{{0 | views}} Likes</div>\n\n				      	</button>\n\n				  	</div> -->\n\n				  	</ion-row>\n\n\n\n				  </ion-card-content>\n\n\n\n				 <!--<ion-row>\n\n				    <ion-col>\n\n				      <button ion-button icon-start clear small>\n\n				        <ion-icon name="thumbs-up"></ion-icon>\n\n				        <div>12 Likes</div>\n\n				      </button>\n\n				    </ion-col>\n\n				    <ion-col>\n\n				      <button ion-button icon-start clear small>\n\n				        <ion-icon name="text"></ion-icon>\n\n				        <div>4 Comments</div>\n\n				      </button>\n\n				    </ion-col>\n\n				    <ion-col center text-center>\n\n				      <ion-note>\n\n\n\n				      </ion-note>\n\n				    </ion-col>\n\n				  </ion-row>-->\n\n\n\n				</ion-card>\n\n			</ion-col>\n\n			<ion-col>\n\n			</ion-col>\n\n		</ion-row>\n\n	</ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip\clip.html"*/,
-            styles: ['.no-padding {padding: 0;} .no-margin {margin: 0;}']
+            selector: 'page-following',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\following\following.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title>Following</ion-title>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div *ngIf="!twitchUserId">\n\n    Set your twitch username in your profile.\n\n  </div>\n\n  <ion-list *ngIf="twitchUserId">\n\n    <div *ngFor="let followedChannel of followedChannels">\n\n      <following-channel-thumbnail-component [channel]="followedChannel.channel"></following-channel-thumbnail-component>\n\n    </div>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\following\following.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__app_services_clips_service__["a" /* ClipsService */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* PopoverController */]])
-    ], ClipPage);
-    return ClipPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2__app_services_users_service__["a" /* UsersService */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_localStorage_service__["a" /* LocalStorageService */]])
+    ], FollowingPage);
+    return FollowingPage;
 }());
 
-//# sourceMappingURL=clip.js.map
+//# sourceMappingURL=following.js.map
 
 /***/ })
 
