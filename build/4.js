@@ -87,7 +87,7 @@ var ProfilePage = /** @class */ (function () {
         var twitchUsername = this.localStorageService.getTwitchUsermame();
         var twitchUserId = this.localStorageService.getTwitchUserId();
         if (!twitchUserId) {
-            if (twitchUsername) {
+            if (twitchUsername && twitchUsername !== "null" && twitchUsername !== "undefined") {
                 this.usersService.getUsers(twitchUsername).then(function (userWrapper) {
                     if (userWrapper.users && userWrapper.users.length) {
                         that.localStorageService.setTwitchUserId(userWrapper.users[0]._id.toString());
