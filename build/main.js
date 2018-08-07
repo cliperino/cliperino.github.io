@@ -458,19 +458,19 @@ var map = {
 		5
 	],
 	"../pages/games/games.module": [
-		610,
+		611,
 		1
 	],
 	"../pages/profile/profile.module": [
-		611,
+		610,
 		4
 	],
 	"../pages/trending-channel/trending-channel.module": [
-		613,
+		612,
 		3
 	],
 	"../pages/trending-game/trending-game.module": [
-		612,
+		613,
 		2
 	],
 	"../pages/trending/trending.module": [
@@ -593,7 +593,7 @@ var TrendingPage = /** @class */ (function () {
     }
     TrendingPage.prototype.ngOnInit = function () {
         this.period = this.localStorageService.getItem("trending-period") || "day";
-        this.languages = JSON.parse(this.localStorageService.getItem("trending-languages"));
+        this.languages = JSON.parse(this.localStorageService.getItem("trending-languages")) || [];
         this.getTrendingClips(this.cursor, false);
     };
     TrendingPage.prototype.getTrendingClips = function (cursor, refresh) {
@@ -945,10 +945,10 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/clip/clip.module#ClipPageModule', name: 'clip', segment: 'clip/:slug', priority: 'low', defaultHistory: ['trending'] },
                         { loadChildren: '../pages/filter-popover/filter-popover.module#FilterPopoverPageModule', name: 'filter-popover', segment: 'filter-popover', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/following/following.module#FollowingPageModule', name: 'following', segment: 'following', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'profile', segment: 'profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/trending-game/trending-game.module#TrendingGamePageModule', name: 'trending-game', segment: 'trending/game/:game', priority: 'low', defaultHistory: ['games'] },
+                        { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trending-channel/trending-channel.module#TrendingChannelPageModule', name: 'trending-channel', segment: 'trending/channel/:channel', priority: 'low', defaultHistory: ['following'] },
+                        { loadChildren: '../pages/trending-game/trending-game.module#TrendingGamePageModule', name: 'trending-game', segment: 'trending/game/:game', priority: 'low', defaultHistory: ['games'] },
                         { loadChildren: '../pages/trending/trending.module#TrendingPageModule', name: 'trending', segment: 'trending', priority: 'low', defaultHistory: [] }
                     ]
                 }),
