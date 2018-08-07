@@ -29,7 +29,7 @@ var FollowingPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__following__["a" /* FollowingPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__following__["a" /* FollowingPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__following__["a" /* FollowingPage */]),
                 __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__["a" /* ComponentModule */].forRoot()
             ],
             providers: [],
@@ -100,14 +100,14 @@ var FollowingPage = /** @class */ (function () {
                 });
             });
         });
-        this.loaderService.show(promise);
-        this.toastService.onFailure(promise);
+        that.loaderService.show(promise);
+        that.toastService.onFailure(promise);
     };
     FollowingPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-following',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\following\following.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title>Following</ion-title>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div *ngIf="!twitchUserId">\n\n    Set your twitch username in your profile.\n\n  </div>\n\n  <ion-list *ngIf="twitchUserId">\n\n    <div *ngFor="let followedChannel of followedChannels">\n\n      <following-channel-thumbnail-component [channel]="followedChannel.channel"></following-channel-thumbnail-component>\n\n    </div>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\following\following.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__app_services_users_service__["a" /* UsersService */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
             __WEBPACK_IMPORTED_MODULE_4__app_services_loader_service__["a" /* LoaderService */],

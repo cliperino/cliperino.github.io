@@ -29,7 +29,7 @@ var ClipPopoverPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__clip_popover__["a" /* ClipPopoverPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clip_popover__["a" /* ClipPopoverPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clip_popover__["a" /* ClipPopoverPage */]),
                 __WEBPACK_IMPORTED_MODULE_3_ngx_clipboard__["a" /* ClipboardModule */]
             ],
             providers: [
@@ -403,7 +403,7 @@ var ClipPopoverPage = /** @class */ (function () {
     ClipPopoverPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip-popover\clip-popover.html"*/'<ion-list style="margin-bottom: 0px;">\n\n	<button ion-item (click)="copyLink()">Copy link</button>\n\n</ion-list>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip-popover\clip-popover.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2_ngx_clipboard__["b" /* ClipboardService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2_ngx_clipboard__["b" /* ClipboardService */]])
     ], ClipPopoverPage);
     return ClipPopoverPage;
 }());

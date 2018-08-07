@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 612:
+/***/ 611:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TrendingChannelPageModule", function() { return TrendingChannelPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__trending_channel__ = __webpack_require__(624);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__trending_channel__ = __webpack_require__(623);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__ = __webpack_require__(184);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__ = __webpack_require__(345);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -31,7 +31,7 @@ var TrendingChannelPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__trending_channel__["a" /* TrendingChannelPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__trending_channel__["a" /* TrendingChannelPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__trending_channel__["a" /* TrendingChannelPage */]),
                 __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__["a" /* PipesModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__["a" /* ComponentModule */].forRoot()
             ],
@@ -48,7 +48,7 @@ var TrendingChannelPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 624:
+/***/ 623:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -118,13 +118,13 @@ var TrendingChannelPage = /** @class */ (function () {
                 that.cursor = trendingClips.cursor;
             });
         });
-        this.loaderService.show(promise);
-        this.toastService.onFailure(promise);
+        that.loaderService.show(promise);
+        that.toastService.onFailure(promise);
     };
     TrendingChannelPage.prototype.presentPopover = function (myEvent) {
         var that = this;
         var popoverOptions = {};
-        popoverOptions.enableBackdropDismiss = false;
+        popoverOptions.enableBackdropDismiss = true;
         var popover = this.popoverCtrl.create('filter-popover', {
             period: that.period,
             displayLanguages: false
@@ -148,13 +148,13 @@ var TrendingChannelPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-trending-channel',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending-channel\trending-channel.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title>{{channel}}</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="presentPopover($event);">\n\n          <ion-icon ios="ios-funnel" md="ios-funnel"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only>\n\n          <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n   <ion-grid>\n\n      <ion-row justify-content-center>\n\n         <div style="max-width: 100%" *ngFor="let clip of clips">\n\n            <thumbnail-component [clip]="clip"></thumbnail-component>\n\n         </div>\n\n         <!-- <div style="width: 280px; height: 260px;"></div>\n\n         <div style="width: 280px; height: 260px;"></div> -->\n\n      </ion-row>\n\n   </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending-channel\trending-channel.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3__app_services_clips_service__["a" /* ClipsService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_4__app_services_localStorage_service__["a" /* LocalStorageService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* PopoverController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* PopoverController */],
             __WEBPACK_IMPORTED_MODULE_5__app_services_loader_service__["a" /* LoaderService */],
             __WEBPACK_IMPORTED_MODULE_6__app_services_toast_service__["a" /* ToastService */]])
     ], TrendingChannelPage);
