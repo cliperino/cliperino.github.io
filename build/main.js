@@ -234,7 +234,6 @@ var ClipsService = /** @class */ (function () {
                 .headers({ 'Accept': 'application/json' })
                 .send()
                 .end(function (resp) {
-                console.log(resp);
                 if (resp && resp.body) {
                     if (typeof resp.body === 'string') {
                         resolve(JSON.parse(resp.body));
@@ -462,11 +461,11 @@ var map = {
 		1
 	],
 	"../pages/profile/profile.module": [
-		612,
+		611,
 		4
 	],
 	"../pages/trending-channel/trending-channel.module": [
-		611,
+		612,
 		3
 	],
 	"../pages/trending-game/trending-game.module": [
@@ -946,8 +945,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/filter-popover/filter-popover.module#FilterPopoverPageModule', name: 'filter-popover', segment: 'filter-popover', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/following/following.module#FollowingPageModule', name: 'following', segment: 'following', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/trending-channel/trending-channel.module#TrendingChannelPageModule', name: 'trending-channel', segment: 'trending/channel/:channel', priority: 'low', defaultHistory: ['following'] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'profile', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/trending-channel/trending-channel.module#TrendingChannelPageModule', name: 'trending-channel', segment: 'trending/channel/:channel', priority: 'low', defaultHistory: ['following'] },
                         { loadChildren: '../pages/trending-game/trending-game.module#TrendingGamePageModule', name: 'trending-game', segment: 'trending/game/:game', priority: 'low', defaultHistory: ['games'] },
                         { loadChildren: '../pages/trending/trending.module#TrendingPageModule', name: 'trending', segment: 'trending', priority: 'low', defaultHistory: [] }
                     ]
