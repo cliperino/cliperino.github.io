@@ -1,6 +1,6 @@
 webpackJsonp([8],{
 
-/***/ 733:
+/***/ 734:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,9 +8,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClipPageModule", function() { return ClipPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clip__ = __webpack_require__(744);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clip__ = __webpack_require__(745);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__ = __webpack_require__(186);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__ = __webpack_require__(469);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__ = __webpack_require__(470);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -48,7 +48,7 @@ var ClipPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 744:
+/***/ 745:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -93,21 +93,56 @@ var ClipPage = /** @class */ (function () {
         this.loaderService = loaderService;
         this.toastService = toastService;
         this.isFavorite = false;
+        this.isLiked = false;
+        this.likesCount = 0;
         var slug = navParams.get('slug');
         this.slug = slug;
     }
     ClipPage.prototype.ngOnInit = function () {
         this.getBySlug();
+        this.getClipPublicInfo();
         if (this.authService.isAuthenticated()) {
-            this.getClipInfo();
+            this.getClipUserInfo();
         }
     };
-    ClipPage.prototype.getClipInfo = function () {
+    ClipPage.prototype.like = function () {
+        var that = this;
+        var promise = this.clipsService.like(this.slug).then(function () {
+            that._ngZone.run(function () {
+                that.isLiked = true;
+                that.likesCount++;
+            });
+        });
+        this.toastService.onFailure(promise);
+    };
+    ClipPage.prototype.unlike = function () {
+        var that = this;
+        var promise = this.clipsService.unlike(this.slug).then(function () {
+            that._ngZone.run(function () {
+                that.isLiked = false;
+                that.likesCount--;
+            });
+        });
+        this.toastService.onFailure(promise);
+    };
+    ClipPage.prototype.getClipPublicInfo = function () {
+        var promise;
+        var that = this;
+        promise = this.clipsService.getPublicInfo(this.slug).then(function (clipPublicInfo) {
+            console.log(clipPublicInfo);
+            that._ngZone.run(function () {
+                that.likesCount = clipPublicInfo.likesCount;
+            });
+        });
+        that.toastService.onFailure(promise);
+    };
+    ClipPage.prototype.getClipUserInfo = function () {
         var promise;
         var that = this;
         promise = this.clipsService.getUserInfo(this.slug).then(function (clipUserInfo) {
             that._ngZone.run(function () {
                 that.isFavorite = clipUserInfo.isFavorite;
+                that.isLiked = clipUserInfo.isLiked;
             });
         });
         that.toastService.onFailure(promise);
@@ -158,7 +193,7 @@ var ClipPage = /** @class */ (function () {
     };
     ClipPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-clip',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip\clip.html"*/'<ion-header>\n\n   <ion-navbar>\n\n      <ion-title>Clip</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="presentPopover($event)">\n\n          <ion-icon ios="ios-arrow-down" md="ios-arrow-down"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only *ngIf="!isFavorite && authService.isAuthenticated()" (click)="addFavorite()">\n\n          <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only *ngIf="isFavorite && authService.isAuthenticated()" (click)="removeFavorite()">\n\n          <ion-icon ios="ios-star" md="md-star"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n<ion-content class="no-padding-xs" padding *ngIf="clip" >\n\n   <ion-grid class="no-padding-xs">\n\n      <ion-row justify-content-center>\n\n         <!-- <ion-col class="display-none-xs"></ion-col> -->\n\n         <!-- <ion-col class="no-padding-xs" col-12 col-lg-8> -->\n\n         <ion-col class="no-padding-xs" col-12 col-xl-9>\n\n            <ion-card class="max-width no-margin-xs">\n\n               <ion-row>\n\n                  <ion-col>\n\n                     <ion-item style="cursor: pointer;" (click)="goToChannel()">\n\n                        <ion-avatar item-start>\n\n                           <img src="{{clip.broadcaster.logo}}">\n\n                        </ion-avatar>\n\n                        <h2>{{clip.broadcaster.displayName}}</h2>\n\n                        <p>{{clip.createdAt | timeAgo}}</p>\n\n                     </ion-item>\n\n                  </ion-col>\n\n               </ion-row>\n\n               <span [innerHTML]="clip.embedHtml"></span>\n\n               <ion-card-content>\n\n                  <ion-row>\n\n                     <ion-col>\n\n                        <p style="font-weight: bold;">{{clip.title}}</p>\n\n                        <p>{{clip.game}}</p>\n\n                        <ion-note>{{clip.views | views}} views</ion-note>\n\n                     </ion-col>\n\n                     <!-- <div>\n\n                        <button ion-button icon-start clear small>\n\n                            	<ion-icon name="thumbs-up"></ion-icon>\n\n                            	<div>{{0 | views}} Likes</div>\n\n                          	</button>\n\n                        </div> -->\n\n                  </ion-row>\n\n               </ion-card-content>\n\n               <!--<ion-row>\n\n                  <ion-col>\n\n                    <button ion-button icon-start clear small>\n\n                      <ion-icon name="thumbs-up"></ion-icon>\n\n                      <div>12 Likes</div>\n\n                    </button>\n\n                  </ion-col>\n\n                  <ion-col>\n\n                    <button ion-button icon-start clear small>\n\n                      <ion-icon name="text"></ion-icon>\n\n                      <div>4 Comments</div>\n\n                    </button>\n\n                  </ion-col>\n\n                  <ion-col center text-center>\n\n                    <ion-note>\n\n\n\n                    </ion-note>\n\n                  </ion-col>\n\n                  </ion-row>-->\n\n            </ion-card>\n\n         </ion-col>\n\n\n\n         <!-- Right content -->\n\n         <!-- <ion-col col-12 col-lg-4> -->\n\n           <!-- <thumbnail-component [clip]="clip"></thumbnail-component>\n\n           <thumbnail-component [clip]="clip"></thumbnail-component>\n\n           <thumbnail-component [clip]="clip"></thumbnail-component>\n\n         </ion-col> -->\n\n      </ion-row>\n\n   </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip\clip.html"*/,
+            selector: 'page-clip',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip\clip.html"*/'<ion-header>\n\n   <ion-navbar>\n\n      <ion-title>Clip</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only *ngIf="!isFavorite && authService.isAuthenticated()" (click)="addFavorite()">\n\n          <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only *ngIf="isFavorite && authService.isAuthenticated()" (click)="removeFavorite()">\n\n          <ion-icon ios="ios-star" md="md-star"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only>\n\n          <ion-icon ios="ios-heart-empty" md="md-heart-empty"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only (click)="presentPopover($event)">\n\n          <ion-icon name="more"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n<ion-content class="no-padding-xs" padding *ngIf="clip" >\n\n   <ion-grid class="no-padding-xs">\n\n      <ion-row justify-content-center>\n\n         <!-- <ion-col class="display-none-xs"></ion-col> -->\n\n         <!-- <ion-col class="no-padding-xs" col-12 col-lg-8> -->\n\n         <ion-col class="no-padding-xs" col-12 col-xl-9>\n\n            <ion-card class="max-width no-margin-xs">\n\n               <ion-row>\n\n                  <ion-col>\n\n                     <ion-item style="cursor: pointer;" (click)="goToChannel()">\n\n                        <ion-avatar item-start>\n\n                           <img src="{{clip.broadcaster.logo}}">\n\n                        </ion-avatar>\n\n                        <h2>{{clip.broadcaster.displayName}}</h2>\n\n                        <p>{{clip.createdAt | timeAgo}}</p>\n\n                     </ion-item>\n\n                  </ion-col>\n\n               </ion-row>\n\n               <span [innerHTML]="clip.embedHtml"></span>\n\n               <ion-card-content>\n\n                  <ion-row>\n\n                    <ion-note><span>{{clip.views | views}}</span> <span style="margin-right: 5px;">Views</span><span>{{likesCount | views}}</span> <span>Likes</span></ion-note>\n\n                  </ion-row>\n\n                  <ion-row style="height: 35px;">\n\n                    <div *ngIf="authService.isAuthenticated()">\n\n                      <button ion-button clear icon-only *ngIf="!isLiked" (click)="like()">\n\n                        <ion-icon name=\'heart-outline\' is-active="false"></ion-icon>\n\n                      </button>\n\n\n\n                      <button ion-button clear icon-only *ngIf="isLiked" (click)="unlike()">\n\n                        <ion-icon name=\'heart\' is-active="false"></ion-icon>\n\n                      </button>\n\n\n\n                      <!-- <button ion-button clear icon-only (click)="unlike()">\n\n                        <ion-icon name=\'chatboxes\' is-active="false"></ion-icon>\n\n                      </button> -->\n\n                    </div>\n\n                  </ion-row>\n\n\n\n                  <ion-row>\n\n                    <ion-col>\n\n                       <p style="font-weight: bold;">{{clip.title}}</p>\n\n                       <p>{{clip.game}}</p>\n\n                    </ion-col>\n\n                  </ion-row>\n\n               </ion-card-content>\n\n               <!--<ion-row>\n\n                  <ion-col>\n\n                    <button ion-button icon-start clear small>\n\n                      <ion-icon name="thumbs-up"></ion-icon>\n\n                      <div>12 Likes</div>\n\n                    </button>\n\n                  </ion-col>\n\n                  <ion-col>\n\n                    <button ion-button icon-start clear small>\n\n                      <ion-icon name="text"></ion-icon>\n\n                      <div>4 Comments</div>\n\n                    </button>\n\n                  </ion-col>\n\n                  <ion-col center text-center>\n\n                    <ion-note>\n\n\n\n                    </ion-note>\n\n                  </ion-col>\n\n                  </ion-row>-->\n\n            </ion-card>\n\n         </ion-col>\n\n\n\n         <!-- Right content -->\n\n         <!-- <ion-col col-12 col-lg-4> -->\n\n           <!-- <thumbnail-component [clip]="clip"></thumbnail-component>\n\n           <thumbnail-component [clip]="clip"></thumbnail-component>\n\n           <thumbnail-component [clip]="clip"></thumbnail-component>\n\n         </ion-col> -->\n\n      </ion-row>\n\n   </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip\clip.html"*/,
             styles: ['.no-padding {padding: 0;} .no-margin {margin: 0;}']
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
