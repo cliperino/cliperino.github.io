@@ -98,12 +98,12 @@ var TrendingChannelPage = /** @class */ (function () {
     }
     TrendingChannelPage.prototype.ngOnInit = function () {
         this.period = this.localStorageService.getItem("trending-channel-period") || "day";
-        this.getTrendingByChannel(this.channel, false);
+        this.getTrendingByChannel(false);
     };
-    TrendingChannelPage.prototype.getTrendingByChannel = function (channel, refresh) {
+    TrendingChannelPage.prototype.getTrendingByChannel = function (refresh) {
         var that = this;
         var promise;
-        promise = this.clipsService.getTrendingByChannel(channel, that.cursor, that.period, "en").then(function (trendingClips) {
+        promise = this.clipsService.getTrendingByChannel(that.channel, that.cursor, that.period).then(function (trendingClips) {
             var clips = trendingClips.clips;
             if (!clips.length) {
                 that.hasClips = false;
@@ -147,12 +147,15 @@ var TrendingChannelPage = /** @class */ (function () {
         localStorage.setItem("trending-channel-period", data.period);
         if (oldPeriod !== data.period) {
             that.cursor = undefined;
-            that.getTrendingByChannel(that.channel, true);
+            that.getTrendingByChannel(true);
         }
+    };
+    TrendingChannelPage.prototype.more = function () {
+        this.getTrendingByChannel(false);
     };
     TrendingChannelPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-trending-channel',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending-channel\trending-channel.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title>{{channel}}</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="presentPopover($event);">\n\n          <ion-icon ios="ios-funnel" md="ios-funnel"></ion-icon>\n\n        </button>\n\n        <!-- <button ion-button icon-only>\n\n          <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>\n\n        </button> -->\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div *ngIf="!hasClips">\n\n    No clips to display\n\n  </div>\n\n   <ion-grid>\n\n      <ion-row justify-content-center>\n\n         <div style="max-width: 100%" *ngFor="let clip of clips">\n\n            <thumbnail-component [clip]="clip"></thumbnail-component>\n\n         </div>\n\n      </ion-row>\n\n   </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending-channel\trending-channel.html"*/
+            selector: 'page-trending-channel',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending-channel\trending-channel.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title>{{channel}}</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="presentPopover($event);">\n\n          <ion-icon ios="ios-funnel" md="ios-funnel"></ion-icon>\n\n        </button>\n\n        <!-- <button ion-button icon-only>\n\n          <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>\n\n        </button> -->\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div *ngIf="!hasClips">\n\n    No clips to display\n\n  </div>\n\n   <ion-grid>\n\n      <ion-row justify-content-center>\n\n         <div style="max-width: 100%" *ngFor="let clip of clips">\n\n            <thumbnail-component [clip]="clip"></thumbnail-component>\n\n         </div>\n\n      </ion-row>\n\n   </ion-grid>\n\n   <ion-row justify-content-center>\n\n     <button (click)="more()" ion-button clear>MORE</button>\n\n   </ion-row>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending-channel\trending-channel.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3__app_services_clips_service__["a" /* ClipsService */],
