@@ -27991,6 +27991,11 @@ ion-navbar.toolbar {
   }
 }
 
+game-thumbnail-component p.title {
+  font-size: 16px;
+  color: #f4f4f4;
+}
+
 @media (max-width: 576px) {
   game-thumbnail-component .no-margin-xs {
     margin: 0 !important;

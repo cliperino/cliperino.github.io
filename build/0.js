@@ -378,6 +378,7 @@ var ClipboardModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_clipboard__ = __webpack_require__(743);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_toast_service__ = __webpack_require__(112);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -391,19 +392,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ClipPopoverPage = /** @class */ (function () {
-    function ClipPopoverPage(viewCtrl, clipboardService) {
+    function ClipPopoverPage(viewCtrl, 
+        /* Services */
+        clipboardService, toastService) {
         this.viewCtrl = viewCtrl;
         this.clipboardService = clipboardService;
+        this.toastService = toastService;
     }
     ClipPopoverPage.prototype.copyLink = function () {
+        var that = this;
         this.clipboardService.copyFromContent("https://www.cliperino.com/#/clip/" + this.viewCtrl.data.slug);
-        this.viewCtrl.dismiss();
+        this.viewCtrl.dismiss().then(function () {
+            that.toastService.show('Link copied to clipboard.');
+        });
     };
     ClipPopoverPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip-popover\clip-popover.html"*/'<ion-list style="margin-bottom: 0px;">\n\n	<button ion-item (click)="copyLink()">Copy link</button>\n\n</ion-list>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip-popover\clip-popover.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2_ngx_clipboard__["b" /* ClipboardService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_2_ngx_clipboard__["b" /* ClipboardService */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_toast_service__["a" /* ToastService */]])
     ], ClipPopoverPage);
     return ClipPopoverPage;
 }());
