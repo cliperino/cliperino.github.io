@@ -28038,6 +28038,29 @@ page-clip ion-content div.fixed-content, page-clip ion-content div.scroll-conten
   }
 }
 
+page-favorite-clips ion-content div.fixed-content, page-favorite-clips ion-content div.scroll-content {
+  margin-top: 56px;
+}
+
+@media (max-width: 576px) {
+  page-favorite-clips .no-margin-xs {
+    margin: 0 !important;
+  }
+  page-favorite-clips .no-padding-xs {
+    padding: 0 !important;
+  }
+  page-favorite-clips .scroll-content {
+    margin: 56px 0 !important;
+    padding: 0 !important;
+  }
+  page-favorite-clips .max-width {
+    width: 100% !important;
+  }
+  page-favorite-clips .display-none-xs {
+    display: none;
+  }
+}
+
 @media (max-width: 576px) {
   page-following .following-channel-wrapper {
     margin-bottom: 10px;
@@ -28059,5 +28082,74 @@ page-clip ion-content div.fixed-content, page-clip ion-content div.scroll-conten
 @media (min-width: 576px) {
   page-games .game-wrapper {
     margin: 0px 5px 5px 5px;
+  }
+}
+
+page-trending ion-content div.fixed-content, page-trending ion-content div.scroll-content {
+  margin-top: 56px;
+}
+
+@media (max-width: 576px) {
+  page-trending .no-margin-xs {
+    margin: 0 !important;
+  }
+  page-trending .no-padding-xs {
+    padding: 0 !important;
+  }
+  page-trending .scroll-content {
+    margin: 56px 0 !important;
+    padding: 0 !important;
+  }
+  page-trending .max-width {
+    width: 100% !important;
+  }
+  page-trending .display-none-xs {
+    display: none;
+  }
+}
+
+page-trending-channel ion-content div.fixed-content, page-trending-channel ion-content div.scroll-content {
+  margin-top: 56px;
+}
+
+@media (max-width: 576px) {
+  page-trending-channel .no-margin-xs {
+    margin: 0 !important;
+  }
+  page-trending-channel .no-padding-xs {
+    padding: 0 !important;
+  }
+  page-trending-channel .scroll-content {
+    margin: 56px 0 !important;
+    padding: 0 !important;
+  }
+  page-trending-channel .max-width {
+    width: 100% !important;
+  }
+  page-trending-channel .display-none-xs {
+    display: none;
+  }
+}
+
+page-trending-game ion-content div.fixed-content, page-trending-game ion-content div.scroll-content {
+  margin-top: 56px;
+}
+
+@media (max-width: 576px) {
+  page-trending-game .no-margin-xs {
+    margin: 0 !important;
+  }
+  page-trending-game .no-padding-xs {
+    padding: 0 !important;
+  }
+  page-trending-game .scroll-content {
+    margin: 56px 0 !important;
+    padding: 0 !important;
+  }
+  page-trending-game .max-width {
+    width: 100% !important;
+  }
+  page-trending-game .display-none-xs {
+    display: none;
   }
 }
