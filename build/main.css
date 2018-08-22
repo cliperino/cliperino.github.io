@@ -28027,7 +28027,7 @@ page-clip ion-content div.fixed-content, page-clip ion-content div.scroll-conten
     padding: 0 !important;
   }
   page-clip .scroll-content {
-    margin: 56px 0 !important;
+    margin: 56px 0 0 0 !important;
     padding: 0 !important;
   }
   page-clip .max-width {
@@ -28038,10 +28038,6 @@ page-clip ion-content div.fixed-content, page-clip ion-content div.scroll-conten
   }
 }
 
-page-favorite-clips ion-content div.fixed-content, page-favorite-clips ion-content div.scroll-content {
-  margin-top: 56px;
-}
-
 @media (max-width: 576px) {
   page-favorite-clips .no-margin-xs {
     margin: 0 !important;
@@ -28050,7 +28046,6 @@ page-favorite-clips ion-content div.fixed-content, page-favorite-clips ion-conte
     padding: 0 !important;
   }
   page-favorite-clips .scroll-content {
-    margin: 56px 0 !important;
     padding: 0 !important;
   }
   page-favorite-clips .max-width {
@@ -28085,10 +28080,6 @@ page-favorite-clips ion-content div.fixed-content, page-favorite-clips ion-conte
   }
 }
 
-page-trending ion-content div.fixed-content, page-trending ion-content div.scroll-content {
-  margin-top: 56px;
-}
-
 @media (max-width: 576px) {
   page-trending .no-margin-xs {
     margin: 0 !important;
@@ -28097,7 +28088,6 @@ page-trending ion-content div.fixed-content, page-trending ion-content div.scrol
     padding: 0 !important;
   }
   page-trending .scroll-content {
-    margin: 56px 0 !important;
     padding: 0 !important;
   }
   page-trending .max-width {
@@ -28108,10 +28098,6 @@ page-trending ion-content div.fixed-content, page-trending ion-content div.scrol
   }
 }
 
-page-trending-channel ion-content div.fixed-content, page-trending-channel ion-content div.scroll-content {
-  margin-top: 56px;
-}
-
 @media (max-width: 576px) {
   page-trending-channel .no-margin-xs {
     margin: 0 !important;
@@ -28120,7 +28106,6 @@ page-trending-channel ion-content div.fixed-content, page-trending-channel ion-c
     padding: 0 !important;
   }
   page-trending-channel .scroll-content {
-    margin: 56px 0 !important;
     padding: 0 !important;
   }
   page-trending-channel .max-width {
@@ -28131,10 +28116,6 @@ page-trending-channel ion-content div.fixed-content, page-trending-channel ion-c
   }
 }
 
-page-trending-game ion-content div.fixed-content, page-trending-game ion-content div.scroll-content {
-  margin-top: 56px;
-}
-
 @media (max-width: 576px) {
   page-trending-game .no-margin-xs {
     margin: 0 !important;
@@ -28143,7 +28124,6 @@ page-trending-game ion-content div.fixed-content, page-trending-game ion-content
     padding: 0 !important;
   }
   page-trending-game .scroll-content {
-    margin: 56px 0 !important;
     padding: 0 !important;
   }
   page-trending-game .max-width {
