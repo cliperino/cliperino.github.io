@@ -1,3 +1,11 @@
+ion-title .toolbar-title-md {
+  text-align: left !important;
+}
+
+ion-title.title-ios {
+  padding-left: 60px !important;
+}
+
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -21997,7 +22005,7 @@ ion-navbar.toolbar {
 }
 
 .toolbar-title-ios {
-  text-align: center;
+  text-align: left;
   font-size: 1.7rem;
   font-weight: 600;
   color: #fff;
