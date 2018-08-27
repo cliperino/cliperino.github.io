@@ -1,6 +1,6 @@
 webpackJsonp([7],{
 
-/***/ 736:
+/***/ 737:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10,7 +10,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_pipes_pipes_module__ = __webpack_require__(187);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__ = __webpack_require__(470);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__favorite_clips__ = __webpack_require__(747);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__favorite_clips__ = __webpack_require__(748);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -48,7 +48,7 @@ var FavoriteClipsPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 747:
+/***/ 748:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -114,7 +114,7 @@ var FavoriteClipsPage = /** @class */ (function () {
                     that.ngZone.run(function () {
                         that.favoriteClips.push(favoriteClip);
                     });
-                });
+                }).catch(function (err) { });
             });
         });
         that.loaderService.show(promise);
@@ -128,7 +128,7 @@ var FavoriteClipsPage = /** @class */ (function () {
     };
     FavoriteClipsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-favorite-clips',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\favorite-clips\favorite-clips.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title align-title="left">Favorite clips</ion-title>\n\n      <ion-buttons end>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n   <ion-grid>\n\n      <ion-row justify-content-center>\n\n         <div style="max-width: 100%" *ngFor="let favoriteClip of favoriteClips | favoriteClipsSort">\n\n            <thumbnail-component [clip]="favoriteClip.clip"></thumbnail-component>\n\n         </div>\n\n         <!-- <div style="width: 280px; height: 260px;"></div>\n\n         <div style="width: 280px; height: 260px;"></div> -->\n\n      </ion-row>\n\n   </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\favorite-clips\favorite-clips.html"*/
+            selector: 'page-favorite-clips',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\favorite-clips\favorite-clips.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title align-title="left">Favorite clips</ion-title>\n\n      <ion-buttons end>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n   <ion-grid>\n\n      <ion-row justify-content-center>\n\n         <div style="max-width: 100%" *ngFor="let favoriteClip of favoriteClips | favoriteClipsSort">\n\n            <thumbnail-component [clip]="favoriteClip.clip"></thumbnail-component>\n\n         </div>\n\n      </ion-row>\n\n   </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\favorite-clips\favorite-clips.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */],

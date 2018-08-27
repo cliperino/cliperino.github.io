@@ -317,24 +317,7 @@ var ClipsService = /** @class */ (function () {
     ClipsService.prototype.getBySlug = function (slug) {
         var that = this;
         var url = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiAddress + '/api/v1/clips/slug/' + slug;
-        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
-            __WEBPACK_IMPORTED_MODULE_1_unirest__["get"](url)
-                .headers({ 'Accept': 'application/json' })
-                .send()
-                .end(function (resp) {
-                if (resp && resp.body) {
-                    if (typeof resp.body === 'string') {
-                        resolve(JSON.parse(resp.body));
-                    }
-                    else {
-                        resolve(resp.body);
-                    }
-                }
-                else {
-                    reject('no response');
-                }
-            });
-        });
+        return this.restService.get(url);
     };
     ClipsService.prototype.getFavorites = function () {
         var that = this;
@@ -696,19 +679,19 @@ var map = {
 		8
 	],
 	"../pages/favorite-clips/favorite-clips.module": [
-		736,
+		737,
 		7
 	],
 	"../pages/filter-popover/filter-popover.module": [
-		737,
+		736,
 		6
 	],
 	"../pages/following/following.module": [
-		739,
+		738,
 		5
 	],
 	"../pages/games/games.module": [
-		738,
+		739,
 		1
 	],
 	"../pages/profile/profile.module": [
@@ -1210,14 +1193,14 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/clip-popover/clip-popover.module#ClipPopoverPageModule', name: 'clip-popover', segment: 'clip-popover', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clip/clip.module#ClipPageModule', name: 'clip', segment: 'clip/:slug', priority: 'low', defaultHistory: ['trending'] },
-                        { loadChildren: '../pages/favorite-clips/favorite-clips.module#FavoriteClipsPageModule', name: 'favorite-clips', segment: 'favorite-clips', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/filter-popover/filter-popover.module#FilterPopoverPageModule', name: 'filter-popover', segment: 'filter-popover', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/favorite-clips/favorite-clips.module#FavoriteClipsPageModule', name: 'favorite-clips', segment: 'favorite-clips', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/following/following.module#FollowingPageModule', name: 'following', segment: 'following', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'profile', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trending-channel/trending-channel.module#TrendingChannelPageModule', name: 'trending-channel', segment: 'trending/channel/:channel', priority: 'low', defaultHistory: ['following'] },
-                        { loadChildren: '../pages/trending/trending.module#TrendingPageModule', name: 'trending', segment: 'trending', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/trending-game/trending-game.module#TrendingGamePageModule', name: 'trending-game', segment: 'trending/game/:game', priority: 'low', defaultHistory: ['games'] }
+                        { loadChildren: '../pages/trending-game/trending-game.module#TrendingGamePageModule', name: 'trending-game', segment: 'trending/game/:game', priority: 'low', defaultHistory: ['games'] },
+                        { loadChildren: '../pages/trending/trending.module#TrendingPageModule', name: 'trending', segment: 'trending', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_6__pages_trending_trending_module__["TrendingPageModule"]
