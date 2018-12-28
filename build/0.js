@@ -1,15 +1,17 @@
 webpackJsonp([0],{
 
-/***/ 734:
+/***/ 736:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClipPopoverPageModule", function() { return ClipPopoverPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClipPageModule", function() { return ClipPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clip_popover__ = __webpack_require__(744);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ngx_clipboard__ = __webpack_require__(743);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clip__ = __webpack_require__(747);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_clipboard__ = __webpack_require__(743);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,30 +22,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ClipPopoverPageModule = /** @class */ (function () {
-    function ClipPopoverPageModule() {
+
+
+var ClipPageModule = /** @class */ (function () {
+    function ClipPageModule() {
     }
-    ClipPopoverPageModule = __decorate([
+    ClipPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__clip_popover__["a" /* ClipPopoverPage */]
+                __WEBPACK_IMPORTED_MODULE_2__clip__["a" /* ClipPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clip_popover__["a" /* ClipPopoverPage */]),
-                __WEBPACK_IMPORTED_MODULE_3_ngx_clipboard__["a" /* ClipboardModule */]
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clip__["a" /* ClipPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__["a" /* PipesModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__["a" /* ComponentModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_5_ngx_clipboard__["a" /* ClipboardModule */]
             ],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_3_ngx_clipboard__["b" /* ClipboardService */]
-            ],
+            providers: [],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_2__clip_popover__["a" /* ClipPopoverPage */]
+                __WEBPACK_IMPORTED_MODULE_2__clip__["a" /* ClipPage */]
             ]
         })
-    ], ClipPopoverPageModule);
-    return ClipPopoverPageModule;
+    ], ClipPageModule);
+    return ClipPageModule;
 }());
 
-//# sourceMappingURL=clip-popover.module.js.map
+//# sourceMappingURL=clip.module.js.map
 
 /***/ }),
 
@@ -58,7 +62,7 @@ var ClipPopoverPageModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClipboardModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_window_token__ = __webpack_require__(745);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_window_token__ = __webpack_require__(744);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__(67);
 
 
@@ -374,58 +378,6 @@ var ClipboardModule = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClipPopoverPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_clipboard__ = __webpack_require__(743);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_toast_service__ = __webpack_require__(112);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-/* Core */
-
-
-
-
-var ClipPopoverPage = /** @class */ (function () {
-    function ClipPopoverPage(viewCtrl, 
-        /* Services */
-        clipboardService, toastService) {
-        this.viewCtrl = viewCtrl;
-        this.clipboardService = clipboardService;
-        this.toastService = toastService;
-    }
-    ClipPopoverPage.prototype.copyLink = function () {
-        var that = this;
-        this.clipboardService.copyFromContent("https://www.cliperino.com/#/clip/" + this.viewCtrl.data.slug);
-        this.viewCtrl.dismiss().then(function () {
-            that.toastService.show('Link copied to clipboard.');
-        });
-    };
-    ClipPopoverPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip-popover\clip-popover.html"*/'<ion-list style="margin-bottom: 0px;">\n\n	<button ion-item (click)="copyLink()">Copy link</button>\n\n</ion-list>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip-popover\clip-popover.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_2_ngx_clipboard__["b" /* ClipboardService */],
-            __WEBPACK_IMPORTED_MODULE_3__app_services_toast_service__["a" /* ToastService */]])
-    ], ClipPopoverPage);
-    return ClipPopoverPage;
-}());
-
-//# sourceMappingURL=clip-popover.js.map
-
-/***/ }),
-
-/***/ 745:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return WINDOW; });
 /* unused harmony export _window */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgxWindowTokenModule; });
@@ -470,6 +422,299 @@ var NgxWindowTokenModule = /** @class */ (function () {
 
 
 //# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmd4LXdpbmRvdy10b2tlbi5qcy5tYXAiLCJzb3VyY2VzIjpbIm5nOi8vbmd4LXdpbmRvdy10b2tlbi9saWIvbmd4LXdpbmRvdy10b2tlbi5tb2R1bGUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTmdNb2R1bGUgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IEluamVjdGlvblRva2VuIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5cbmV4cG9ydCBjb25zdCBXSU5ET1cgPSBuZXcgSW5qZWN0aW9uVG9rZW48V2luZG93PignV2luZG93VG9rZW4nKTtcblxuZXhwb3J0IGZ1bmN0aW9uIF93aW5kb3coKTogV2luZG93IHtcbiAgICByZXR1cm4gd2luZG93O1xufVxuXG5ATmdNb2R1bGUoe1xuICAgIHByb3ZpZGVyczogW3tcbiAgICAgICAgcHJvdmlkZTogV0lORE9XLFxuICAgICAgICB1c2VGYWN0b3J5OiBfd2luZG93XG4gICAgfV1cbn0pXG5leHBvcnQgY2xhc3MgTmd4V2luZG93VG9rZW5Nb2R1bGUgeyB9XG4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUEscUJBR2EsTUFBTSxHQUFHLElBQUksY0FBYyxDQUFTLGFBQWEsQ0FBQyxDQUFDOzs7O0FBRWhFO0lBQ0ksT0FBTyxNQUFNLENBQUM7Q0FDakI7Ozs7O2dCQUVBLFFBQVEsU0FBQztvQkFDTixTQUFTLEVBQUUsQ0FBQzs0QkFDUixPQUFPLEVBQUUsTUFBTTs0QkFDZixVQUFVLEVBQUUsT0FBTzt5QkFDdEIsQ0FBQztpQkFDTDs7K0JBZEQ7Ozs7Ozs7Ozs7Ozs7OzsifQ==
+
+/***/ }),
+
+/***/ 747:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClipPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_clips_service__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_loader_service__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_toast_service__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_services_auth_service__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__environments_environment__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_services_localStorage_service__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ngx_clipboard__ = __webpack_require__(743);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+/* Core */
+
+
+
+
+/* Services */
+
+
+
+
+
+
+
+var ClipPage = /** @class */ (function () {
+    function ClipPage(navCtrl, navParams, _ngZone, _sanitizer, popoverCtrl, clipboardService, 
+        /* Services */
+        authService, clipsService, loaderService, localStorageService, toastService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this._ngZone = _ngZone;
+        this._sanitizer = _sanitizer;
+        this.popoverCtrl = popoverCtrl;
+        this.clipboardService = clipboardService;
+        this.authService = authService;
+        this.clipsService = clipsService;
+        this.loaderService = loaderService;
+        this.localStorageService = localStorageService;
+        this.toastService = toastService;
+        this.commentsCount = 0;
+        this.isFavorite = false;
+        this.isLiked = false;
+        this.likesCount = 0;
+        this.cropInfo = "";
+        this.selectClipFeature = false;
+        var slug = navParams.get('slug');
+        this.slug = slug;
+        if (!__WEBPACK_IMPORTED_MODULE_7__environments_environment__["a" /* environment */].production) {
+            this.selectClipFeature = true;
+        }
+    }
+    ClipPage.prototype.ngOnInit = function () {
+        this.getBySlug();
+        this.getClipPublicInfo();
+        this.getComments();
+        if (this.authService.isAuthenticated()) {
+            this.getClipUserInfo();
+        }
+    };
+    ClipPage.prototype.addComment = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var that, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        that = this;
+                        if (!this.authService.isAuthenticated()) {
+                            this.toastService.show('Must be logged in to comment on a clip.');
+                            return [2 /*return*/];
+                        }
+                        return [4 /*yield*/, this.clipsService.addComment(this.slug, this.userComment)];
+                    case 1:
+                        response = _a.sent();
+                        this._ngZone.run(function () {
+                            that.comments.push(response.response[0]);
+                            that.userComment = null;
+                        });
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ClipPage.prototype.like = function () {
+        var that = this;
+        if (!that.authService.isAuthenticated()) {
+            that.toastService.show('Must be logged in to like a clip.');
+            return;
+        }
+        var promise = this.clipsService.like(this.slug).then(function () {
+            that._ngZone.run(function () {
+                that.isLiked = true;
+                that.likesCount++;
+            });
+        });
+        this.toastService.onFailure(promise);
+    };
+    ClipPage.prototype.unlike = function () {
+        var that = this;
+        var promise = this.clipsService.unlike(this.slug).then(function () {
+            that._ngZone.run(function () {
+                that.isLiked = false;
+                that.likesCount--;
+            });
+        });
+        this.toastService.onFailure(promise);
+    };
+    ClipPage.prototype.getComments = function () {
+        var promise;
+        var that = this;
+        promise = this.clipsService.getComments(this.slug).then(function (comments) {
+            that._ngZone.run(function () {
+                that.comments = comments;
+            });
+        });
+        that.toastService.onFailure(promise);
+    };
+    ClipPage.prototype.getClipPublicInfo = function () {
+        var promise;
+        var that = this;
+        promise = this.clipsService.getPublicInfo(this.slug).then(function (clipPublicInfo) {
+            that._ngZone.run(function () {
+                that.commentsCount = clipPublicInfo.commentsCount;
+                that.likesCount = clipPublicInfo.likesCount;
+            });
+        });
+        that.toastService.onFailure(promise);
+    };
+    ClipPage.prototype.getClipUserInfo = function () {
+        var promise;
+        var that = this;
+        promise = this.clipsService.getUserInfo(this.slug).then(function (clipUserInfo) {
+            that._ngZone.run(function () {
+                that.isFavorite = clipUserInfo.isFavorite;
+                that.isLiked = clipUserInfo.isLiked;
+            });
+        });
+        that.toastService.onFailure(promise);
+    };
+    ClipPage.prototype.getBySlug = function () {
+        var promise;
+        var that = this;
+        promise = this.clipsService.getBySlug(this.slug).then(function (clip) {
+            var src = 'https://clips.twitch.tv/embed?clip=' + clip.slug + '&tt_medium=clips_api&tt_content=embed&autoplay=true';
+            clip.embedHtml = that._sanitizer.bypassSecurityTrustHtml("<div style='overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0;' class='video-responsive'><iframe style='left: 0; top: 0; height: 100%; width: 100%; position: absolute;' src='" + src + "' width='100%' height='100%' muted='false' frameborder='0' scrolling='no' allowfullscreen='true' preload='metadata'></iframe></div>");
+            that._ngZone.run(function () {
+                that.clip = clip;
+            });
+        });
+        that.loaderService.show(promise);
+        that.toastService.onFailure(promise);
+    };
+    ClipPage.prototype.addFavorite = function () {
+        var that = this;
+        var promise = this.clipsService.addFavorite(this.slug).then(function () {
+            that._ngZone.run(function () {
+                that.isFavorite = true;
+                that.toastService.show('Added clip to favorites.');
+            });
+        });
+        this.toastService.onFailure(promise);
+    };
+    ClipPage.prototype.removeFavorite = function () {
+        var that = this;
+        var promise = this.clipsService.removeFavorite(this.slug).then(function () {
+            that._ngZone.run(function () {
+                that.isFavorite = false;
+                that.toastService.show('Removed clip from favorites.');
+            });
+        });
+        this.toastService.onFailure(promise);
+    };
+    ClipPage.prototype.goToChannel = function () {
+        var that = this;
+        that.navCtrl.push('trending-channel', { channel: that.clip.broadcaster.displayName });
+    };
+    ClipPage.prototype.presentPopover = function (myEvent) {
+        var that = this;
+        var popover = this.popoverCtrl.create('clip-popover', { slug: that.slug });
+        popover.present({
+            ev: myEvent
+        });
+    };
+    ClipPage.prototype.goToProfile = function () {
+        this.navCtrl.push('profile');
+    };
+    /* Local only methods */
+    ClipPage.prototype.clearSelectedClips = function () {
+        this.localStorageService.setItem('selectedClips', '');
+        this.toastService.show('Cleared selected clips.');
+    };
+    ClipPage.prototype.selectClip = function () {
+        var found = false;
+        var selectedClipsString = this.localStorageService.getItem('selectedClips');
+        var selectedClips = [];
+        var that = this;
+        var slug = that.slug;
+        if (that.cropInfo) {
+            slug += ":" + that.cropInfo;
+        }
+        console.log(that.cropInfo);
+        if (!selectedClipsString) {
+            selectedClips = [];
+        }
+        else {
+            selectedClips = JSON.parse(selectedClipsString);
+        }
+        selectedClips.forEach(function (selectedClip) {
+            if (selectedClip === slug) {
+                found = true;
+            }
+        });
+        if (!found) {
+            selectedClips.push(slug);
+        }
+        this.localStorageService.setItem('selectedClips', JSON.stringify(selectedClips));
+        this.toastService.show('Added clip to selected clips.');
+    };
+    ClipPage.prototype.copySelectedClips = function () {
+        this.clipboardService.copyFromContent(JSON.parse(this.localStorageService.getItem('selectedClips')).join(','));
+        this.toastService.show('Copied selected clips to clipboard.');
+    };
+    ClipPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-clip',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip\clip.html"*/'<!-- <meta property="og:title" content="European Travel Destinations"> -->\n\n<!-- <meta property="og:description" content="Offering tour packages for individuals or groups."> -->\n\n<!-- <meta property="og:url" content="http://euro-travel-example.com/index.htm"> -->\n\n\n\n<ion-header>\n\n   <ion-navbar>\n\n      <ion-title align-title="left">Clip</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only *ngIf="!isFavorite && authService.isAuthenticated()" (click)="addFavorite()">\n\n          <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only *ngIf="isFavorite && authService.isAuthenticated()" (click)="removeFavorite()">\n\n          <ion-icon ios="ios-star" md="md-star"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only *ngIf="selectClipFeature" (click)="selectClip()">\n\n          <ion-icon name="add-circle"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only *ngIf="selectClipFeature" (click)="copySelectedClips()">\n\n          <ion-icon name="copy"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only *ngIf="selectClipFeature" (click)="clearSelectedClips()">\n\n          <ion-icon name="close"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only *ngIf="!authService.isAuthenticated()" (click)="authService.login()">\n\n          <ion-icon name="log-in"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n<ion-content class="no-padding-xs" padding *ngIf="clip">\n\n    <meta property="og:image" content="{{clip.thumbnails.medium}}">\n\n   <ion-grid class="no-padding-xs">\n\n      <ion-row justify-content-center>\n\n         <ion-col class="no-padding-xs" col-12 col-xl-9>\n\n           <ion-input placeholder="Custom crop info (00-00)" *ngIf="selectClipFeature" [(ngModel)]="cropInfo"></ion-input>\n\n            <ion-card class="max-width no-margin-xs">\n\n               <ion-row>\n\n                  <ion-col>\n\n                     <ion-item style="cursor: pointer;" (click)="goToChannel()">\n\n                        <ion-avatar item-start>\n\n                           <img src="{{clip.broadcaster.logo}}">\n\n                        </ion-avatar>\n\n                        <h2 ion-text color="light">{{clip.broadcaster.displayName}}</h2>\n\n                        <p>{{clip.views | views}} views &#183; {{clip.createdAt | timeAgo}}</p>\n\n                     </ion-item>\n\n                  </ion-col>\n\n               </ion-row>\n\n               <span [innerHTML]="clip.embedHtml"></span>\n\n               <ion-card-content>\n\n                  <ion-row>\n\n                    <button ion-button clear icon-only *ngIf="!isLiked" (click)="like()">\n\n                      <ion-icon name=\'heart-outline\' is-active="false"></ion-icon>\n\n                      {{likesCount}}\n\n                    </button>\n\n\n\n                    <button ion-button clear icon-only *ngIf="isLiked" (click)="unlike()">\n\n                      <ion-icon color="danger" name=\'heart\' is-active="false"></ion-icon>\n\n                      {{likesCount}}\n\n                    </button>\n\n\n\n                    <button ion-button clear icon-only>\n\n                      <ion-icon name=\'chatboxes\' is-active="false"></ion-icon>\n\n                      {{commentsCount}}\n\n                    </button>\n\n\n\n                    <ion-col style="padding: 0;" text-right>\n\n                      <button ion-button clear icon-only (click)="presentPopover($event)">\n\n                        <ion-icon name=\'share-alt\' is-active="false"></ion-icon>\n\n                        Share\n\n                      </button>\n\n                    </ion-col>\n\n                  </ion-row>\n\n\n\n                  <ion-row>\n\n                    <ion-col>\n\n                       <p ion-text color="light" style="font-weight: bold;">{{clip.title}}</p>\n\n                       <p ion-text color="lightdark">{{clip.game}}</p>\n\n                    </ion-col>\n\n                  </ion-row>\n\n               </ion-card-content>\n\n            </ion-card>\n\n\n\n            <ion-col>\n\n              <ion-row>\n\n                <ion-col col-12 col-xl-9>\n\n                  <div style="padding-left: 16px;">\n\n                    <p ion-text color="lightdark">Comments</p>\n\n                  </div>\n\n                </ion-col>\n\n              </ion-row>\n\n\n\n              <ion-row *ngIf="authService.isAuthenticated()">\n\n                <ion-col col-12 col-xl-9>\n\n                  <ion-item class="no-border" style="background-color: inherit; padding-right: 16px;">\n\n                     <ion-avatar item-start>\n\n                        <img src="assets/imgs/avatar_placeholder.png">\n\n                     </ion-avatar>\n\n                     <ion-textarea [(ngModel)]="userComment" style="border-bottom: 1px;" placeholder="Add a public comment..."></ion-textarea>\n\n                  </ion-item>\n\n                </ion-col>\n\n                <ion-col text-right>\n\n                  <div>\n\n                    <button (click)="addComment()" *ngIf="userComment" ion-button clear>Add comment</button>\n\n                  </div>\n\n                </ion-col>\n\n              </ion-row>\n\n              <ion-row *ngIf="comments.length">\n\n                <ion-col col-12 col-xl-9>\n\n                  <ion-item *ngFor="let comment of comments" class="no-border" style="background-color: inherit;">\n\n                     <ion-avatar item-start>\n\n                        <img src="assets/imgs/avatar_placeholder.png">\n\n                     </ion-avatar>\n\n                     <h2 ion-text color="light">{{comment.twitchUsername}} &nbsp;<p style="display: inline;" color="lightdark">{{comment.createdAt | timeAgo}}</p></h2>\n\n                     <p style="color: white;">{{comment.comment}}</p>\n\n                  </ion-item>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-col>\n\n         </ion-col>\n\n      </ion-row>\n\n   </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip\clip.html"*/,
+            styles: ['.no-padding {padding: 0;} .no-margin {margin: 0;}']
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* PopoverController */],
+            __WEBPACK_IMPORTED_MODULE_9_ngx_clipboard__["b" /* ClipboardService */],
+            __WEBPACK_IMPORTED_MODULE_6__app_services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_clips_service__["a" /* ClipsService */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_loader_service__["a" /* LoaderService */],
+            __WEBPACK_IMPORTED_MODULE_8__app_services_localStorage_service__["a" /* LocalStorageService */],
+            __WEBPACK_IMPORTED_MODULE_5__app_services_toast_service__["a" /* ToastService */]])
+    ], ClipPage);
+    return ClipPage;
+}());
+
+//# sourceMappingURL=clip.js.map
 
 /***/ })
 

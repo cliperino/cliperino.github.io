@@ -69,11 +69,11 @@ var ToastService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_auth0_js__ = __webpack_require__(698);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_unirest__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_auth0_js__ = __webpack_require__(531);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_unirest__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_unirest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_unirest__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_bluebird__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_bluebird__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_bluebird___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_bluebird__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -225,10 +225,10 @@ var LoaderService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PipesModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__favorite_clips_sort_pipe__ = __webpack_require__(699);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_time_ago_pipe__ = __webpack_require__(701);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_pipe__ = __webpack_require__(702);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__capitalize_pipe__ = __webpack_require__(703);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__favorite_clips_sort_pipe__ = __webpack_require__(522);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_time_ago_pipe__ = __webpack_require__(524);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_pipe__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__capitalize_pipe__ = __webpack_require__(526);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -281,14 +281,14 @@ var PipesModule = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClipsService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_bluebird__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_unirest__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__localStorage_service__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__rest_service__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__rest_service__ = __webpack_require__(424);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -309,8 +309,17 @@ var ClipsService = /** @class */ (function () {
         this.localStorageService = localStorageService;
         this.restService = restService;
     }
-    ClipsService.prototype.getPublicInfo = function (slug) {
+    ClipsService.prototype.addComment = function (slug, comment) {
         var that = this;
+        var authorization = "Bearer " + this.localStorageService.getItem('id_token');
+        var url = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiAddress + ("/api/v1/protected/clips/" + slug + "/comments");
+        return this.restService.post(url, authorization, JSON.stringify({ "comment": comment }));
+    };
+    ClipsService.prototype.getComments = function (slug) {
+        var url = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiAddress + ("/api/v1/clips/" + slug + "/comments");
+        return this.restService.get(url);
+    };
+    ClipsService.prototype.getPublicInfo = function (slug) {
         var url = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiAddress + ("/api/v1/clips/" + slug + "/info");
         return this.restService.get(url);
     };
@@ -480,82 +489,25 @@ var ClipsService = /** @class */ (function () {
         return this.getTrending(undefined, period, language);
     };
     ClipsService.prototype.getTrending = function (cursor, period, language) {
-        var clips = new Array();
-        var that = this;
-        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
-            var url = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiAddress + ("/api/v1/clips/trending?period=" + period + "&language=" + language);
-            if (cursor) {
-                url += "&cursor=" + cursor;
-            }
-            __WEBPACK_IMPORTED_MODULE_1_unirest__["get"](url)
-                .headers({ 'Accept': 'application/json' })
-                .send()
-                .end(function (resp) {
-                if (resp && resp.body) {
-                    if (typeof resp.body === 'string') {
-                        resolve(JSON.parse(resp.body));
-                    }
-                    else {
-                        resolve(resp.body);
-                    }
-                }
-                else {
-                    reject('no response');
-                }
-            });
-        });
+        var url = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiAddress + ("/api/v1/clips/trending?period=" + period + "&language=" + language);
+        if (cursor) {
+            url += "&cursor=" + cursor;
+        }
+        return this.restService.get(url);
     };
     ClipsService.prototype.getTrendingByChannel = function (channel, cursor, period) {
-        var clips = new Array();
-        var that = this;
-        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
-            var url = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiAddress + ("/api/v1/clips/trending/channel/" + channel + "?period=" + period);
-            if (cursor) {
-                url += "&cursor=" + cursor;
-            }
-            __WEBPACK_IMPORTED_MODULE_1_unirest__["get"](url)
-                .headers({ 'Accept': 'application/json' })
-                .send()
-                .end(function (resp) {
-                if (resp && resp.body) {
-                    if (typeof resp.body === 'string') {
-                        resolve(JSON.parse(resp.body));
-                    }
-                    else {
-                        resolve(resp.body);
-                    }
-                }
-                else {
-                    reject('no response');
-                }
-            });
-        });
+        var url = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiAddress + ("/api/v1/clips/trending/channel/" + channel + "?period=" + period);
+        if (cursor) {
+            url += "&cursor=" + cursor;
+        }
+        return this.restService.get(url);
     };
     ClipsService.prototype.getTrendingByGame = function (game, cursor, period, language) {
-        var clips = new Array();
-        var that = this;
-        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
-            var url = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiAddress + ("/api/v1/clips/trending/game/" + game + "?period=" + period + "&language=" + language);
-            if (cursor) {
-                url += "&cursor=" + cursor;
-            }
-            __WEBPACK_IMPORTED_MODULE_1_unirest__["get"](url)
-                .headers({ 'Accept': 'application/json' })
-                .send()
-                .end(function (resp) {
-                if (resp && resp.body) {
-                    if (typeof resp.body === 'string') {
-                        resolve(JSON.parse(resp.body));
-                    }
-                    else {
-                        resolve(resp.body);
-                    }
-                }
-                else {
-                    reject('no response');
-                }
-            });
-        });
+        var url = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].apiAddress + ("/api/v1/clips/trending/game/" + game + "?period=" + period + "&language=" + language);
+        if (cursor) {
+            url += "&cursor=" + cursor;
+        }
+        return this.restService.get(url);
     };
     ClipsService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["A" /* Injectable */])(),
@@ -575,12 +527,12 @@ var ClipsService = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsersService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_bluebird__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_unirest__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(68);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -672,39 +624,39 @@ webpackEmptyAsyncContext.id = 198;
 var map = {
 	"../pages/clip-popover/clip-popover.module": [
 		734,
-		0
+		1
 	],
 	"../pages/clip/clip.module": [
+		736,
+		0
+	],
+	"../pages/favorite-clips/favorite-clips.module": [
 		735,
 		8
 	],
-	"../pages/favorite-clips/favorite-clips.module": [
+	"../pages/filter-popover/filter-popover.module": [
 		737,
 		7
 	],
-	"../pages/filter-popover/filter-popover.module": [
-		736,
-		6
-	],
 	"../pages/following/following.module": [
 		738,
-		5
+		6
 	],
 	"../pages/games/games.module": [
-		739,
-		1
+		740,
+		2
 	],
 	"../pages/profile/profile.module": [
-		740,
-		4
+		739,
+		5
 	],
 	"../pages/trending-channel/trending-channel.module": [
 		741,
-		3
+		4
 	],
 	"../pages/trending-game/trending-game.module": [
 		742,
-		2
+		3
 	],
 	"../pages/trending/trending.module": [
 		425
@@ -726,14 +678,14 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 301:
+/***/ 424:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_bluebird__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_unirest__);
 
 
@@ -759,17 +711,11 @@ var RestService = /** @class */ (function () {
                         resolve(body.response);
                     }
                     else {
-                        reject({
-                            success: false,
-                            message: body.message || 'The response contains no message.'
-                        });
+                        reject(new Error(body.message || 'The response contains no message.'));
                     }
                 }
                 else {
-                    reject({
-                        success: false,
-                        message: 'The response contains no body.'
-                    });
+                    reject(new Error('The response contains no body.'));
                 }
             });
         });
@@ -779,6 +725,30 @@ var RestService = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_1_unirest__["get"](url)
                 .headers({ 'Accept': 'application/json', 'Authorization': authorization })
                 .send()
+                .end(function (resp) {
+                if (resp && resp.error) {
+                    reject(resp.error);
+                    return;
+                }
+                if (resp && resp.body) {
+                    if (typeof resp.body === 'string') {
+                        resolve(JSON.parse(resp.body));
+                    }
+                    else {
+                        resolve(resp.body);
+                    }
+                }
+                else {
+                    reject('no response');
+                }
+            });
+        });
+    };
+    RestService.prototype.post = function (url, authorization, obj) {
+        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
+            __WEBPACK_IMPORTED_MODULE_1_unirest__["post"](url)
+                .headers({ 'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': authorization })
+                .send(obj)
                 .end(function (resp) {
                 if (resp && resp.error) {
                     reject(resp.error);
@@ -1006,9 +976,9 @@ var TrendingPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__thumbnail_thumbnail_component__ = __webpack_require__(704);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__thumbnail_thumbnail_component__ = __webpack_require__(527);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__following_channel_thumbnail_following_channel_thumbnail_component__ = __webpack_require__(706);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__following_channel_thumbnail_following_channel_thumbnail_component__ = __webpack_require__(529);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1060,12 +1030,12 @@ var ComponentModule = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GamesService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_bluebird__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_unirest__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(68);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1121,7 +1091,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(474);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_module__ = __webpack_require__(496);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(68);
 
 
 
@@ -1153,7 +1123,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_localStorage_service__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_loader_service__ = __webpack_require__(186);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_toast_service__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_rest_service__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_rest_service__ = __webpack_require__(424);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1192,12 +1162,12 @@ var AppModule = /** @class */ (function () {
                 }, {
                     links: [
                         { loadChildren: '../pages/clip-popover/clip-popover.module#ClipPopoverPageModule', name: 'clip-popover', segment: 'clip-popover', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/favorite-clips/favorite-clips.module#FavoriteClipsPageModule', name: 'favorite-clips', segment: 'favorite-clips', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clip/clip.module#ClipPageModule', name: 'clip', segment: 'clip/:slug', priority: 'low', defaultHistory: ['trending'] },
                         { loadChildren: '../pages/filter-popover/filter-popover.module#FilterPopoverPageModule', name: 'filter-popover', segment: 'filter-popover', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/favorite-clips/favorite-clips.module#FavoriteClipsPageModule', name: 'favorite-clips', segment: 'favorite-clips', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/following/following.module#FollowingPageModule', name: 'following', segment: 'following', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'profile', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trending-channel/trending-channel.module#TrendingChannelPageModule', name: 'trending-channel', segment: 'trending/channel/:channel', priority: 'low', defaultHistory: ['following'] },
                         { loadChildren: '../pages/trending-game/trending-game.module#TrendingGamePageModule', name: 'trending-game', segment: 'trending/game/:game', priority: 'low', defaultHistory: ['games'] },
                         { loadChildren: '../pages/trending/trending.module#TrendingPageModule', name: 'trending', segment: 'trending', priority: 'low', defaultHistory: [] }
@@ -1230,42 +1200,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 527:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 529:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 579:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 580:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 637:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 699:
+/***/ 522:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1304,256 +1239,256 @@ var FavoriteClipsPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 700:
+/***/ 523:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 302,
-	"./af.js": 302,
-	"./ar": 303,
-	"./ar-dz": 304,
-	"./ar-dz.js": 304,
-	"./ar-kw": 305,
-	"./ar-kw.js": 305,
-	"./ar-ly": 306,
-	"./ar-ly.js": 306,
-	"./ar-ma": 307,
-	"./ar-ma.js": 307,
-	"./ar-sa": 308,
-	"./ar-sa.js": 308,
-	"./ar-tn": 309,
-	"./ar-tn.js": 309,
-	"./ar.js": 303,
-	"./az": 310,
-	"./az.js": 310,
-	"./be": 311,
-	"./be.js": 311,
-	"./bg": 312,
-	"./bg.js": 312,
-	"./bm": 313,
-	"./bm.js": 313,
-	"./bn": 314,
-	"./bn.js": 314,
-	"./bo": 315,
-	"./bo.js": 315,
-	"./br": 316,
-	"./br.js": 316,
-	"./bs": 317,
-	"./bs.js": 317,
-	"./ca": 318,
-	"./ca.js": 318,
-	"./cs": 319,
-	"./cs.js": 319,
-	"./cv": 320,
-	"./cv.js": 320,
-	"./cy": 321,
-	"./cy.js": 321,
-	"./da": 322,
-	"./da.js": 322,
-	"./de": 323,
-	"./de-at": 324,
-	"./de-at.js": 324,
-	"./de-ch": 325,
-	"./de-ch.js": 325,
-	"./de.js": 323,
-	"./dv": 326,
-	"./dv.js": 326,
-	"./el": 327,
-	"./el.js": 327,
-	"./en-au": 328,
-	"./en-au.js": 328,
-	"./en-ca": 329,
-	"./en-ca.js": 329,
-	"./en-gb": 330,
-	"./en-gb.js": 330,
-	"./en-ie": 331,
-	"./en-ie.js": 331,
-	"./en-il": 332,
-	"./en-il.js": 332,
-	"./en-nz": 333,
-	"./en-nz.js": 333,
-	"./eo": 334,
-	"./eo.js": 334,
-	"./es": 335,
-	"./es-do": 336,
-	"./es-do.js": 336,
-	"./es-us": 337,
-	"./es-us.js": 337,
-	"./es.js": 335,
-	"./et": 338,
-	"./et.js": 338,
-	"./eu": 339,
-	"./eu.js": 339,
-	"./fa": 340,
-	"./fa.js": 340,
-	"./fi": 341,
-	"./fi.js": 341,
-	"./fo": 342,
-	"./fo.js": 342,
-	"./fr": 343,
-	"./fr-ca": 344,
-	"./fr-ca.js": 344,
-	"./fr-ch": 345,
-	"./fr-ch.js": 345,
-	"./fr.js": 343,
-	"./fy": 346,
-	"./fy.js": 346,
-	"./gd": 347,
-	"./gd.js": 347,
-	"./gl": 348,
-	"./gl.js": 348,
-	"./gom-latn": 349,
-	"./gom-latn.js": 349,
-	"./gu": 350,
-	"./gu.js": 350,
-	"./he": 351,
-	"./he.js": 351,
-	"./hi": 352,
-	"./hi.js": 352,
-	"./hr": 353,
-	"./hr.js": 353,
-	"./hu": 354,
-	"./hu.js": 354,
-	"./hy-am": 355,
-	"./hy-am.js": 355,
-	"./id": 356,
-	"./id.js": 356,
-	"./is": 357,
-	"./is.js": 357,
-	"./it": 358,
-	"./it.js": 358,
-	"./ja": 359,
-	"./ja.js": 359,
-	"./jv": 360,
-	"./jv.js": 360,
-	"./ka": 361,
-	"./ka.js": 361,
-	"./kk": 362,
-	"./kk.js": 362,
-	"./km": 363,
-	"./km.js": 363,
-	"./kn": 364,
-	"./kn.js": 364,
-	"./ko": 365,
-	"./ko.js": 365,
-	"./ky": 366,
-	"./ky.js": 366,
-	"./lb": 367,
-	"./lb.js": 367,
-	"./lo": 368,
-	"./lo.js": 368,
-	"./lt": 369,
-	"./lt.js": 369,
-	"./lv": 370,
-	"./lv.js": 370,
-	"./me": 371,
-	"./me.js": 371,
-	"./mi": 372,
-	"./mi.js": 372,
-	"./mk": 373,
-	"./mk.js": 373,
-	"./ml": 374,
-	"./ml.js": 374,
-	"./mn": 375,
-	"./mn.js": 375,
-	"./mr": 376,
-	"./mr.js": 376,
-	"./ms": 377,
-	"./ms-my": 378,
-	"./ms-my.js": 378,
-	"./ms.js": 377,
-	"./mt": 379,
-	"./mt.js": 379,
-	"./my": 380,
-	"./my.js": 380,
-	"./nb": 381,
-	"./nb.js": 381,
-	"./ne": 382,
-	"./ne.js": 382,
-	"./nl": 383,
-	"./nl-be": 384,
-	"./nl-be.js": 384,
-	"./nl.js": 383,
-	"./nn": 385,
-	"./nn.js": 385,
-	"./pa-in": 386,
-	"./pa-in.js": 386,
-	"./pl": 387,
-	"./pl.js": 387,
-	"./pt": 388,
-	"./pt-br": 389,
-	"./pt-br.js": 389,
-	"./pt.js": 388,
-	"./ro": 390,
-	"./ro.js": 390,
-	"./ru": 391,
-	"./ru.js": 391,
-	"./sd": 392,
-	"./sd.js": 392,
-	"./se": 393,
-	"./se.js": 393,
-	"./si": 394,
-	"./si.js": 394,
-	"./sk": 395,
-	"./sk.js": 395,
-	"./sl": 396,
-	"./sl.js": 396,
-	"./sq": 397,
-	"./sq.js": 397,
-	"./sr": 398,
-	"./sr-cyrl": 399,
-	"./sr-cyrl.js": 399,
-	"./sr.js": 398,
-	"./ss": 400,
-	"./ss.js": 400,
-	"./sv": 401,
-	"./sv.js": 401,
-	"./sw": 402,
-	"./sw.js": 402,
-	"./ta": 403,
-	"./ta.js": 403,
-	"./te": 404,
-	"./te.js": 404,
-	"./tet": 405,
-	"./tet.js": 405,
-	"./tg": 406,
-	"./tg.js": 406,
-	"./th": 407,
-	"./th.js": 407,
-	"./tl-ph": 408,
-	"./tl-ph.js": 408,
-	"./tlh": 409,
-	"./tlh.js": 409,
-	"./tr": 410,
-	"./tr.js": 410,
-	"./tzl": 411,
-	"./tzl.js": 411,
-	"./tzm": 412,
-	"./tzm-latn": 413,
-	"./tzm-latn.js": 413,
-	"./tzm.js": 412,
-	"./ug-cn": 414,
-	"./ug-cn.js": 414,
-	"./uk": 415,
-	"./uk.js": 415,
-	"./ur": 416,
-	"./ur.js": 416,
-	"./uz": 417,
-	"./uz-latn": 418,
-	"./uz-latn.js": 418,
-	"./uz.js": 417,
-	"./vi": 419,
-	"./vi.js": 419,
-	"./x-pseudo": 420,
-	"./x-pseudo.js": 420,
-	"./yo": 421,
-	"./yo.js": 421,
-	"./zh-cn": 422,
-	"./zh-cn.js": 422,
-	"./zh-hk": 423,
-	"./zh-hk.js": 423,
-	"./zh-tw": 424,
-	"./zh-tw.js": 424
+	"./af": 240,
+	"./af.js": 240,
+	"./ar": 241,
+	"./ar-dz": 242,
+	"./ar-dz.js": 242,
+	"./ar-kw": 243,
+	"./ar-kw.js": 243,
+	"./ar-ly": 244,
+	"./ar-ly.js": 244,
+	"./ar-ma": 245,
+	"./ar-ma.js": 245,
+	"./ar-sa": 246,
+	"./ar-sa.js": 246,
+	"./ar-tn": 247,
+	"./ar-tn.js": 247,
+	"./ar.js": 241,
+	"./az": 248,
+	"./az.js": 248,
+	"./be": 249,
+	"./be.js": 249,
+	"./bg": 250,
+	"./bg.js": 250,
+	"./bm": 251,
+	"./bm.js": 251,
+	"./bn": 252,
+	"./bn.js": 252,
+	"./bo": 253,
+	"./bo.js": 253,
+	"./br": 254,
+	"./br.js": 254,
+	"./bs": 255,
+	"./bs.js": 255,
+	"./ca": 256,
+	"./ca.js": 256,
+	"./cs": 257,
+	"./cs.js": 257,
+	"./cv": 258,
+	"./cv.js": 258,
+	"./cy": 259,
+	"./cy.js": 259,
+	"./da": 260,
+	"./da.js": 260,
+	"./de": 261,
+	"./de-at": 262,
+	"./de-at.js": 262,
+	"./de-ch": 263,
+	"./de-ch.js": 263,
+	"./de.js": 261,
+	"./dv": 264,
+	"./dv.js": 264,
+	"./el": 265,
+	"./el.js": 265,
+	"./en-au": 266,
+	"./en-au.js": 266,
+	"./en-ca": 267,
+	"./en-ca.js": 267,
+	"./en-gb": 268,
+	"./en-gb.js": 268,
+	"./en-ie": 269,
+	"./en-ie.js": 269,
+	"./en-il": 270,
+	"./en-il.js": 270,
+	"./en-nz": 271,
+	"./en-nz.js": 271,
+	"./eo": 272,
+	"./eo.js": 272,
+	"./es": 273,
+	"./es-do": 274,
+	"./es-do.js": 274,
+	"./es-us": 275,
+	"./es-us.js": 275,
+	"./es.js": 273,
+	"./et": 276,
+	"./et.js": 276,
+	"./eu": 277,
+	"./eu.js": 277,
+	"./fa": 278,
+	"./fa.js": 278,
+	"./fi": 279,
+	"./fi.js": 279,
+	"./fo": 280,
+	"./fo.js": 280,
+	"./fr": 281,
+	"./fr-ca": 282,
+	"./fr-ca.js": 282,
+	"./fr-ch": 283,
+	"./fr-ch.js": 283,
+	"./fr.js": 281,
+	"./fy": 284,
+	"./fy.js": 284,
+	"./gd": 285,
+	"./gd.js": 285,
+	"./gl": 286,
+	"./gl.js": 286,
+	"./gom-latn": 287,
+	"./gom-latn.js": 287,
+	"./gu": 288,
+	"./gu.js": 288,
+	"./he": 289,
+	"./he.js": 289,
+	"./hi": 290,
+	"./hi.js": 290,
+	"./hr": 291,
+	"./hr.js": 291,
+	"./hu": 292,
+	"./hu.js": 292,
+	"./hy-am": 293,
+	"./hy-am.js": 293,
+	"./id": 294,
+	"./id.js": 294,
+	"./is": 295,
+	"./is.js": 295,
+	"./it": 296,
+	"./it.js": 296,
+	"./ja": 297,
+	"./ja.js": 297,
+	"./jv": 298,
+	"./jv.js": 298,
+	"./ka": 299,
+	"./ka.js": 299,
+	"./kk": 300,
+	"./kk.js": 300,
+	"./km": 301,
+	"./km.js": 301,
+	"./kn": 302,
+	"./kn.js": 302,
+	"./ko": 303,
+	"./ko.js": 303,
+	"./ky": 304,
+	"./ky.js": 304,
+	"./lb": 305,
+	"./lb.js": 305,
+	"./lo": 306,
+	"./lo.js": 306,
+	"./lt": 307,
+	"./lt.js": 307,
+	"./lv": 308,
+	"./lv.js": 308,
+	"./me": 309,
+	"./me.js": 309,
+	"./mi": 310,
+	"./mi.js": 310,
+	"./mk": 311,
+	"./mk.js": 311,
+	"./ml": 312,
+	"./ml.js": 312,
+	"./mn": 313,
+	"./mn.js": 313,
+	"./mr": 314,
+	"./mr.js": 314,
+	"./ms": 315,
+	"./ms-my": 316,
+	"./ms-my.js": 316,
+	"./ms.js": 315,
+	"./mt": 317,
+	"./mt.js": 317,
+	"./my": 318,
+	"./my.js": 318,
+	"./nb": 319,
+	"./nb.js": 319,
+	"./ne": 320,
+	"./ne.js": 320,
+	"./nl": 321,
+	"./nl-be": 322,
+	"./nl-be.js": 322,
+	"./nl.js": 321,
+	"./nn": 323,
+	"./nn.js": 323,
+	"./pa-in": 324,
+	"./pa-in.js": 324,
+	"./pl": 325,
+	"./pl.js": 325,
+	"./pt": 326,
+	"./pt-br": 327,
+	"./pt-br.js": 327,
+	"./pt.js": 326,
+	"./ro": 328,
+	"./ro.js": 328,
+	"./ru": 329,
+	"./ru.js": 329,
+	"./sd": 330,
+	"./sd.js": 330,
+	"./se": 331,
+	"./se.js": 331,
+	"./si": 332,
+	"./si.js": 332,
+	"./sk": 333,
+	"./sk.js": 333,
+	"./sl": 334,
+	"./sl.js": 334,
+	"./sq": 335,
+	"./sq.js": 335,
+	"./sr": 336,
+	"./sr-cyrl": 337,
+	"./sr-cyrl.js": 337,
+	"./sr.js": 336,
+	"./ss": 338,
+	"./ss.js": 338,
+	"./sv": 339,
+	"./sv.js": 339,
+	"./sw": 340,
+	"./sw.js": 340,
+	"./ta": 341,
+	"./ta.js": 341,
+	"./te": 342,
+	"./te.js": 342,
+	"./tet": 343,
+	"./tet.js": 343,
+	"./tg": 344,
+	"./tg.js": 344,
+	"./th": 345,
+	"./th.js": 345,
+	"./tl-ph": 346,
+	"./tl-ph.js": 346,
+	"./tlh": 347,
+	"./tlh.js": 347,
+	"./tr": 348,
+	"./tr.js": 348,
+	"./tzl": 349,
+	"./tzl.js": 349,
+	"./tzm": 350,
+	"./tzm-latn": 351,
+	"./tzm-latn.js": 351,
+	"./tzm.js": 350,
+	"./ug-cn": 352,
+	"./ug-cn.js": 352,
+	"./uk": 353,
+	"./uk.js": 353,
+	"./ur": 354,
+	"./ur.js": 354,
+	"./uz": 355,
+	"./uz-latn": 356,
+	"./uz-latn.js": 356,
+	"./uz.js": 355,
+	"./vi": 357,
+	"./vi.js": 357,
+	"./x-pseudo": 358,
+	"./x-pseudo.js": 358,
+	"./yo": 359,
+	"./yo.js": 359,
+	"./zh-cn": 360,
+	"./zh-cn.js": 360,
+	"./zh-hk": 361,
+	"./zh-hk.js": 361,
+	"./zh-tw": 362,
+	"./zh-tw.js": 362
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -1569,11 +1504,11 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 700;
+webpackContext.id = 523;
 
 /***/ }),
 
-/***/ 702:
+/***/ 525:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1631,7 +1566,7 @@ var ViewsPipe = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 703:
+/***/ 526:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1663,13 +1598,13 @@ var CapitalizePipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 704:
+/***/ 527:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ThumbnailComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_clip_model__ = __webpack_require__(705);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_clip_model__ = __webpack_require__(528);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(37);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1711,7 +1646,7 @@ var ThumbnailComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 705:
+/***/ 528:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1726,14 +1661,14 @@ var Clip = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 706:
+/***/ 529:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FollowingChannelThumbnailComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_channel_model__ = __webpack_require__(707);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_channel_model__ = __webpack_require__(530);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1759,7 +1694,7 @@ var FollowingChannelThumbnailComponent = /** @class */ (function () {
     ], FollowingChannelThumbnailComponent.prototype, "channel", void 0);
     FollowingChannelThumbnailComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'following-channel-thumbnail-component',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\following-channel-thumbnail\following-channel-thumbnail.component.html"*/'<ion-item style="cursor: pointer;" (click)="goToChannel(channel.display_name)">\n\n  <ion-thumbnail item-start>\n\n    <img src="{{channel.logo}}">\n\n  </ion-thumbnail>\n\n  <h2>{{channel.display_name}}</h2>\n\n  <p>{{channel.followers | views}} followers</p>\n\n  <button ion-button clear item-end>View</button>\n\n</ion-item>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\following-channel-thumbnail\following-channel-thumbnail.component.html"*/
+            selector: 'following-channel-thumbnail-component',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\following-channel-thumbnail\following-channel-thumbnail.component.html"*/'<ion-item style="cursor: pointer;" (click)="goToChannel(channel.display_name)">\n\n  <ion-thumbnail item-start>\n\n    <img src="{{channel.logo}}">\n\n  </ion-thumbnail>\n\n  <h2>{{channel.display_name}}</h2>\n\n  <p>{{channel.followers | views}} followers</p>\n\n</ion-item>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\following-channel-thumbnail\following-channel-thumbnail.component.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], FollowingChannelThumbnailComponent);
@@ -1770,7 +1705,7 @@ var FollowingChannelThumbnailComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 707:
+/***/ 530:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1782,6 +1717,55 @@ var Channel = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=channel.model.js.map
+
+/***/ }),
+
+/***/ 536:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 538:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 589:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 590:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 647:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 68:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+var environment = {
+    production: true,
+    apiAddress: 'https://api.cliperino.com',
+    authCallback: 'https://www.cliperino.com/#/authCallback'
+};
+//# sourceMappingURL=environment.js.map
 
 /***/ }),
 
@@ -1884,20 +1868,6 @@ var MyApp = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 92:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
-var environment = {
-    production: true,
-    apiAddress: 'https://api.cliperino.com',
-    authCallback: 'https://www.cliperino.com/#/authCallback'
-};
-//# sourceMappingURL=environment.js.map
 
 /***/ }),
 

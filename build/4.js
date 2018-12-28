@@ -1,15 +1,16 @@
 webpackJsonp([4],{
 
-/***/ 740:
+/***/ 741:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TrendingChannelPageModule", function() { return TrendingChannelPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(753);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__trending_channel__ = __webpack_require__(754);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__ = __webpack_require__(470);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,41 +21,46 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ProfilePageModule = /** @class */ (function () {
-    function ProfilePageModule() {
+
+var TrendingChannelPageModule = /** @class */ (function () {
+    function TrendingChannelPageModule() {
     }
-    ProfilePageModule = __decorate([
+    TrendingChannelPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]
+                __WEBPACK_IMPORTED_MODULE_2__trending_channel__["a" /* TrendingChannelPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]),
-                __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__["a" /* ComponentModule */].forRoot()
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__trending_channel__["a" /* TrendingChannelPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__["a" /* PipesModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__["a" /* ComponentModule */].forRoot()
             ],
             providers: [],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]
+                __WEBPACK_IMPORTED_MODULE_2__trending_channel__["a" /* TrendingChannelPage */]
             ]
         })
-    ], ProfilePageModule);
-    return ProfilePageModule;
+    ], TrendingChannelPageModule);
+    return TrendingChannelPageModule;
 }());
 
-//# sourceMappingURL=profile.module.js.map
+//# sourceMappingURL=trending-channel.module.js.map
 
 /***/ }),
 
-/***/ 753:
+/***/ 754:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrendingChannelPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_localStorage_service__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_users_service__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_toast_service__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_clips_service__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_localStorage_service__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_loader_service__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_services_toast_service__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_services_auth_service__ = __webpack_require__(113);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -68,52 +74,112 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-/* Models */
 /* Services */
-var ProfilePage = /** @class */ (function () {
-    function ProfilePage(navCtrl, localStorageService, usersService, toastService) {
+
+
+
+
+
+var TrendingChannelPage = /** @class */ (function () {
+    function TrendingChannelPage(navCtrl, _sanitizer, _ngZone, navParams, popoverCtrl, 
+        /* Services */
+        authService, clipsService, localStorageService, loaderService, toastService) {
         this.navCtrl = navCtrl;
+        this._sanitizer = _sanitizer;
+        this._ngZone = _ngZone;
+        this.navParams = navParams;
+        this.popoverCtrl = popoverCtrl;
+        this.authService = authService;
+        this.clipsService = clipsService;
         this.localStorageService = localStorageService;
-        this.usersService = usersService;
+        this.loaderService = loaderService;
         this.toastService = toastService;
+        this.clips = [];
+        this.hasClips = true;
+        this.period = "day";
+        this.channel = navParams.get('channel');
+        this.sanitizer = _sanitizer;
+        this.ngZone = _ngZone;
     }
-    ProfilePage.prototype.ngOnInit = function () {
-        this.twitchUsername = this.localStorageService.getTwitchUsermame();
+    TrendingChannelPage.prototype.ngOnInit = function () {
+        this.period = this.localStorageService.getItem("trending-channel-period") || "day";
+        this.getTrendingByChannel(false);
     };
-    ProfilePage.prototype.onSave = function () {
+    TrendingChannelPage.prototype.getTrendingByChannel = function (refresh) {
         var that = this;
-        this.localStorageService.setTwitchUsername(this.twitchUsername);
-        var twitchUsername = this.localStorageService.getTwitchUsermame();
-        var twitchUserId = this.localStorageService.getTwitchUserId();
-        if (!twitchUserId) {
-            if (twitchUsername && twitchUsername !== "null" && twitchUsername !== "undefined") {
-                this.usersService.getUsers(twitchUsername).then(function (userWrapper) {
-                    if (userWrapper.users && userWrapper.users.length) {
-                        that.localStorageService.setTwitchUserId(userWrapper.users[0]._id.toString());
-                    }
-                });
+        var promise;
+        promise = this.clipsService.getTrendingByChannel(that.channel, that.cursor, that.period).then(function (trendingClips) {
+            var clips = trendingClips.clips;
+            if (!clips.length) {
+                that.hasClips = false;
             }
+            clips.forEach(function (clip) {
+                var src = 'https://clips.twitch.tv/embed?clip=' + clip.slug + '&tt_medium=clips_api&tt_content=embed&autoplay=false';
+                clip.embedHtml = that.sanitizer.bypassSecurityTrustHtml("<div style='overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0;' class='video-responsive'><iframe style='left: 0; top: 0; height: 100%; width: 100%; position: absolute;' src='" + src + "' width='100%' height='100%' frameborder='0' scrolling='no' allowfullscreen='true' preload='metadata'></iframe></div>");
+            });
+            that.ngZone.run(function () {
+                if (refresh) {
+                    that.clips.splice(0, that.clips.length);
+                }
+                clips.forEach(function (clip) {
+                    that.clips.push(clip);
+                });
+                that.cursor = trendingClips.cursor;
+            });
+        });
+        that.loaderService.show(promise);
+        that.toastService.onFailure(promise);
+    };
+    TrendingChannelPage.prototype.presentPopover = function (myEvent) {
+        var that = this;
+        var popoverOptions = {};
+        popoverOptions.enableBackdropDismiss = true;
+        var popover = this.popoverCtrl.create('filter-popover', {
+            period: that.period,
+            displayLanguages: false
+        }, popoverOptions);
+        popover.present({
+            ev: myEvent
+        });
+        popover.onDidDismiss(this.refreshData.bind(that));
+    };
+    TrendingChannelPage.prototype.refreshData = function (data) {
+        if (!data)
+            return;
+        var that = this;
+        var oldPeriod = this.period;
+        this.period = data.period;
+        localStorage.setItem("trending-channel-period", data.period);
+        if (oldPeriod !== data.period) {
+            that.cursor = undefined;
+            that.getTrendingByChannel(true);
         }
-        this.presentToast();
     };
-    ProfilePage.prototype.presentToast = function () {
-        this.toastService.show('Information has been saved successfully.');
+    TrendingChannelPage.prototype.more = function () {
+        this.getTrendingByChannel(false);
     };
-    ProfilePage = __decorate([
+    TrendingChannelPage.prototype.goToProfile = function () {
+        this.navCtrl.push('profile');
+    };
+    TrendingChannelPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\profile\profile.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title align-title="left">Profile</ion-title>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n\n\n  <ion-item>\n\n    <ion-label floating>Twitch username</ion-label>\n\n    <ion-input type="text" value="{{twitchUsername}}" [(ngModel)]="twitchUsername"></ion-input>\n\n  </ion-item>\n\n\n\n  <button (click)="onSave()" ion-button clear>Save</button>\n\n\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\profile\profile.html"*/
+            selector: 'page-trending-channel',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending-channel\trending-channel.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title align-title="left">{{channel}}</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="presentPopover($event);">\n\n          <ion-icon ios="ios-funnel" md="ios-funnel"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only *ngIf="!authService.isAuthenticated()" (click)="authService.login()">\n\n          <ion-icon name="log-in"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div *ngIf="!hasClips">\n\n    No clips to display\n\n  </div>\n\n   <ion-grid>\n\n      <ion-row justify-content-center>\n\n         <div style="max-width: 100%" *ngFor="let clip of clips">\n\n            <thumbnail-component [clip]="clip"></thumbnail-component>\n\n         </div>\n\n      </ion-row>\n\n   </ion-grid>\n\n   <ion-row justify-content-center *ngIf="clips.length">\n\n     <button (click)="more()" ion-button clear>MORE</button>\n\n   </ion-row>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending-channel\trending-channel.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2__app_services_localStorage_service__["a" /* LocalStorageService */],
-            __WEBPACK_IMPORTED_MODULE_3__app_services_users_service__["a" /* UsersService */],
-            __WEBPACK_IMPORTED_MODULE_4__app_services_toast_service__["a" /* ToastService */]])
-    ], ProfilePage);
-    return ProfilePage;
+            __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* PopoverController */],
+            __WEBPACK_IMPORTED_MODULE_7__app_services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_clips_service__["a" /* ClipsService */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_localStorage_service__["a" /* LocalStorageService */],
+            __WEBPACK_IMPORTED_MODULE_5__app_services_loader_service__["a" /* LoaderService */],
+            __WEBPACK_IMPORTED_MODULE_6__app_services_toast_service__["a" /* ToastService */]])
+    ], TrendingChannelPage);
+    return TrendingChannelPage;
 }());
 
-//# sourceMappingURL=profile.js.map
+//# sourceMappingURL=trending-channel.js.map
 
 /***/ })
 

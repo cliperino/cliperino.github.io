@@ -1,14 +1,15 @@
 webpackJsonp([6],{
 
-/***/ 736:
+/***/ 738:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterPopoverPageModule", function() { return FilterPopoverPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FollowingPageModule", function() { return FollowingPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filter_popover__ = __webpack_require__(747);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__following__ = __webpack_require__(749);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__ = __webpack_require__(470);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +19,44 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FilterPopoverPageModule = /** @class */ (function () {
-    function FilterPopoverPageModule() {
+
+var FollowingPageModule = /** @class */ (function () {
+    function FollowingPageModule() {
     }
-    FilterPopoverPageModule = __decorate([
+    FollowingPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__filter_popover__["a" /* FilterPopoverPage */]
+                __WEBPACK_IMPORTED_MODULE_2__following__["a" /* FollowingPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__filter_popover__["a" /* FilterPopoverPage */])
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__following__["a" /* FollowingPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__["a" /* ComponentModule */].forRoot()
             ],
             providers: [],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_2__filter_popover__["a" /* FilterPopoverPage */]
+                __WEBPACK_IMPORTED_MODULE_2__following__["a" /* FollowingPage */]
             ]
         })
-    ], FilterPopoverPageModule);
-    return FilterPopoverPageModule;
+    ], FollowingPageModule);
+    return FollowingPageModule;
 }());
 
-//# sourceMappingURL=filter-popover.module.js.map
+//# sourceMappingURL=following.module.js.map
 
 /***/ }),
 
-/***/ 747:
+/***/ 749:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilterPopoverPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FollowingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_users_service__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_localStorage_service__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_loader_service__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_toast_service__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_services_auth_service__ = __webpack_require__(113);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -61,54 +69,64 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /* Core */
 
 
-var FilterPopoverPage = /** @class */ (function () {
-    function FilterPopoverPage(viewCtrl) {
-        this.viewCtrl = viewCtrl;
-        this.displayLanguages = true;
+/* Services */
+
+
+
+
+
+var FollowingPage = /** @class */ (function () {
+    function FollowingPage(navCtrl, usersService, ngZone, 
+        /* Services */
+        authService, loaderService, localStorageService, toastService) {
+        this.navCtrl = navCtrl;
+        this.usersService = usersService;
+        this.ngZone = ngZone;
+        this.authService = authService;
+        this.loaderService = loaderService;
+        this.localStorageService = localStorageService;
+        this.toastService = toastService;
+        this.followedChannels = [];
     }
-    FilterPopoverPage.prototype.ngOnInit = function () {
+    FollowingPage.prototype.ngOnInit = function () {
+        this.twitchUserId = this.localStorageService.getTwitchUserId();
+        if (this.twitchUserId) {
+            this.getFollowingChannels();
+        }
+    };
+    FollowingPage.prototype.getFollowingChannels = function () {
         var that = this;
-        this.period = this.viewCtrl.data.period;
-        this.languages = this.viewCtrl.data.languages || [];
-        if (this.viewCtrl.data.displayLanguages !== undefined) {
-            this.displayLanguages = this.viewCtrl.data.displayLanguages;
-        }
-        this.langEn = this.contains('en');
-        this.langFr = this.contains('fr');
-    };
-    FilterPopoverPage.prototype.onSave = function () {
-        var that = this;
-        that.languages = [];
-        if (that.langEn) {
-            that.languages.push('en');
-        }
-        if (that.langFr) {
-            that.languages.push('fr');
-        }
-        this.viewCtrl.dismiss({
-            period: that.period,
-            languages: that.languages
+        var promise;
+        promise = this.usersService.getFollowingChannelsById(that.twitchUserId).then(function (channelWrapper) {
+            that.ngZone.run(function () {
+                that.followedChannels = channelWrapper.follows;
+                that.followedChannels.sort(function (a, b) {
+                    return (b.channel.followers - a.channel.followers);
+                });
+            });
         });
+        that.loaderService.show(promise);
+        that.toastService.onFailure(promise);
     };
-    FilterPopoverPage.prototype.contains = function (lang) {
-        var contained = false;
-        this.languages.forEach(function (language) {
-            if (language === lang) {
-                contained = true;
-                return;
-            }
-        });
-        return contained;
+    FollowingPage.prototype.goToProfile = function () {
+        this.navCtrl.push('profile');
     };
-    FilterPopoverPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\filter-popover\filter-popover.html"*/'<ion-list radio-group style="margin-bottom: 0px;" [(ngModel)]="period">\n\n	<ion-item-divider color="light">Period</ion-item-divider>\n\n	<ion-item>\n\n	  <ion-label>24 hours</ion-label>\n\n	  <ion-radio checked="true" value="day"></ion-radio>\n\n	</ion-item>\n\n		<ion-item>\n\n		  <ion-label>7 days</ion-label>\n\n		  <ion-radio value="week"></ion-radio>\n\n		</ion-item>\n\n		<ion-item>\n\n		  <ion-label>30 days</ion-label>\n\n		  <ion-radio value="month"></ion-radio>\n\n		</ion-item>\n\n		<ion-item>\n\n		  <ion-label>All</ion-label>\n\n		  <ion-radio value="all"></ion-radio>\n\n		</ion-item>\n\n	<ion-item-divider *ngIf="displayLanguages" color="light">Languages</ion-item-divider>\n\n	<ion-item *ngIf="displayLanguages">\n\n	  <ion-label>English</ion-label>\n\n	  <ion-checkbox [(ngModel)]="langEn"></ion-checkbox>\n\n	</ion-item>\n\n	<ion-item *ngIf="displayLanguages">\n\n	  <ion-label>French</ion-label>\n\n	  <ion-checkbox [(ngModel)]="langFr"></ion-checkbox>\n\n	</ion-item>\n\n</ion-list>\n\n<button (click)="onSave()" ion-button clear>Save</button>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\filter-popover\filter-popover.html"*/
+    FollowingPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-following',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\following\following.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title align-title="left">Following</ion-title>\n\n      <ion-buttons end>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div *ngIf="!twitchUserId">\n\n    Set your twitch username in your profile.\n\n  </div>\n\n  <ion-list *ngIf="twitchUserId">\n\n    <div *ngFor="let followedChannel of followedChannels">\n\n      <following-channel-thumbnail-component [channel]="followedChannel.channel"></following-channel-thumbnail-component>\n\n    </div>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\following\following.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]])
-    ], FilterPopoverPage);
-    return FilterPopoverPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2__app_services_users_service__["a" /* UsersService */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
+            __WEBPACK_IMPORTED_MODULE_6__app_services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_loader_service__["a" /* LoaderService */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_localStorage_service__["a" /* LocalStorageService */],
+            __WEBPACK_IMPORTED_MODULE_5__app_services_toast_service__["a" /* ToastService */]])
+    ], FollowingPage);
+    return FollowingPage;
 }());
 
-//# sourceMappingURL=filter-popover.js.map
+//# sourceMappingURL=following.js.map
 
 /***/ })
 

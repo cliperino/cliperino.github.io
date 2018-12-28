@@ -1,16 +1,17 @@
 webpackJsonp([2],{
 
-/***/ 742:
+/***/ 740:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TrendingGamePageModule", function() { return TrendingGamePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GamesPageModule", function() { return GamesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__trending_game__ = __webpack_require__(755);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__games__ = __webpack_require__(751);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_components_game_thumbnail_game_thumbnail_component__ = __webpack_require__(752);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_pipes_pipes_module__ = __webpack_require__(187);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -22,47 +23,45 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TrendingGamePageModule = /** @class */ (function () {
-    function TrendingGamePageModule() {
+
+var GamesPageModule = /** @class */ (function () {
+    function GamesPageModule() {
     }
-    TrendingGamePageModule = __decorate([
+    GamesPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__trending_game__["a" /* TrendingGamePage */]
+                __WEBPACK_IMPORTED_MODULE_2__games__["a" /* GamesPage */],
+                __WEBPACK_IMPORTED_MODULE_3__app_components_game_thumbnail_game_thumbnail_component__["a" /* GameThumbnailComponent */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__trending_game__["a" /* TrendingGamePage */]),
-                __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__["a" /* PipesModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__["a" /* ComponentModule */].forRoot()
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__games__["a" /* GamesPage */]),
+                __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__["a" /* ComponentModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_5__app_pipes_pipes_module__["a" /* PipesModule */].forRoot()
             ],
             providers: [],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_2__trending_game__["a" /* TrendingGamePage */]
+                __WEBPACK_IMPORTED_MODULE_2__games__["a" /* GamesPage */]
             ]
         })
-    ], TrendingGamePageModule);
-    return TrendingGamePageModule;
+    ], GamesPageModule);
+    return GamesPageModule;
 }());
 
-//# sourceMappingURL=trending-game.module.js.map
+//# sourceMappingURL=games.module.js.map
 
 /***/ }),
 
-/***/ 755:
+/***/ 751:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrendingGamePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GamesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_clips_service__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_localStorage_service__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_array_equal__ = __webpack_require__(472);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_array_equal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_array_equal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_services_loader_service__ = __webpack_require__(186);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_services_toast_service__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_services_auth_service__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_games_service__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_loader_service__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_toast_service__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_auth_service__ = __webpack_require__(113);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -75,120 +74,116 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /* Core */
 
 
-
 /* Services */
 
 
 
 
-
-
-var TrendingGamePage = /** @class */ (function () {
-    function TrendingGamePage(navCtrl, clipsService, _sanitizer, _ngZone, navParams, 
+var GamesPage = /** @class */ (function () {
+    function GamesPage(navCtrl, ngZone, 
         /* Services */
-        authService, localStorageService, popoverCtrl, loaderService, toastService) {
+        authService, gamesService, loaderService, toastService) {
         this.navCtrl = navCtrl;
-        this.clipsService = clipsService;
-        this._sanitizer = _sanitizer;
-        this._ngZone = _ngZone;
-        this.navParams = navParams;
+        this.ngZone = ngZone;
         this.authService = authService;
-        this.localStorageService = localStorageService;
-        this.popoverCtrl = popoverCtrl;
+        this.gamesService = gamesService;
         this.loaderService = loaderService;
         this.toastService = toastService;
-        this.clips = [];
-        this.period = "day";
-        this.languages = [];
-        this.game = navParams.get('game');
-        this.sanitizer = _sanitizer;
-        this.ngZone = _ngZone;
+        this.gameWrappers = [];
     }
-    TrendingGamePage.prototype.ngOnInit = function () {
-        this.period = this.localStorageService.getItem("trending-game-period") || "day";
-        this.languages = JSON.parse(this.localStorageService.getItem("trending-game-languages")) || [];
-        this.getTrendingByGame(false);
+    GamesPage.prototype.ngOnInit = function () {
+        this.getTopGames();
     };
-    TrendingGamePage.prototype.getTrendingByGame = function (refresh) {
+    GamesPage.prototype.getTopGames = function () {
         var that = this;
         var promise;
-        promise = this.clipsService.getTrendingByGame(that.game, that.gameCursor, this.period, this.languages.join(',')).then(function (trendingClips) {
-            var clips = trendingClips.clips;
-            clips.forEach(function (clip) {
-                var src = 'https://clips.twitch.tv/embed?clip=' + clip.slug + '&tt_medium=clips_api&tt_content=embed&autoplay=false';
-                clip.embedHtml = that.sanitizer.bypassSecurityTrustHtml("<div style='overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0;' class='video-responsive'><iframe style='left: 0; top: 0; height: 100%; width: 100%; position: absolute;' src='" + src + "' width='100%' height='100%' frameborder='0' scrolling='no' allowfullscreen='true' preload='metadata'></iframe></div>");
-            });
+        promise = this.gamesService.getTop().then(function (gameWrappers) {
             that.ngZone.run(function () {
-                if (refresh) {
-                    that.clips.splice(0, that.clips.length);
-                }
-                clips.forEach(function (clip) {
-                    that.clips.push(clip);
+                gameWrappers.forEach(function (gameWrapper) {
+                    that.gameWrappers.push(gameWrapper);
                 });
-                that.gameCursor = trendingClips.cursor;
             });
         });
         that.loaderService.show(promise);
         that.toastService.onFailure(promise);
     };
-    TrendingGamePage.prototype.goToPage = function (page) {
-        var navOptions = {};
-        navOptions.updateUrl = true;
-        this.navCtrl.setRoot(page, null, navOptions);
-    };
-    TrendingGamePage.prototype.presentPopover = function (myEvent) {
-        var that = this;
-        var popoverOptions = {};
-        popoverOptions.enableBackdropDismiss = true;
-        var popover = this.popoverCtrl.create('filter-popover', {
-            period: that.period,
-            languages: that.languages
-        }, popoverOptions);
-        popover.present({
-            ev: myEvent
-        });
-        popover.onDidDismiss(this.refreshData.bind(that));
-    };
-    TrendingGamePage.prototype.refreshData = function (data) {
-        if (!data)
-            return;
-        var that = this;
-        var oldPeriod = this.period;
-        var oldLanguages = this.languages;
-        this.period = data.period;
-        this.languages = data.languages;
-        localStorage.setItem("trending-game-period", data.period);
-        localStorage.setItem("trending-game-languages", JSON.stringify(data.languages));
-        if (!(oldPeriod === data.period && __WEBPACK_IMPORTED_MODULE_5_array_equal__(oldLanguages, data.languages))) {
-            that.gameCursor = undefined;
-            that.getTrendingByGame(true);
-        }
-    };
-    TrendingGamePage.prototype.more = function () {
-        this.getTrendingByGame(false);
-    };
-    TrendingGamePage.prototype.goToProfile = function () {
+    GamesPage.prototype.goToProfile = function () {
         this.navCtrl.push('profile');
     };
-    TrendingGamePage = __decorate([
+    GamesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-trending-game',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending-game\trending-game.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title align-title="left">{{game}}</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="presentPopover($event);">\n\n          <ion-icon ios="ios-funnel" md="ios-funnel"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only *ngIf="!authService.isAuthenticated()" (click)="authService.login()">\n\n          <ion-icon name="log-in"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n   <ion-grid>\n\n      <ion-row justify-content-center>\n\n         <div style="max-width: 100%" *ngFor="let clip of clips">\n\n            <thumbnail-component [clip]="clip"></thumbnail-component>\n\n         </div>\n\n         <!-- <div style="width: 280px; height: 260px;"></div>\n\n         <div style="width: 280px; height: 260px;"></div> -->\n\n      </ion-row>\n\n   </ion-grid>\n\n   <ion-row justify-content-center *ngIf="clips.length">\n\n     <button (click)="more()" ion-button clear>MORE</button>\n\n   </ion-row>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending-game\trending-game.html"*/
+            selector: 'page-games',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\games\games.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title align-title="left">Games</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only *ngIf="!authService.isAuthenticated()" (click)="authService.login()">\n\n          <ion-icon name="log-in"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <div *ngFor="let gameWrapper of gameWrappers">\n\n      <game-thumbnail-component [gameWrapper]="gameWrapper"></game-thumbnail-component>\n\n    </div>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\games\games.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3__app_services_clips_service__["a" /* ClipsService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_8__app_services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_4__app_services_localStorage_service__["a" /* LocalStorageService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* PopoverController */],
-            __WEBPACK_IMPORTED_MODULE_6__app_services_loader_service__["a" /* LoaderService */],
-            __WEBPACK_IMPORTED_MODULE_7__app_services_toast_service__["a" /* ToastService */]])
-    ], TrendingGamePage);
-    return TrendingGamePage;
+            __WEBPACK_IMPORTED_MODULE_5__app_services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__app_services_games_service__["a" /* GamesService */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_loader_service__["a" /* LoaderService */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_toast_service__["a" /* ToastService */]])
+    ], GamesPage);
+    return GamesPage;
 }());
 
-//# sourceMappingURL=trending-game.js.map
+//# sourceMappingURL=games.js.map
+
+/***/ }),
+
+/***/ 752:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GameThumbnailComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_game_wrapper_model__ = __webpack_require__(753);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(37);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var GameThumbnailComponent = /** @class */ (function () {
+    function GameThumbnailComponent(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    GameThumbnailComponent.prototype.goToGame = function (game) {
+        this.navCtrl.push('trending-game', { game: game });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__models_game_wrapper_model__["a" /* GameWrapper */])
+    ], GameThumbnailComponent.prototype, "gameWrapper", void 0);
+    GameThumbnailComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'game-thumbnail-component',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\game-thumbnail\game-thumbnail.component.html"*/'<ion-item style="cursor: pointer;" (click)="goToGame(gameWrapper.game.name)">\n\n  <ion-thumbnail item-start>\n\n    <img style="height: 100%;" src="{{gameWrapper.game.box.medium}}">\n\n  </ion-thumbnail>\n\n  <p class="title">{{gameWrapper.game.name}}</p>\n\n  <p>{{gameWrapper.viewers | views}} viewers</p>\n\n</ion-item>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\game-thumbnail\game-thumbnail.component.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */]])
+    ], GameThumbnailComponent);
+    return GameThumbnailComponent;
+}());
+
+//# sourceMappingURL=game-thumbnail.component.js.map
+
+/***/ }),
+
+/***/ 753:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GameWrapper; });
+var GameWrapper = /** @class */ (function () {
+    function GameWrapper() {
+    }
+    return GameWrapper;
+}());
+
+//# sourceMappingURL=game-wrapper.model.js.map
 
 /***/ })
 

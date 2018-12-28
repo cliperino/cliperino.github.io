@@ -27980,6 +27980,14 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+ion-icon.icon.smaller {
+  font-size: 1.4em;
+}
+
+.toolbar-title {
+  padding-left: 0px;
+}
+
 @media (max-width: 576px) {
   following-channel-thumbnail-component .no-margin-xs {
     margin: 0 !important;
@@ -28025,6 +28033,24 @@ game-thumbnail-component p.title {
 
 page-clip ion-content div.fixed-content, page-clip ion-content div.scroll-content {
   margin-top: 56px;
+}
+
+page-clip ion-card {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+page-clip ion-textarea {
+  height: 32px;
+}
+
+page-clip textarea {
+  margin-left: 0 !important;
+  resize: none;
+}
+
+page-clip ion-item.no-border .item-inner {
+  border-bottom: 0 !important;
 }
 
 @media (max-width: 576px) {
