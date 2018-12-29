@@ -69,9 +69,9 @@ var ToastService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_auth0_js__ = __webpack_require__(531);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_auth0_js__ = __webpack_require__(698);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rest_service__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rest_service__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__localStorage_service__ = __webpack_require__(67);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -201,7 +201,7 @@ var AuthService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 142:
+/***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -324,10 +324,10 @@ var LoaderService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PipesModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__favorite_clips_sort_pipe__ = __webpack_require__(522);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_time_ago_pipe__ = __webpack_require__(524);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_pipe__ = __webpack_require__(525);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__capitalize_pipe__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__favorite_clips_sort_pipe__ = __webpack_require__(699);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_time_ago_pipe__ = __webpack_require__(701);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_pipe__ = __webpack_require__(702);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__capitalize_pipe__ = __webpack_require__(703);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -387,7 +387,7 @@ var PipesModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__localStorage_service__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__rest_service__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__rest_service__ = __webpack_require__(164);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -730,11 +730,11 @@ var map = {
 		0
 	],
 	"../pages/favorite-clips/favorite-clips.module": [
-		735,
+		737,
 		8
 	],
 	"../pages/filter-popover/filter-popover.module": [
-		737,
+		735,
 		7
 	],
 	"../pages/following/following.module": [
@@ -742,15 +742,15 @@ var map = {
 		6
 	],
 	"../pages/games/games.module": [
-		740,
+		739,
 		2
 	],
 	"../pages/profile/profile.module": [
-		739,
+		741,
 		5
 	],
 	"../pages/trending-channel/trending-channel.module": [
-		741,
+		740,
 		4
 	],
 	"../pages/trending-game/trending-game.module": [
@@ -980,9 +980,9 @@ var TrendingPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__thumbnail_thumbnail_component__ = __webpack_require__(527);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__thumbnail_thumbnail_component__ = __webpack_require__(704);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__following_channel_thumbnail_following_channel_thumbnail_component__ = __webpack_require__(529);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__following_channel_thumbnail_following_channel_thumbnail_component__ = __webpack_require__(706);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1127,7 +1127,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_localStorage_service__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_loader_service__ = __webpack_require__(187);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_toast_service__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_rest_service__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_rest_service__ = __webpack_require__(164);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1166,13 +1166,13 @@ var AppModule = /** @class */ (function () {
                 }, {
                     links: [
                         { loadChildren: '../pages/clip-popover/clip-popover.module#ClipPopoverPageModule', name: 'clip-popover', segment: 'clip-popover', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/favorite-clips/favorite-clips.module#FavoriteClipsPageModule', name: 'favorite-clips', segment: 'favorite-clips', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/clip/clip.module#ClipPageModule', name: 'clip', segment: 'clip/:slug', priority: 'low', defaultHistory: ['trending'] },
                         { loadChildren: '../pages/filter-popover/filter-popover.module#FilterPopoverPageModule', name: 'filter-popover', segment: 'filter-popover', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/clip/clip.module#ClipPageModule', name: 'clip', segment: 'clip/:slug', priority: 'low', defaultHistory: ['trending'] },
+                        { loadChildren: '../pages/favorite-clips/favorite-clips.module#FavoriteClipsPageModule', name: 'favorite-clips', segment: 'favorite-clips', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/following/following.module#FollowingPageModule', name: 'following', segment: 'following', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'profile', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trending-channel/trending-channel.module#TrendingChannelPageModule', name: 'trending-channel', segment: 'trending/channel/:channel', priority: 'low', defaultHistory: ['following'] },
+                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'profile', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trending-game/trending-game.module#TrendingGamePageModule', name: 'trending-game', segment: 'trending/game/:game', priority: 'low', defaultHistory: ['games'] },
                         { loadChildren: '../pages/trending/trending.module#TrendingPageModule', name: 'trending', segment: 'trending', priority: 'low', defaultHistory: [] }
                     ]
@@ -1204,555 +1204,35 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 522:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavoriteClipsPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_moment__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-var FavoriteClipsPipe = /** @class */ (function () {
-    function FavoriteClipsPipe() {
-    }
-    FavoriteClipsPipe.prototype.transform = function (array) {
-        array.sort(function (a, b) {
-            var aMoment = __WEBPACK_IMPORTED_MODULE_1_moment__(a.createdAt, 'YYYY-MM-DD HH:mm:ss');
-            var bMoment = __WEBPACK_IMPORTED_MODULE_1_moment__(b.createdAt, 'YYYY-MM-DD HH:mm:ss');
-            return bMoment.diff(aMoment);
-        });
-        return array;
-    };
-    FavoriteClipsPipe = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({
-            name: 'favoriteClipsSort'
-        })
-    ], FavoriteClipsPipe);
-    return FavoriteClipsPipe;
-}());
-
-//# sourceMappingURL=favorite-clips-sort.pipe.js.map
-
-/***/ }),
-
-/***/ 523:
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./af": 241,
-	"./af.js": 241,
-	"./ar": 242,
-	"./ar-dz": 243,
-	"./ar-dz.js": 243,
-	"./ar-kw": 244,
-	"./ar-kw.js": 244,
-	"./ar-ly": 245,
-	"./ar-ly.js": 245,
-	"./ar-ma": 246,
-	"./ar-ma.js": 246,
-	"./ar-sa": 247,
-	"./ar-sa.js": 247,
-	"./ar-tn": 248,
-	"./ar-tn.js": 248,
-	"./ar.js": 242,
-	"./az": 249,
-	"./az.js": 249,
-	"./be": 250,
-	"./be.js": 250,
-	"./bg": 251,
-	"./bg.js": 251,
-	"./bm": 252,
-	"./bm.js": 252,
-	"./bn": 253,
-	"./bn.js": 253,
-	"./bo": 254,
-	"./bo.js": 254,
-	"./br": 255,
-	"./br.js": 255,
-	"./bs": 256,
-	"./bs.js": 256,
-	"./ca": 257,
-	"./ca.js": 257,
-	"./cs": 258,
-	"./cs.js": 258,
-	"./cv": 259,
-	"./cv.js": 259,
-	"./cy": 260,
-	"./cy.js": 260,
-	"./da": 261,
-	"./da.js": 261,
-	"./de": 262,
-	"./de-at": 263,
-	"./de-at.js": 263,
-	"./de-ch": 264,
-	"./de-ch.js": 264,
-	"./de.js": 262,
-	"./dv": 265,
-	"./dv.js": 265,
-	"./el": 266,
-	"./el.js": 266,
-	"./en-au": 267,
-	"./en-au.js": 267,
-	"./en-ca": 268,
-	"./en-ca.js": 268,
-	"./en-gb": 269,
-	"./en-gb.js": 269,
-	"./en-ie": 270,
-	"./en-ie.js": 270,
-	"./en-il": 271,
-	"./en-il.js": 271,
-	"./en-nz": 272,
-	"./en-nz.js": 272,
-	"./eo": 273,
-	"./eo.js": 273,
-	"./es": 274,
-	"./es-do": 275,
-	"./es-do.js": 275,
-	"./es-us": 276,
-	"./es-us.js": 276,
-	"./es.js": 274,
-	"./et": 277,
-	"./et.js": 277,
-	"./eu": 278,
-	"./eu.js": 278,
-	"./fa": 279,
-	"./fa.js": 279,
-	"./fi": 280,
-	"./fi.js": 280,
-	"./fo": 281,
-	"./fo.js": 281,
-	"./fr": 282,
-	"./fr-ca": 283,
-	"./fr-ca.js": 283,
-	"./fr-ch": 284,
-	"./fr-ch.js": 284,
-	"./fr.js": 282,
-	"./fy": 285,
-	"./fy.js": 285,
-	"./gd": 286,
-	"./gd.js": 286,
-	"./gl": 287,
-	"./gl.js": 287,
-	"./gom-latn": 288,
-	"./gom-latn.js": 288,
-	"./gu": 289,
-	"./gu.js": 289,
-	"./he": 290,
-	"./he.js": 290,
-	"./hi": 291,
-	"./hi.js": 291,
-	"./hr": 292,
-	"./hr.js": 292,
-	"./hu": 293,
-	"./hu.js": 293,
-	"./hy-am": 294,
-	"./hy-am.js": 294,
-	"./id": 295,
-	"./id.js": 295,
-	"./is": 296,
-	"./is.js": 296,
-	"./it": 297,
-	"./it.js": 297,
-	"./ja": 298,
-	"./ja.js": 298,
-	"./jv": 299,
-	"./jv.js": 299,
-	"./ka": 300,
-	"./ka.js": 300,
-	"./kk": 301,
-	"./kk.js": 301,
-	"./km": 302,
-	"./km.js": 302,
-	"./kn": 303,
-	"./kn.js": 303,
-	"./ko": 304,
-	"./ko.js": 304,
-	"./ky": 305,
-	"./ky.js": 305,
-	"./lb": 306,
-	"./lb.js": 306,
-	"./lo": 307,
-	"./lo.js": 307,
-	"./lt": 308,
-	"./lt.js": 308,
-	"./lv": 309,
-	"./lv.js": 309,
-	"./me": 310,
-	"./me.js": 310,
-	"./mi": 311,
-	"./mi.js": 311,
-	"./mk": 312,
-	"./mk.js": 312,
-	"./ml": 313,
-	"./ml.js": 313,
-	"./mn": 314,
-	"./mn.js": 314,
-	"./mr": 315,
-	"./mr.js": 315,
-	"./ms": 316,
-	"./ms-my": 317,
-	"./ms-my.js": 317,
-	"./ms.js": 316,
-	"./mt": 318,
-	"./mt.js": 318,
-	"./my": 319,
-	"./my.js": 319,
-	"./nb": 320,
-	"./nb.js": 320,
-	"./ne": 321,
-	"./ne.js": 321,
-	"./nl": 322,
-	"./nl-be": 323,
-	"./nl-be.js": 323,
-	"./nl.js": 322,
-	"./nn": 324,
-	"./nn.js": 324,
-	"./pa-in": 325,
-	"./pa-in.js": 325,
-	"./pl": 326,
-	"./pl.js": 326,
-	"./pt": 327,
-	"./pt-br": 328,
-	"./pt-br.js": 328,
-	"./pt.js": 327,
-	"./ro": 329,
-	"./ro.js": 329,
-	"./ru": 330,
-	"./ru.js": 330,
-	"./sd": 331,
-	"./sd.js": 331,
-	"./se": 332,
-	"./se.js": 332,
-	"./si": 333,
-	"./si.js": 333,
-	"./sk": 334,
-	"./sk.js": 334,
-	"./sl": 335,
-	"./sl.js": 335,
-	"./sq": 336,
-	"./sq.js": 336,
-	"./sr": 337,
-	"./sr-cyrl": 338,
-	"./sr-cyrl.js": 338,
-	"./sr.js": 337,
-	"./ss": 339,
-	"./ss.js": 339,
-	"./sv": 340,
-	"./sv.js": 340,
-	"./sw": 341,
-	"./sw.js": 341,
-	"./ta": 342,
-	"./ta.js": 342,
-	"./te": 343,
-	"./te.js": 343,
-	"./tet": 344,
-	"./tet.js": 344,
-	"./tg": 345,
-	"./tg.js": 345,
-	"./th": 346,
-	"./th.js": 346,
-	"./tl-ph": 347,
-	"./tl-ph.js": 347,
-	"./tlh": 348,
-	"./tlh.js": 348,
-	"./tr": 349,
-	"./tr.js": 349,
-	"./tzl": 350,
-	"./tzl.js": 350,
-	"./tzm": 351,
-	"./tzm-latn": 352,
-	"./tzm-latn.js": 352,
-	"./tzm.js": 351,
-	"./ug-cn": 353,
-	"./ug-cn.js": 353,
-	"./uk": 354,
-	"./uk.js": 354,
-	"./ur": 355,
-	"./ur.js": 355,
-	"./uz": 356,
-	"./uz-latn": 357,
-	"./uz-latn.js": 357,
-	"./uz.js": 356,
-	"./vi": 358,
-	"./vi.js": 358,
-	"./x-pseudo": 359,
-	"./x-pseudo.js": 359,
-	"./yo": 360,
-	"./yo.js": 360,
-	"./zh-cn": 361,
-	"./zh-cn.js": 361,
-	"./zh-hk": 362,
-	"./zh-hk.js": 362,
-	"./zh-tw": 363,
-	"./zh-tw.js": 363
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 523;
-
-/***/ }),
-
-/***/ 525:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewsPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(68);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-var ViewsPipe = /** @class */ (function (_super) {
-    __extends(ViewsPipe, _super);
-    function ViewsPipe() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    ViewsPipe.prototype.transform = function (value) {
-        var divider = 1;
-        var format = "1.0-0";
-        var letter = '';
-        value = value || 0;
-        if (value > 1000000) {
-            divider = 1000000;
-            letter = 'M';
-            format = '1.0-2';
-        }
-        else if (value > 1000) {
-            divider = 1000;
-            letter = 'K';
-        }
-        return _super.prototype.transform.call(this, (value / divider), format) + letter;
-    };
-    ViewsPipe = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({
-            name: 'views'
-        })
-    ], ViewsPipe);
-    return ViewsPipe;
-}(__WEBPACK_IMPORTED_MODULE_1__angular_common__["d" /* DecimalPipe */]));
-
-//# sourceMappingURL=views.pipe.js.map
-
-/***/ }),
-
-/***/ 526:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CapitalizePipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var CapitalizePipe = /** @class */ (function () {
-    function CapitalizePipe() {
-    }
-    CapitalizePipe.prototype.transform = function (value) {
-        if (value) {
-            return value.charAt(0).toUpperCase() + value.slice(1);
-        }
-        return value;
-    };
-    CapitalizePipe = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({ name: 'capitalize' })
-    ], CapitalizePipe);
-    return CapitalizePipe;
-}());
-
-//# sourceMappingURL=capitalize.pipe.js.map
-
-/***/ }),
-
 /***/ 527:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ThumbnailComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_clip_model__ = __webpack_require__(528);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(37);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var ThumbnailComponent = /** @class */ (function () {
-    function ThumbnailComponent(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    ThumbnailComponent.prototype.goToClip = function (slug) {
-        this.navCtrl.push('clip', { slug: slug });
-    };
-    ThumbnailComponent.prototype.goToChannel = function () {
-        var that = this;
-        that.navCtrl.push('trending-channel', { channel: that.clip.broadcaster.displayName });
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__models_clip_model__["a" /* Clip */])
-    ], ThumbnailComponent.prototype, "clip", void 0);
-    ThumbnailComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'thumbnail-component',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\thumbnail\thumbnail.component.html"*/'<ion-card class="max-width no-margin-xs" style="cursor: pointer; max-width: 480px;" (click)="goToClip(clip.slug)">\n\n   <img src="{{clip.thumbnails.medium}}" />\n\n   <ion-row>\n\n      <ion-col>\n\n         <ion-item style="padding-left: 3px;">\n\n            <ion-avatar style="margin-right: 10px;" item-start (click)="$event.stopPropagation(); goToChannel();">\n\n               <img src="{{clip.broadcaster.logo}}">\n\n            </ion-avatar>\n\n            <p ion-text color="light" style="font-weight:bold;">{{clip.title}}</p>\n\n            <p>{{clip.broadcaster.displayName}}</p>\n\n            <p>{{clip.views | views}} views &#183; {{clip.createdAt | timeAgo}}</p>\n\n         </ion-item>\n\n      </ion-col>\n\n   </ion-row>\n\n</ion-card>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\thumbnail\thumbnail.component.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */]])
-    ], ThumbnailComponent);
-    return ThumbnailComponent;
-}());
-
-//# sourceMappingURL=thumbnail.component.js.map
-
-/***/ }),
-
-/***/ 528:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Clip; });
-var Clip = /** @class */ (function () {
-    function Clip() {
-    }
-    return Clip;
-}());
-
-//# sourceMappingURL=clip.model.js.map
+/* (ignored) */
 
 /***/ }),
 
 /***/ 529:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FollowingChannelThumbnailComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_channel_model__ = __webpack_require__(530);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var FollowingChannelThumbnailComponent = /** @class */ (function () {
-    function FollowingChannelThumbnailComponent(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    FollowingChannelThumbnailComponent.prototype.goToChannel = function (channel) {
-        this.navCtrl.push('trending-channel', { channel: channel });
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__models_channel_model__["a" /* Channel */])
-    ], FollowingChannelThumbnailComponent.prototype, "channel", void 0);
-    FollowingChannelThumbnailComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'following-channel-thumbnail-component',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\following-channel-thumbnail\following-channel-thumbnail.component.html"*/'<ion-item style="cursor: pointer;" (click)="goToChannel(channel.display_name)">\n\n  <ion-thumbnail item-start>\n\n    <img src="{{channel.logo}}">\n\n  </ion-thumbnail>\n\n  <h2>{{channel.display_name}}</h2>\n\n  <p>{{channel.followers | views}} followers</p>\n\n</ion-item>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\following-channel-thumbnail\following-channel-thumbnail.component.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
-    ], FollowingChannelThumbnailComponent);
-    return FollowingChannelThumbnailComponent;
-}());
-
-//# sourceMappingURL=following-channel-thumbnail.component.js.map
-
-/***/ }),
-
-/***/ 530:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Channel; });
-var Channel = /** @class */ (function () {
-    function Channel() {
-    }
-    return Channel;
-}());
-
-//# sourceMappingURL=channel.model.js.map
-
-/***/ }),
-
-/***/ 537:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 539:
+/***/ 579:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 589:
+/***/ 580:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 590:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 647:
+/***/ 637:
 /***/ (function(module, exports) {
 
 /* (ignored) */
@@ -1815,6 +1295,526 @@ var environment = {
     authCallback: 'https://www.cliperino.com/#/authCallback'
 };
 //# sourceMappingURL=environment.js.map
+
+/***/ }),
+
+/***/ 699:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavoriteClipsPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_moment__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var FavoriteClipsPipe = /** @class */ (function () {
+    function FavoriteClipsPipe() {
+    }
+    FavoriteClipsPipe.prototype.transform = function (array) {
+        array.sort(function (a, b) {
+            var aMoment = __WEBPACK_IMPORTED_MODULE_1_moment__(a.createdAt, 'YYYY-MM-DD HH:mm:ss');
+            var bMoment = __WEBPACK_IMPORTED_MODULE_1_moment__(b.createdAt, 'YYYY-MM-DD HH:mm:ss');
+            return bMoment.diff(aMoment);
+        });
+        return array;
+    };
+    FavoriteClipsPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({
+            name: 'favoriteClipsSort'
+        })
+    ], FavoriteClipsPipe);
+    return FavoriteClipsPipe;
+}());
+
+//# sourceMappingURL=favorite-clips-sort.pipe.js.map
+
+/***/ }),
+
+/***/ 700:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": 302,
+	"./af.js": 302,
+	"./ar": 303,
+	"./ar-dz": 304,
+	"./ar-dz.js": 304,
+	"./ar-kw": 305,
+	"./ar-kw.js": 305,
+	"./ar-ly": 306,
+	"./ar-ly.js": 306,
+	"./ar-ma": 307,
+	"./ar-ma.js": 307,
+	"./ar-sa": 308,
+	"./ar-sa.js": 308,
+	"./ar-tn": 309,
+	"./ar-tn.js": 309,
+	"./ar.js": 303,
+	"./az": 310,
+	"./az.js": 310,
+	"./be": 311,
+	"./be.js": 311,
+	"./bg": 312,
+	"./bg.js": 312,
+	"./bm": 313,
+	"./bm.js": 313,
+	"./bn": 314,
+	"./bn.js": 314,
+	"./bo": 315,
+	"./bo.js": 315,
+	"./br": 316,
+	"./br.js": 316,
+	"./bs": 317,
+	"./bs.js": 317,
+	"./ca": 318,
+	"./ca.js": 318,
+	"./cs": 319,
+	"./cs.js": 319,
+	"./cv": 320,
+	"./cv.js": 320,
+	"./cy": 321,
+	"./cy.js": 321,
+	"./da": 322,
+	"./da.js": 322,
+	"./de": 323,
+	"./de-at": 324,
+	"./de-at.js": 324,
+	"./de-ch": 325,
+	"./de-ch.js": 325,
+	"./de.js": 323,
+	"./dv": 326,
+	"./dv.js": 326,
+	"./el": 327,
+	"./el.js": 327,
+	"./en-au": 328,
+	"./en-au.js": 328,
+	"./en-ca": 329,
+	"./en-ca.js": 329,
+	"./en-gb": 330,
+	"./en-gb.js": 330,
+	"./en-ie": 331,
+	"./en-ie.js": 331,
+	"./en-il": 332,
+	"./en-il.js": 332,
+	"./en-nz": 333,
+	"./en-nz.js": 333,
+	"./eo": 334,
+	"./eo.js": 334,
+	"./es": 335,
+	"./es-do": 336,
+	"./es-do.js": 336,
+	"./es-us": 337,
+	"./es-us.js": 337,
+	"./es.js": 335,
+	"./et": 338,
+	"./et.js": 338,
+	"./eu": 339,
+	"./eu.js": 339,
+	"./fa": 340,
+	"./fa.js": 340,
+	"./fi": 341,
+	"./fi.js": 341,
+	"./fo": 342,
+	"./fo.js": 342,
+	"./fr": 343,
+	"./fr-ca": 344,
+	"./fr-ca.js": 344,
+	"./fr-ch": 345,
+	"./fr-ch.js": 345,
+	"./fr.js": 343,
+	"./fy": 346,
+	"./fy.js": 346,
+	"./gd": 347,
+	"./gd.js": 347,
+	"./gl": 348,
+	"./gl.js": 348,
+	"./gom-latn": 349,
+	"./gom-latn.js": 349,
+	"./gu": 350,
+	"./gu.js": 350,
+	"./he": 351,
+	"./he.js": 351,
+	"./hi": 352,
+	"./hi.js": 352,
+	"./hr": 353,
+	"./hr.js": 353,
+	"./hu": 354,
+	"./hu.js": 354,
+	"./hy-am": 355,
+	"./hy-am.js": 355,
+	"./id": 356,
+	"./id.js": 356,
+	"./is": 357,
+	"./is.js": 357,
+	"./it": 358,
+	"./it.js": 358,
+	"./ja": 359,
+	"./ja.js": 359,
+	"./jv": 360,
+	"./jv.js": 360,
+	"./ka": 361,
+	"./ka.js": 361,
+	"./kk": 362,
+	"./kk.js": 362,
+	"./km": 363,
+	"./km.js": 363,
+	"./kn": 364,
+	"./kn.js": 364,
+	"./ko": 365,
+	"./ko.js": 365,
+	"./ky": 366,
+	"./ky.js": 366,
+	"./lb": 367,
+	"./lb.js": 367,
+	"./lo": 368,
+	"./lo.js": 368,
+	"./lt": 369,
+	"./lt.js": 369,
+	"./lv": 370,
+	"./lv.js": 370,
+	"./me": 371,
+	"./me.js": 371,
+	"./mi": 372,
+	"./mi.js": 372,
+	"./mk": 373,
+	"./mk.js": 373,
+	"./ml": 374,
+	"./ml.js": 374,
+	"./mn": 375,
+	"./mn.js": 375,
+	"./mr": 376,
+	"./mr.js": 376,
+	"./ms": 377,
+	"./ms-my": 378,
+	"./ms-my.js": 378,
+	"./ms.js": 377,
+	"./mt": 379,
+	"./mt.js": 379,
+	"./my": 380,
+	"./my.js": 380,
+	"./nb": 381,
+	"./nb.js": 381,
+	"./ne": 382,
+	"./ne.js": 382,
+	"./nl": 383,
+	"./nl-be": 384,
+	"./nl-be.js": 384,
+	"./nl.js": 383,
+	"./nn": 385,
+	"./nn.js": 385,
+	"./pa-in": 386,
+	"./pa-in.js": 386,
+	"./pl": 387,
+	"./pl.js": 387,
+	"./pt": 388,
+	"./pt-br": 389,
+	"./pt-br.js": 389,
+	"./pt.js": 388,
+	"./ro": 390,
+	"./ro.js": 390,
+	"./ru": 391,
+	"./ru.js": 391,
+	"./sd": 392,
+	"./sd.js": 392,
+	"./se": 393,
+	"./se.js": 393,
+	"./si": 394,
+	"./si.js": 394,
+	"./sk": 395,
+	"./sk.js": 395,
+	"./sl": 396,
+	"./sl.js": 396,
+	"./sq": 397,
+	"./sq.js": 397,
+	"./sr": 398,
+	"./sr-cyrl": 399,
+	"./sr-cyrl.js": 399,
+	"./sr.js": 398,
+	"./ss": 400,
+	"./ss.js": 400,
+	"./sv": 401,
+	"./sv.js": 401,
+	"./sw": 402,
+	"./sw.js": 402,
+	"./ta": 403,
+	"./ta.js": 403,
+	"./te": 404,
+	"./te.js": 404,
+	"./tet": 405,
+	"./tet.js": 405,
+	"./tg": 406,
+	"./tg.js": 406,
+	"./th": 407,
+	"./th.js": 407,
+	"./tl-ph": 408,
+	"./tl-ph.js": 408,
+	"./tlh": 409,
+	"./tlh.js": 409,
+	"./tr": 410,
+	"./tr.js": 410,
+	"./tzl": 411,
+	"./tzl.js": 411,
+	"./tzm": 412,
+	"./tzm-latn": 413,
+	"./tzm-latn.js": 413,
+	"./tzm.js": 412,
+	"./ug-cn": 414,
+	"./ug-cn.js": 414,
+	"./uk": 415,
+	"./uk.js": 415,
+	"./ur": 416,
+	"./ur.js": 416,
+	"./uz": 417,
+	"./uz-latn": 418,
+	"./uz-latn.js": 418,
+	"./uz.js": 417,
+	"./vi": 419,
+	"./vi.js": 419,
+	"./x-pseudo": 420,
+	"./x-pseudo.js": 420,
+	"./yo": 421,
+	"./yo.js": 421,
+	"./zh-cn": 422,
+	"./zh-cn.js": 422,
+	"./zh-hk": 423,
+	"./zh-hk.js": 423,
+	"./zh-tw": 424,
+	"./zh-tw.js": 424
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 700;
+
+/***/ }),
+
+/***/ 702:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewsPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(68);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var ViewsPipe = /** @class */ (function (_super) {
+    __extends(ViewsPipe, _super);
+    function ViewsPipe() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ViewsPipe.prototype.transform = function (value) {
+        var divider = 1;
+        var format = "1.0-0";
+        var letter = '';
+        value = value || 0;
+        if (value > 1000000) {
+            divider = 1000000;
+            letter = 'M';
+            format = '1.0-2';
+        }
+        else if (value > 1000) {
+            divider = 1000;
+            letter = 'K';
+        }
+        return _super.prototype.transform.call(this, (value / divider), format) + letter;
+    };
+    ViewsPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({
+            name: 'views'
+        })
+    ], ViewsPipe);
+    return ViewsPipe;
+}(__WEBPACK_IMPORTED_MODULE_1__angular_common__["d" /* DecimalPipe */]));
+
+//# sourceMappingURL=views.pipe.js.map
+
+/***/ }),
+
+/***/ 703:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CapitalizePipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var CapitalizePipe = /** @class */ (function () {
+    function CapitalizePipe() {
+    }
+    CapitalizePipe.prototype.transform = function (value) {
+        if (value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+        }
+        return value;
+    };
+    CapitalizePipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({ name: 'capitalize' })
+    ], CapitalizePipe);
+    return CapitalizePipe;
+}());
+
+//# sourceMappingURL=capitalize.pipe.js.map
+
+/***/ }),
+
+/***/ 704:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ThumbnailComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_clip_model__ = __webpack_require__(705);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(37);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ThumbnailComponent = /** @class */ (function () {
+    function ThumbnailComponent(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    ThumbnailComponent.prototype.goToClip = function (slug) {
+        this.navCtrl.push('clip', { slug: slug });
+    };
+    ThumbnailComponent.prototype.goToChannel = function () {
+        var that = this;
+        that.navCtrl.push('trending-channel', { channel: that.clip.broadcaster.displayName });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__models_clip_model__["a" /* Clip */])
+    ], ThumbnailComponent.prototype, "clip", void 0);
+    ThumbnailComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'thumbnail-component',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\thumbnail\thumbnail.component.html"*/'<ion-card class="max-width no-margin-xs" style="cursor: pointer; max-width: 480px;" (click)="goToClip(clip.slug)">\n\n   <img src="{{clip.thumbnails.medium}}" />\n\n   <ion-row>\n\n      <ion-col>\n\n         <ion-item style="padding-left: 3px;">\n\n            <ion-avatar style="margin-right: 10px;" item-start (click)="$event.stopPropagation(); goToChannel();">\n\n               <img src="{{clip.broadcaster.logo}}">\n\n            </ion-avatar>\n\n            <p ion-text color="light" style="font-weight:bold;">{{clip.title}}</p>\n\n            <p>{{clip.broadcaster.displayName}}</p>\n\n            <p>{{clip.views | views}} views &#183; {{clip.createdAt | timeAgo}}</p>\n\n         </ion-item>\n\n      </ion-col>\n\n   </ion-row>\n\n</ion-card>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\thumbnail\thumbnail.component.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */]])
+    ], ThumbnailComponent);
+    return ThumbnailComponent;
+}());
+
+//# sourceMappingURL=thumbnail.component.js.map
+
+/***/ }),
+
+/***/ 705:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Clip; });
+var Clip = /** @class */ (function () {
+    function Clip() {
+    }
+    return Clip;
+}());
+
+//# sourceMappingURL=clip.model.js.map
+
+/***/ }),
+
+/***/ 706:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FollowingChannelThumbnailComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_channel_model__ = __webpack_require__(707);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var FollowingChannelThumbnailComponent = /** @class */ (function () {
+    function FollowingChannelThumbnailComponent(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    FollowingChannelThumbnailComponent.prototype.goToChannel = function (channel) {
+        this.navCtrl.push('trending-channel', { channel: channel });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__models_channel_model__["a" /* Channel */])
+    ], FollowingChannelThumbnailComponent.prototype, "channel", void 0);
+    FollowingChannelThumbnailComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'following-channel-thumbnail-component',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\following-channel-thumbnail\following-channel-thumbnail.component.html"*/'<ion-item style="cursor: pointer;" (click)="goToChannel(channel.display_name)">\n\n  <ion-thumbnail item-start>\n\n    <img src="{{channel.logo}}">\n\n  </ion-thumbnail>\n\n  <h2>{{channel.display_name}}</h2>\n\n  <p>{{channel.followers | views}} followers</p>\n\n</ion-item>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\following-channel-thumbnail\following-channel-thumbnail.component.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
+    ], FollowingChannelThumbnailComponent);
+    return FollowingChannelThumbnailComponent;
+}());
+
+//# sourceMappingURL=following-channel-thumbnail.component.js.map
+
+/***/ }),
+
+/***/ 707:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Channel; });
+var Channel = /** @class */ (function () {
+    function Channel() {
+    }
+    return Channel;
+}());
+
+//# sourceMappingURL=channel.model.js.map
 
 /***/ }),
 

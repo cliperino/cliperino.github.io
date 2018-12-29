@@ -549,7 +549,7 @@ var ClipPage = /** @class */ (function () {
                     case 1:
                         response = _a.sent();
                         this._ngZone.run(function () {
-                            that.comments.push(response.response[0]);
+                            that.comments.push(response);
                             that.userComment = null;
                         });
                         return [2 /*return*/];
