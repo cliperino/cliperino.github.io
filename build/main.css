@@ -28031,6 +28031,10 @@ game-thumbnail-component p.title {
   }
 }
 
+page-addhighlightclip ion-title {
+  margin-left: 16px;
+}
+
 page-clip ion-content div.fixed-content, page-clip ion-content div.scroll-content {
   margin-top: 56px;
 }
@@ -28110,6 +28114,33 @@ page-clip ion-item.no-border .item-inner {
 
 @media (min-width: 576px) {
   page-games .game-wrapper {
+    margin: 0px 5px 5px 5px;
+  }
+}
+
+page-highlightclips p.title {
+  font-size: 16px;
+  color: #f4f4f4;
+}
+
+page-highlightclips ion-thumbnail {
+  margin: 0 !important;
+}
+
+page-highlightclips img {
+  margin-right: 0 !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+@media (max-width: 576px) {
+  page-highlights .game-wrapper {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 576px) {
+  page-highlights .game-wrapper {
     margin: 0px 5px 5px 5px;
   }
 }

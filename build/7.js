@@ -1,14 +1,15 @@
 webpackJsonp([7],{
 
-/***/ 735:
+/***/ 771:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterPopoverPageModule", function() { return FilterPopoverPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HighlightClipsPageModule", function() { return HighlightClipsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filter_popover__ = __webpack_require__(746);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_pipes_pipes_module__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__highlightclips__ = __webpack_require__(786);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +19,44 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FilterPopoverPageModule = /** @class */ (function () {
-    function FilterPopoverPageModule() {
+
+var HighlightClipsPageModule = /** @class */ (function () {
+    function HighlightClipsPageModule() {
     }
-    FilterPopoverPageModule = __decorate([
+    HighlightClipsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__filter_popover__["a" /* FilterPopoverPage */]
+                __WEBPACK_IMPORTED_MODULE_3__highlightclips__["a" /* HighlightClipsPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__filter_popover__["a" /* FilterPopoverPage */])
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__highlightclips__["a" /* HighlightClipsPage */]),
+                __WEBPACK_IMPORTED_MODULE_2__app_pipes_pipes_module__["a" /* PipesModule */].forRoot()
             ],
             providers: [],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_2__filter_popover__["a" /* FilterPopoverPage */]
+                __WEBPACK_IMPORTED_MODULE_3__highlightclips__["a" /* HighlightClipsPage */]
             ]
         })
-    ], FilterPopoverPageModule);
-    return FilterPopoverPageModule;
+    ], HighlightClipsPageModule);
+    return HighlightClipsPageModule;
 }());
 
-//# sourceMappingURL=filter-popover.module.js.map
+//# sourceMappingURL=highlightclips.module.js.map
 
 /***/ }),
 
-/***/ 746:
+/***/ 786:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilterPopoverPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HighlightClipsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_loader_service__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_toast_service__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_highlights_service__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_clips_service__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_models_highlightclip_model__ = __webpack_require__(481);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,57 +66,300 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 /* Core */
 
 
-var FilterPopoverPage = /** @class */ (function () {
-    function FilterPopoverPage(viewCtrl) {
-        this.viewCtrl = viewCtrl;
-        this.displayLanguages = true;
+/* Models */
+/* Services */
+
+
+
+
+
+var HighlightClipsPage = /** @class */ (function () {
+    function HighlightClipsPage(navCtrl, ngZone, navParams, modalCtrl, 
+        /* Services */
+        highlightsService, clipsService, loaderService, toastService) {
+        this.navCtrl = navCtrl;
+        this.ngZone = ngZone;
+        this.navParams = navParams;
+        this.modalCtrl = modalCtrl;
+        this.highlightsService = highlightsService;
+        this.clipsService = clipsService;
+        this.loaderService = loaderService;
+        this.toastService = toastService;
+        this.isEditing = false;
+        this.removeList = [];
+        this.highlightUuid = this.navParams.get('highlight');
     }
-    FilterPopoverPage.prototype.ngOnInit = function () {
-        var that = this;
-        this.period = this.viewCtrl.data.period;
-        this.languages = this.viewCtrl.data.languages || [];
-        if (this.viewCtrl.data.displayLanguages !== undefined) {
-            this.displayLanguages = this.viewCtrl.data.displayLanguages;
-        }
-        this.langEn = this.contains('en');
-        this.langFr = this.contains('fr');
-    };
-    FilterPopoverPage.prototype.onSave = function () {
-        var that = this;
-        that.languages = [];
-        if (that.langEn) {
-            that.languages.push('en');
-        }
-        if (that.langFr) {
-            that.languages.push('fr');
-        }
-        this.viewCtrl.dismiss({
-            period: that.period,
-            languages: that.languages
+    HighlightClipsPage.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getHighlight()];
+                    case 1:
+                        _a.sent();
+                        return [4 /*yield*/, this.getClips()];
+                    case 2:
+                        _a.sent();
+                        this.highlight.clips.sort(this.sort);
+                        return [2 /*return*/];
+                }
+            });
         });
     };
-    FilterPopoverPage.prototype.contains = function (lang) {
-        var contained = false;
-        this.languages.forEach(function (language) {
-            if (language === lang) {
-                contained = true;
-                return;
+    HighlightClipsPage.prototype.edit = function () {
+        this.isEditing = true;
+    };
+    HighlightClipsPage.prototype.save = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var allPromise, deletePromise, updatePromise;
+            return __generator(this, function (_a) {
+                allPromise = null;
+                deletePromise = null;
+                updatePromise = null;
+                this.isEditing = false;
+                deletePromise = this.deleteClips();
+                updatePromise = this.updateClipOrders();
+                allPromise = Promise.all([deletePromise, updatePromise]);
+                this.loaderService.show(allPromise);
+                this.toastService.onFailure(allPromise);
+                return [2 /*return*/];
+            });
+        });
+    };
+    HighlightClipsPage.prototype.getClips = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var promiseList;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        promiseList = [];
+                        this.highlight.clips.forEach(function (clip, index) { return __awaiter(_this, void 0, void 0, function () {
+                            var promise, c;
+                            return __generator(this, function (_a) {
+                                switch (_a.label) {
+                                    case 0:
+                                        promise = this.clipsService.getBySlug(clip.slug);
+                                        return [4 /*yield*/, promise];
+                                    case 1:
+                                        c = _a.sent();
+                                        clip.clipOrder = index;
+                                        clip.thumbnail = c.thumbnails.medium;
+                                        clip.broadcaster = c.broadcaster;
+                                        clip.title = c.title;
+                                        clip.originalDuration = c.duration;
+                                        return [2 /*return*/];
+                                }
+                            });
+                        }); });
+                        this.clipsReady = Promise.all(promiseList);
+                        return [4 /*yield*/, this.clipsReady];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    HighlightClipsPage.prototype.getHighlight = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var that, promise;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        that = this;
+                        promise = this.highlightsService.getByUuid(this.highlightUuid).then(function (highlight) {
+                            that.ngZone.run(function () {
+                                that.highlight = highlight;
+                            });
+                        });
+                        that.loaderService.show(promise);
+                        that.toastService.onFailure(promise);
+                        return [4 /*yield*/, promise];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Moves up locally until the user saves the modifications
+     *
+     * @param clip
+     */
+    HighlightClipsPage.prototype.moveUp = function (clip) {
+        return __awaiter(this, void 0, void 0, function () {
+            var currentIndex, lastIndex, lastClip;
+            return __generator(this, function (_a) {
+                currentIndex = clip.clipOrder;
+                lastIndex = currentIndex - 1;
+                lastClip = this.findClipWithIndex(lastIndex);
+                clip.clipOrder -= 1;
+                lastClip.clipOrder += 1;
+                return [2 /*return*/];
+            });
+        });
+    };
+    /**
+     * Moves down locally until the user saves the modifications
+     *
+     * @param clip
+     */
+    HighlightClipsPage.prototype.moveDown = function (clip) {
+        var currentIndex = clip.clipOrder;
+        var nextIndex = currentIndex + 1;
+        var nextClip = this.findClipWithIndex(nextIndex);
+        clip.clipOrder += 1;
+        nextClip.clipOrder -= 1;
+        this.highlight.clips.sort(this.sort);
+    };
+    /**
+     * Removes locally until the user saves the modifications
+     *
+     * @param clip
+     */
+    HighlightClipsPage.prototype.remove = function (clip) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var index;
+            return __generator(this, function (_a) {
+                this.removeList.push(clip);
+                index = this.findClipIndex(clip);
+                this.highlight.clips.forEach(function (c, i) {
+                    if (index === i) {
+                        _this.highlight.clips.splice(index, 1);
+                    }
+                    else if (i > index) {
+                        c.clipOrder -= 1;
+                    }
+                });
+                return [2 /*return*/];
+            });
+        });
+    };
+    /**
+     *
+     */
+    HighlightClipsPage.prototype.deleteClips = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var promiseList;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        promiseList = [];
+                        this.removeList.forEach(function (clip) {
+                            promiseList.push(_this.highlightsService.removeClipHighlight(_this.highlightUuid, clip.uuid));
+                        });
+                        return [4 /*yield*/, Promise.all(promiseList)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     *
+     */
+    HighlightClipsPage.prototype.updateClipOrders = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var promiseList;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        promiseList = [];
+                        this.highlight.clips.forEach(function (clip) {
+                            var highlightClip = new __WEBPACK_IMPORTED_MODULE_6__app_models_highlightclip_model__["a" /* HighlightClipModel */]();
+                            highlightClip.clipOrder = clip.clipOrder;
+                            highlightClip.duration = clip.duration;
+                            highlightClip.slug = clip.slug;
+                            highlightClip.startTime = clip.startTime;
+                            highlightClip.uuid = clip.uuid;
+                            var promise = _this.highlightsService.updateHighlightClip(_this.highlightUuid, highlightClip);
+                            promiseList.push(promise);
+                        });
+                        return [4 /*yield*/, Promise.all(promiseList)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    HighlightClipsPage.prototype.findClipIndex = function (clip) {
+        var index = null;
+        this.highlight.clips.forEach(function (c, i) {
+            if (c.uuid === clip.uuid) {
+                index = i;
             }
         });
-        return contained;
+        return index;
     };
-    FilterPopoverPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\filter-popover\filter-popover.html"*/'<ion-list radio-group style="margin-bottom: 0px;" [(ngModel)]="period">\n\n	<ion-item-divider color="light">Period</ion-item-divider>\n\n	<ion-item>\n\n	  <ion-label>24 hours</ion-label>\n\n	  <ion-radio checked="true" value="day"></ion-radio>\n\n	</ion-item>\n\n		<ion-item>\n\n		  <ion-label>7 days</ion-label>\n\n		  <ion-radio value="week"></ion-radio>\n\n		</ion-item>\n\n		<ion-item>\n\n		  <ion-label>30 days</ion-label>\n\n		  <ion-radio value="month"></ion-radio>\n\n		</ion-item>\n\n		<ion-item>\n\n		  <ion-label>All</ion-label>\n\n		  <ion-radio value="all"></ion-radio>\n\n		</ion-item>\n\n	<ion-item-divider *ngIf="displayLanguages" color="light">Languages</ion-item-divider>\n\n	<ion-item *ngIf="displayLanguages">\n\n	  <ion-label>English</ion-label>\n\n	  <ion-checkbox [(ngModel)]="langEn"></ion-checkbox>\n\n	</ion-item>\n\n	<ion-item *ngIf="displayLanguages">\n\n	  <ion-label>French</ion-label>\n\n	  <ion-checkbox [(ngModel)]="langFr"></ion-checkbox>\n\n	</ion-item>\n\n</ion-list>\n\n<button (click)="onSave()" ion-button clear>Save</button>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\filter-popover\filter-popover.html"*/
+    HighlightClipsPage.prototype.findClipWithIndex = function (index) {
+        var clip = null;
+        this.highlight.clips.forEach(function (c) {
+            if (c.clipOrder === index) {
+                clip = c;
+            }
+        });
+        return clip;
+    };
+    HighlightClipsPage.prototype.sort = function (a, b) {
+        return a.clipOrder - b.clipOrder;
+    };
+    HighlightClipsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-highlightclips',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlightclips\highlightclips.html"*/'<ion-header>\n\n   <ion-navbar>\n\n      <ion-title *ngIf="highlight" align-title="left">{{highlight.name}}</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button *ngIf="!isEditing" (click)="edit()">\n\n          EDIT\n\n        </button>\n\n        <button ion-button *ngIf="isEditing" (click)="save()">\n\n          SAVE\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list *ngIf="clipsReady | async">\n\n    <ion-item *ngFor="let clip of highlight.clips">\n\n      <ion-row>\n\n        <ion-col col-12><ion-thumbnail item-start>\n\n              <img src="{{clip.thumbnail}}">\n\n          </ion-thumbnail>\n\n        </ion-col>\n\n        \n\n        <ion-col col-12>\n\n          <p *ngIf="clip.broadcaster" class="title">{{clip.broadcaster.displayName}}</p>\n\n          <p>{{clip.title}}</p>\n\n          <p>{{clip.startTime | seconds}} - {{clip.startTime + clip.duration | seconds}} ({{clip.duration || clip.originalDuration}} seconds)</p>\n\n          <p>Clip added {{clip.createdAt | timeAgo}}</p>\n\n          <div *ngIf="isEditing">\n\n            <button ion-button clear icon-only (click)="moveUp(clip)" [disabled]="clip.clipOrder === 0">\n\n              <ion-icon name=\'arrow-up\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveDown(clip)" [disabled]="clip.clipOrder === highlight.clips.length - 1">\n\n              <ion-icon name=\'arrow-down\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="remove(clip)">\n\n              <ion-icon name=\'trash\' is-active="false"></ion-icon>\n\n            </button>\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlightclips\highlightclips.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]])
-    ], FilterPopoverPage);
-    return FilterPopoverPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_highlights_service__["a" /* HighlightsService */],
+            __WEBPACK_IMPORTED_MODULE_5__app_services_clips_service__["a" /* ClipsService */],
+            __WEBPACK_IMPORTED_MODULE_2__app_services_loader_service__["a" /* LoaderService */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_toast_service__["a" /* ToastService */]])
+    ], HighlightClipsPage);
+    return HighlightClipsPage;
 }());
 
-//# sourceMappingURL=filter-popover.js.map
+//# sourceMappingURL=highlightclips.js.map
 
 /***/ })
 
