@@ -51,13 +51,13 @@ var LoaderService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PipesModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__favorite_clips_sort_pipe__ = __webpack_require__(712);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_time_ago_pipe__ = __webpack_require__(714);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_pipe__ = __webpack_require__(715);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__capitalize_pipe__ = __webpack_require__(716);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__user_comments_pipe__ = __webpack_require__(717);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__seconds_pipe__ = __webpack_require__(718);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__highlight_clips_sort_pipe__ = __webpack_require__(719);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__favorite_clips_sort_pipe__ = __webpack_require__(715);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_time_ago_pipe__ = __webpack_require__(717);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_pipe__ = __webpack_require__(718);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__capitalize_pipe__ = __webpack_require__(719);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__user_comments_pipe__ = __webpack_require__(720);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__seconds_pipe__ = __webpack_require__(721);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__highlight_clips_sort_pipe__ = __webpack_require__(722);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -681,33 +681,33 @@ webpackEmptyAsyncContext.id = 202;
 
 var map = {
 	"../pages/addhighlightclip/addhighlightclip.module": [
-		244
+		306
 	],
 	"../pages/clip-popover/clip-popover.module": [
 		767,
 		1
 	],
 	"../pages/clip/clip.module": [
-		770,
+		768,
 		0
 	],
 	"../pages/createhighlight/createhighlight.module": [
-		307
+		431
 	],
 	"../pages/favorite-clips/favorite-clips.module": [
-		768,
+		769,
 		9
 	],
 	"../pages/filter-popover/filter-popover.module": [
-		769,
+		770,
 		8
 	],
 	"../pages/following/following.module": [
-		771,
+		772,
 		4
 	],
 	"../pages/games/games.module": [
-		772,
+		771,
 		2
 	],
 	"../pages/highlightclips/highlightclips.module": [
@@ -750,48 +750,6 @@ module.exports = webpackAsyncContext;
 /***/ }),
 
 /***/ 244:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddHighlightClipPageModule", function() { return AddHighlightClipPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__addhighlightclip__ = __webpack_require__(482);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var AddHighlightClipPageModule = /** @class */ (function () {
-    function AddHighlightClipPageModule() {
-    }
-    AddHighlightClipPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__addhighlightclip__["a" /* AddHighlightClipPage */]
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__addhighlightclip__["a" /* AddHighlightClipPage */])
-            ],
-            providers: [],
-            entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_2__addhighlightclip__["a" /* AddHighlightClipPage */]
-            ]
-        })
-    ], AddHighlightClipPageModule);
-    return AddHighlightClipPageModule;
-}());
-
-//# sourceMappingURL=addhighlightclip.module.js.map
-
-/***/ }),
-
-/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -871,7 +829,64 @@ var LoggingService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 307:
+/***/ 306:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddHighlightClipPageModule", function() { return AddHighlightClipPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__addhighlightclip__ = __webpack_require__(482);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var AddHighlightClipPageModule = /** @class */ (function () {
+    function AddHighlightClipPageModule() {
+    }
+    AddHighlightClipPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__addhighlightclip__["a" /* AddHighlightClipPage */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__addhighlightclip__["a" /* AddHighlightClipPage */])
+            ],
+            providers: [],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_2__addhighlightclip__["a" /* AddHighlightClipPage */]
+            ]
+        })
+    ], AddHighlightClipPageModule);
+    return AddHighlightClipPageModule;
+}());
+
+//# sourceMappingURL=addhighlightclip.module.js.map
+
+/***/ }),
+
+/***/ 31:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+var environment = {
+    production: true,
+    apiAddress: 'https://api.cliperino.com',
+    authCallback: 'https://www.cliperino.com/#/authCallback',
+    mobile: false
+};
+//# sourceMappingURL=environment.js.map
+
+/***/ }),
+
+/***/ 431:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -879,7 +894,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateHighlightPageModule", function() { return CreateHighlightPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createhighlight__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createhighlight__ = __webpack_require__(432);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -913,7 +928,7 @@ var CreateHighlightPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 308:
+/***/ 432:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -954,21 +969,6 @@ var CreateHighlightPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=createhighlight.js.map
-
-/***/ }),
-
-/***/ 31:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
-var environment = {
-    production: true,
-    apiAddress: 'https://api.cliperino.com',
-    authCallback: 'https://www.cliperino.com/#/authCallback',
-    mobile: false
-};
-//# sourceMappingURL=environment.js.map
 
 /***/ }),
 
@@ -1365,9 +1365,9 @@ var AuthoritiesService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__thumbnail_thumbnail_component__ = __webpack_require__(720);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__thumbnail_thumbnail_component__ = __webpack_require__(723);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__following_channel_thumbnail_following_channel_thumbnail_component__ = __webpack_require__(722);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__following_channel_thumbnail_following_channel_thumbnail_component__ = __webpack_require__(725);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1640,16 +1640,16 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_loader_service__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_toast_service__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_rest_service__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_storage__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_storage__ = __webpack_require__(307);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_abstract_auth_service__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__environments_environment__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_web_auth_service__ = __webpack_require__(766);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_common__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_highlights_service__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_highlights_highlights_module__ = __webpack_require__(433);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_createhighlight_createhighlight_module__ = __webpack_require__(307);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_addhighlightclip_addhighlightclip_module__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_logging_service__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_createhighlight_createhighlight_module__ = __webpack_require__(431);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_addhighlightclip_addhighlightclip_module__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_logging_service__ = __webpack_require__(244);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_authorities_service__ = __webpack_require__(480);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_authorities_model_service__ = __webpack_require__(193);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1703,16 +1703,16 @@ var AppModule = /** @class */ (function () {
                     iconMode: 'md'
                 }, {
                     links: [
-                        { loadChildren: '../pages/addhighlightclip/addhighlightclip.module#AddHighlightClipPageModule', name: 'addhighlightclip', segment: 'addhighlightclip', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clip-popover/clip-popover.module#ClipPopoverPageModule', name: 'clip-popover', segment: 'clip-popover', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/createhighlight/createhighlight.module#CreateHighlightPageModule', name: 'createhighlight', segment: 'createhighlight', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/favorite-clips/favorite-clips.module#FavoriteClipsPageModule', name: 'favorite-clips', segment: 'favorite-clips', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/filter-popover/filter-popover.module#FilterPopoverPageModule', name: 'filter-popover', segment: 'filter-popover', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/addhighlightclip/addhighlightclip.module#AddHighlightClipPageModule', name: 'addhighlightclip', segment: 'addhighlightclip', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clip/clip.module#ClipPageModule', name: 'clip', segment: 'clip/:slug', priority: 'low', defaultHistory: ['trending'] },
-                        { loadChildren: '../pages/following/following.module#FollowingPageModule', name: 'following', segment: 'following', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/favorite-clips/favorite-clips.module#FavoriteClipsPageModule', name: 'favorite-clips', segment: 'favorite-clips', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/createhighlight/createhighlight.module#CreateHighlightPageModule', name: 'createhighlight', segment: 'createhighlight', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/filter-popover/filter-popover.module#FilterPopoverPageModule', name: 'filter-popover', segment: 'filter-popover', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/highlightclips/highlightclips.module#HighlightClipsPageModule', name: 'highlightclips', segment: 'highlightclips/:highlight', priority: 'low', defaultHistory: ['highlights'] },
+                        { loadChildren: '../pages/following/following.module#FollowingPageModule', name: 'following', segment: 'following', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/highlights/highlights.module#HighlightsPageModule', name: 'highlights', segment: 'highlights', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/highlightclips/highlightclips.module#HighlightClipsPageModule', name: 'highlightclips', segment: 'highlightclips/:highlight', priority: 'low', defaultHistory: ['highlights'] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'profile', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trending-channel/trending-channel.module#TrendingChannelPageModule', name: 'trending-channel', segment: 'trending/channel/:channel', priority: 'low', defaultHistory: ['following'] },
                         { loadChildren: '../pages/trending-game/trending-game.module#TrendingGamePageModule', name: 'trending-game', segment: 'trending/game/:game', priority: 'low', defaultHistory: ['games'] },
@@ -1905,7 +1905,7 @@ var AbstractAuthenticationService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalStorageService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__environments_environment__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(307);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2043,7 +2043,7 @@ var HighlightModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 712:
+/***/ 715:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2082,256 +2082,256 @@ var FavoriteClipsPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 713:
+/***/ 716:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 309,
-	"./af.js": 309,
-	"./ar": 310,
-	"./ar-dz": 311,
-	"./ar-dz.js": 311,
-	"./ar-kw": 312,
-	"./ar-kw.js": 312,
-	"./ar-ly": 313,
-	"./ar-ly.js": 313,
-	"./ar-ma": 314,
-	"./ar-ma.js": 314,
-	"./ar-sa": 315,
-	"./ar-sa.js": 315,
-	"./ar-tn": 316,
-	"./ar-tn.js": 316,
-	"./ar.js": 310,
-	"./az": 317,
-	"./az.js": 317,
-	"./be": 318,
-	"./be.js": 318,
-	"./bg": 319,
-	"./bg.js": 319,
-	"./bm": 320,
-	"./bm.js": 320,
-	"./bn": 321,
-	"./bn.js": 321,
-	"./bo": 322,
-	"./bo.js": 322,
-	"./br": 323,
-	"./br.js": 323,
-	"./bs": 324,
-	"./bs.js": 324,
-	"./ca": 325,
-	"./ca.js": 325,
-	"./cs": 326,
-	"./cs.js": 326,
-	"./cv": 327,
-	"./cv.js": 327,
-	"./cy": 328,
-	"./cy.js": 328,
-	"./da": 329,
-	"./da.js": 329,
-	"./de": 330,
-	"./de-at": 331,
-	"./de-at.js": 331,
-	"./de-ch": 332,
-	"./de-ch.js": 332,
-	"./de.js": 330,
-	"./dv": 333,
-	"./dv.js": 333,
-	"./el": 334,
-	"./el.js": 334,
-	"./en-au": 335,
-	"./en-au.js": 335,
-	"./en-ca": 336,
-	"./en-ca.js": 336,
-	"./en-gb": 337,
-	"./en-gb.js": 337,
-	"./en-ie": 338,
-	"./en-ie.js": 338,
-	"./en-il": 339,
-	"./en-il.js": 339,
-	"./en-nz": 340,
-	"./en-nz.js": 340,
-	"./eo": 341,
-	"./eo.js": 341,
-	"./es": 342,
-	"./es-do": 343,
-	"./es-do.js": 343,
-	"./es-us": 344,
-	"./es-us.js": 344,
-	"./es.js": 342,
-	"./et": 345,
-	"./et.js": 345,
-	"./eu": 346,
-	"./eu.js": 346,
-	"./fa": 347,
-	"./fa.js": 347,
-	"./fi": 348,
-	"./fi.js": 348,
-	"./fo": 349,
-	"./fo.js": 349,
-	"./fr": 350,
-	"./fr-ca": 351,
-	"./fr-ca.js": 351,
-	"./fr-ch": 352,
-	"./fr-ch.js": 352,
-	"./fr.js": 350,
-	"./fy": 353,
-	"./fy.js": 353,
-	"./gd": 354,
-	"./gd.js": 354,
-	"./gl": 355,
-	"./gl.js": 355,
-	"./gom-latn": 356,
-	"./gom-latn.js": 356,
-	"./gu": 357,
-	"./gu.js": 357,
-	"./he": 358,
-	"./he.js": 358,
-	"./hi": 359,
-	"./hi.js": 359,
-	"./hr": 360,
-	"./hr.js": 360,
-	"./hu": 361,
-	"./hu.js": 361,
-	"./hy-am": 362,
-	"./hy-am.js": 362,
-	"./id": 363,
-	"./id.js": 363,
-	"./is": 364,
-	"./is.js": 364,
-	"./it": 365,
-	"./it.js": 365,
-	"./ja": 366,
-	"./ja.js": 366,
-	"./jv": 367,
-	"./jv.js": 367,
-	"./ka": 368,
-	"./ka.js": 368,
-	"./kk": 369,
-	"./kk.js": 369,
-	"./km": 370,
-	"./km.js": 370,
-	"./kn": 371,
-	"./kn.js": 371,
-	"./ko": 372,
-	"./ko.js": 372,
-	"./ky": 373,
-	"./ky.js": 373,
-	"./lb": 374,
-	"./lb.js": 374,
-	"./lo": 375,
-	"./lo.js": 375,
-	"./lt": 376,
-	"./lt.js": 376,
-	"./lv": 377,
-	"./lv.js": 377,
-	"./me": 378,
-	"./me.js": 378,
-	"./mi": 379,
-	"./mi.js": 379,
-	"./mk": 380,
-	"./mk.js": 380,
-	"./ml": 381,
-	"./ml.js": 381,
-	"./mn": 382,
-	"./mn.js": 382,
-	"./mr": 383,
-	"./mr.js": 383,
-	"./ms": 384,
-	"./ms-my": 385,
-	"./ms-my.js": 385,
-	"./ms.js": 384,
-	"./mt": 386,
-	"./mt.js": 386,
-	"./my": 387,
-	"./my.js": 387,
-	"./nb": 388,
-	"./nb.js": 388,
-	"./ne": 389,
-	"./ne.js": 389,
-	"./nl": 390,
-	"./nl-be": 391,
-	"./nl-be.js": 391,
-	"./nl.js": 390,
-	"./nn": 392,
-	"./nn.js": 392,
-	"./pa-in": 393,
-	"./pa-in.js": 393,
-	"./pl": 394,
-	"./pl.js": 394,
-	"./pt": 395,
-	"./pt-br": 396,
-	"./pt-br.js": 396,
-	"./pt.js": 395,
-	"./ro": 397,
-	"./ro.js": 397,
-	"./ru": 398,
-	"./ru.js": 398,
-	"./sd": 399,
-	"./sd.js": 399,
-	"./se": 400,
-	"./se.js": 400,
-	"./si": 401,
-	"./si.js": 401,
-	"./sk": 402,
-	"./sk.js": 402,
-	"./sl": 403,
-	"./sl.js": 403,
-	"./sq": 404,
-	"./sq.js": 404,
-	"./sr": 405,
-	"./sr-cyrl": 406,
-	"./sr-cyrl.js": 406,
-	"./sr.js": 405,
-	"./ss": 407,
-	"./ss.js": 407,
-	"./sv": 408,
-	"./sv.js": 408,
-	"./sw": 409,
-	"./sw.js": 409,
-	"./ta": 410,
-	"./ta.js": 410,
-	"./te": 411,
-	"./te.js": 411,
-	"./tet": 412,
-	"./tet.js": 412,
-	"./tg": 413,
-	"./tg.js": 413,
-	"./th": 414,
-	"./th.js": 414,
-	"./tl-ph": 415,
-	"./tl-ph.js": 415,
-	"./tlh": 416,
-	"./tlh.js": 416,
-	"./tr": 417,
-	"./tr.js": 417,
-	"./tzl": 418,
-	"./tzl.js": 418,
-	"./tzm": 419,
-	"./tzm-latn": 420,
-	"./tzm-latn.js": 420,
-	"./tzm.js": 419,
-	"./ug-cn": 421,
-	"./ug-cn.js": 421,
-	"./uk": 422,
-	"./uk.js": 422,
-	"./ur": 423,
-	"./ur.js": 423,
-	"./uz": 424,
-	"./uz-latn": 425,
-	"./uz-latn.js": 425,
-	"./uz.js": 424,
-	"./vi": 426,
-	"./vi.js": 426,
-	"./x-pseudo": 427,
-	"./x-pseudo.js": 427,
-	"./yo": 428,
-	"./yo.js": 428,
-	"./zh-cn": 429,
-	"./zh-cn.js": 429,
-	"./zh-hk": 430,
-	"./zh-hk.js": 430,
-	"./zh-tw": 431,
-	"./zh-tw.js": 431
+	"./af": 308,
+	"./af.js": 308,
+	"./ar": 309,
+	"./ar-dz": 310,
+	"./ar-dz.js": 310,
+	"./ar-kw": 311,
+	"./ar-kw.js": 311,
+	"./ar-ly": 312,
+	"./ar-ly.js": 312,
+	"./ar-ma": 313,
+	"./ar-ma.js": 313,
+	"./ar-sa": 314,
+	"./ar-sa.js": 314,
+	"./ar-tn": 315,
+	"./ar-tn.js": 315,
+	"./ar.js": 309,
+	"./az": 316,
+	"./az.js": 316,
+	"./be": 317,
+	"./be.js": 317,
+	"./bg": 318,
+	"./bg.js": 318,
+	"./bm": 319,
+	"./bm.js": 319,
+	"./bn": 320,
+	"./bn.js": 320,
+	"./bo": 321,
+	"./bo.js": 321,
+	"./br": 322,
+	"./br.js": 322,
+	"./bs": 323,
+	"./bs.js": 323,
+	"./ca": 324,
+	"./ca.js": 324,
+	"./cs": 325,
+	"./cs.js": 325,
+	"./cv": 326,
+	"./cv.js": 326,
+	"./cy": 327,
+	"./cy.js": 327,
+	"./da": 328,
+	"./da.js": 328,
+	"./de": 329,
+	"./de-at": 330,
+	"./de-at.js": 330,
+	"./de-ch": 331,
+	"./de-ch.js": 331,
+	"./de.js": 329,
+	"./dv": 332,
+	"./dv.js": 332,
+	"./el": 333,
+	"./el.js": 333,
+	"./en-au": 334,
+	"./en-au.js": 334,
+	"./en-ca": 335,
+	"./en-ca.js": 335,
+	"./en-gb": 336,
+	"./en-gb.js": 336,
+	"./en-ie": 337,
+	"./en-ie.js": 337,
+	"./en-il": 338,
+	"./en-il.js": 338,
+	"./en-nz": 339,
+	"./en-nz.js": 339,
+	"./eo": 340,
+	"./eo.js": 340,
+	"./es": 341,
+	"./es-do": 342,
+	"./es-do.js": 342,
+	"./es-us": 343,
+	"./es-us.js": 343,
+	"./es.js": 341,
+	"./et": 344,
+	"./et.js": 344,
+	"./eu": 345,
+	"./eu.js": 345,
+	"./fa": 346,
+	"./fa.js": 346,
+	"./fi": 347,
+	"./fi.js": 347,
+	"./fo": 348,
+	"./fo.js": 348,
+	"./fr": 349,
+	"./fr-ca": 350,
+	"./fr-ca.js": 350,
+	"./fr-ch": 351,
+	"./fr-ch.js": 351,
+	"./fr.js": 349,
+	"./fy": 352,
+	"./fy.js": 352,
+	"./gd": 353,
+	"./gd.js": 353,
+	"./gl": 354,
+	"./gl.js": 354,
+	"./gom-latn": 355,
+	"./gom-latn.js": 355,
+	"./gu": 356,
+	"./gu.js": 356,
+	"./he": 357,
+	"./he.js": 357,
+	"./hi": 358,
+	"./hi.js": 358,
+	"./hr": 359,
+	"./hr.js": 359,
+	"./hu": 360,
+	"./hu.js": 360,
+	"./hy-am": 361,
+	"./hy-am.js": 361,
+	"./id": 362,
+	"./id.js": 362,
+	"./is": 363,
+	"./is.js": 363,
+	"./it": 364,
+	"./it.js": 364,
+	"./ja": 365,
+	"./ja.js": 365,
+	"./jv": 366,
+	"./jv.js": 366,
+	"./ka": 367,
+	"./ka.js": 367,
+	"./kk": 368,
+	"./kk.js": 368,
+	"./km": 369,
+	"./km.js": 369,
+	"./kn": 370,
+	"./kn.js": 370,
+	"./ko": 371,
+	"./ko.js": 371,
+	"./ky": 372,
+	"./ky.js": 372,
+	"./lb": 373,
+	"./lb.js": 373,
+	"./lo": 374,
+	"./lo.js": 374,
+	"./lt": 375,
+	"./lt.js": 375,
+	"./lv": 376,
+	"./lv.js": 376,
+	"./me": 377,
+	"./me.js": 377,
+	"./mi": 378,
+	"./mi.js": 378,
+	"./mk": 379,
+	"./mk.js": 379,
+	"./ml": 380,
+	"./ml.js": 380,
+	"./mn": 381,
+	"./mn.js": 381,
+	"./mr": 382,
+	"./mr.js": 382,
+	"./ms": 383,
+	"./ms-my": 384,
+	"./ms-my.js": 384,
+	"./ms.js": 383,
+	"./mt": 385,
+	"./mt.js": 385,
+	"./my": 386,
+	"./my.js": 386,
+	"./nb": 387,
+	"./nb.js": 387,
+	"./ne": 388,
+	"./ne.js": 388,
+	"./nl": 389,
+	"./nl-be": 390,
+	"./nl-be.js": 390,
+	"./nl.js": 389,
+	"./nn": 391,
+	"./nn.js": 391,
+	"./pa-in": 392,
+	"./pa-in.js": 392,
+	"./pl": 393,
+	"./pl.js": 393,
+	"./pt": 394,
+	"./pt-br": 395,
+	"./pt-br.js": 395,
+	"./pt.js": 394,
+	"./ro": 396,
+	"./ro.js": 396,
+	"./ru": 397,
+	"./ru.js": 397,
+	"./sd": 398,
+	"./sd.js": 398,
+	"./se": 399,
+	"./se.js": 399,
+	"./si": 400,
+	"./si.js": 400,
+	"./sk": 401,
+	"./sk.js": 401,
+	"./sl": 402,
+	"./sl.js": 402,
+	"./sq": 403,
+	"./sq.js": 403,
+	"./sr": 404,
+	"./sr-cyrl": 405,
+	"./sr-cyrl.js": 405,
+	"./sr.js": 404,
+	"./ss": 406,
+	"./ss.js": 406,
+	"./sv": 407,
+	"./sv.js": 407,
+	"./sw": 408,
+	"./sw.js": 408,
+	"./ta": 409,
+	"./ta.js": 409,
+	"./te": 410,
+	"./te.js": 410,
+	"./tet": 411,
+	"./tet.js": 411,
+	"./tg": 412,
+	"./tg.js": 412,
+	"./th": 413,
+	"./th.js": 413,
+	"./tl-ph": 414,
+	"./tl-ph.js": 414,
+	"./tlh": 415,
+	"./tlh.js": 415,
+	"./tr": 416,
+	"./tr.js": 416,
+	"./tzl": 417,
+	"./tzl.js": 417,
+	"./tzm": 418,
+	"./tzm-latn": 419,
+	"./tzm-latn.js": 419,
+	"./tzm.js": 418,
+	"./ug-cn": 420,
+	"./ug-cn.js": 420,
+	"./uk": 421,
+	"./uk.js": 421,
+	"./ur": 422,
+	"./ur.js": 422,
+	"./uz": 423,
+	"./uz-latn": 424,
+	"./uz-latn.js": 424,
+	"./uz.js": 423,
+	"./vi": 425,
+	"./vi.js": 425,
+	"./x-pseudo": 426,
+	"./x-pseudo.js": 426,
+	"./yo": 427,
+	"./yo.js": 427,
+	"./zh-cn": 428,
+	"./zh-cn.js": 428,
+	"./zh-hk": 429,
+	"./zh-hk.js": 429,
+	"./zh-tw": 430,
+	"./zh-tw.js": 430
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -2347,11 +2347,11 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 713;
+webpackContext.id = 716;
 
 /***/ }),
 
-/***/ 715:
+/***/ 718:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2409,7 +2409,7 @@ var ViewsPipe = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 716:
+/***/ 719:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2441,7 +2441,7 @@ var CapitalizePipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 717:
+/***/ 720:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2480,7 +2480,7 @@ var UserCommentsPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 718:
+/***/ 721:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2517,7 +2517,7 @@ var SecondsPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 719:
+/***/ 722:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2555,13 +2555,13 @@ var HighlightClipsSortPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 720:
+/***/ 723:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ThumbnailComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_clip_model__ = __webpack_require__(721);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_clip_model__ = __webpack_require__(724);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2603,7 +2603,7 @@ var ThumbnailComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 721:
+/***/ 724:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2618,14 +2618,14 @@ var Clip = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 722:
+/***/ 725:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FollowingChannelThumbnailComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_channel_model__ = __webpack_require__(723);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_channel_model__ = __webpack_require__(726);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2662,7 +2662,7 @@ var FollowingChannelThumbnailComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 723:
+/***/ 726:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2687,7 +2687,7 @@ var Channel = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_loader_service__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_toast_service__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_highlights_service__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__createhighlight_createhighlight__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__createhighlight_createhighlight__ = __webpack_require__(432);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3440,7 +3440,7 @@ var WebAuthenticationService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToastService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__logging_service__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__logging_service__ = __webpack_require__(244);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
