@@ -218,6 +218,55 @@ var HighlightClipsPage = /** @class */ (function () {
         });
     };
     /**
+     * Moves bottom locally until the user saves the modifications
+     *
+     * @param clip
+     */
+    HighlightClipsPage.prototype.moveBottom = function (clip) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                while (clip.clipOrder < this.highlight.clips.length - 1) {
+                    this.moveDown(clip);
+                }
+                return [2 /*return*/];
+            });
+        });
+    };
+    /**
+     * Moves down locally until the user saves the modifications
+     *
+     * @param clip
+     */
+    HighlightClipsPage.prototype.moveDown = function (clip) {
+        return __awaiter(this, void 0, void 0, function () {
+            var currentIndex, nextIndex, nextClip;
+            return __generator(this, function (_a) {
+                currentIndex = clip.clipOrder;
+                nextIndex = currentIndex + 1;
+                nextClip = this.findClipWithIndex(nextIndex);
+                clip.clipOrder += 1;
+                nextClip.clipOrder -= 1;
+                this.highlight.clips.sort(this.sort);
+                return [2 /*return*/];
+            });
+        });
+    };
+    /**
+     * Moves top locally until the user saves the modifications
+     *
+     * @param clip
+     */
+    HighlightClipsPage.prototype.moveTop = function (clip) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                while (clip.clipOrder > 0) {
+                    this.moveUp(clip);
+                }
+                return [2 /*return*/];
+            });
+        });
+    };
+    /**
      * Moves up locally until the user saves the modifications
      *
      * @param clip
@@ -231,22 +280,10 @@ var HighlightClipsPage = /** @class */ (function () {
                 lastClip = this.findClipWithIndex(lastIndex);
                 clip.clipOrder -= 1;
                 lastClip.clipOrder += 1;
+                this.highlight.clips.sort(this.sort);
                 return [2 /*return*/];
             });
         });
-    };
-    /**
-     * Moves down locally until the user saves the modifications
-     *
-     * @param clip
-     */
-    HighlightClipsPage.prototype.moveDown = function (clip) {
-        var currentIndex = clip.clipOrder;
-        var nextIndex = currentIndex + 1;
-        var nextClip = this.findClipWithIndex(nextIndex);
-        clip.clipOrder += 1;
-        nextClip.clipOrder -= 1;
-        this.highlight.clips.sort(this.sort);
     };
     /**
      * Removes locally until the user saves the modifications
@@ -346,7 +383,7 @@ var HighlightClipsPage = /** @class */ (function () {
     };
     HighlightClipsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-highlightclips',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlightclips\highlightclips.html"*/'<ion-header>\n\n   <ion-navbar>\n\n      <ion-title *ngIf="highlight" align-title="left">{{highlight.name}}</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button *ngIf="!isEditing" (click)="edit()">\n\n          EDIT\n\n        </button>\n\n        <button ion-button *ngIf="isEditing" (click)="save()">\n\n          SAVE\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list *ngIf="clipsReady | async">\n\n    <ion-item *ngFor="let clip of highlight.clips">\n\n      <ion-row>\n\n        <ion-col col-12><ion-thumbnail item-start>\n\n              <img src="{{clip.thumbnail}}">\n\n          </ion-thumbnail>\n\n        </ion-col>\n\n        \n\n        <ion-col col-12>\n\n          <p *ngIf="clip.broadcaster" class="title">{{clip.broadcaster.displayName}}</p>\n\n          <p>{{clip.title}}</p>\n\n          <p>{{clip.startTime | seconds}} - {{clip.startTime + clip.duration | seconds}} ({{clip.duration || clip.originalDuration}} seconds)</p>\n\n          <p>Clip added {{clip.createdAt | timeAgo}}</p>\n\n          <p>{{clip.description}}</p>\n\n          <div *ngIf="isEditing">\n\n            <button ion-button clear icon-only (click)="moveUp(clip)" [disabled]="clip.clipOrder === 0">\n\n              <ion-icon name=\'arrow-up\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveDown(clip)" [disabled]="clip.clipOrder === highlight.clips.length - 1">\n\n              <ion-icon name=\'arrow-down\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="remove(clip)">\n\n              <ion-icon name=\'trash\' is-active="false"></ion-icon>\n\n            </button>\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlightclips\highlightclips.html"*/
+            selector: 'page-highlightclips',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlightclips\highlightclips.html"*/'<ion-header>\n\n   <ion-navbar>\n\n      <ion-title *ngIf="highlight" align-title="left">{{highlight.name}}</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button *ngIf="!isEditing" (click)="edit()">\n\n          EDIT\n\n        </button>\n\n        <button ion-button *ngIf="isEditing" (click)="save()">\n\n          SAVE\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list *ngIf="clipsReady | async">\n\n    <ion-item *ngFor="let clip of highlight.clips">\n\n      <ion-row>\n\n        <ion-col col-12><ion-thumbnail item-start>\n\n              <img src="{{clip.thumbnail}}">\n\n          </ion-thumbnail>\n\n        </ion-col>\n\n        \n\n        <ion-col col-12>\n\n          <p *ngIf="clip.broadcaster" class="title">{{clip.broadcaster.displayName}}</p>\n\n          <p>{{clip.title}}</p>\n\n          <p>{{clip.startTime | seconds}} - {{clip.startTime + clip.duration | seconds}} ({{clip.duration || clip.originalDuration}} seconds)</p>\n\n          <p>Clip added {{clip.createdAt | timeAgo}}</p>\n\n          <p>{{clip.description}}</p>\n\n          <div *ngIf="isEditing">\n\n            <button ion-button clear icon-only (click)="moveTop(clip)" [disabled]="clip.clipOrder === 0">\n\n              <ion-icon name=\'arrow-dropleft-circle\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveUp(clip)" [disabled]="clip.clipOrder === 0">\n\n              <ion-icon name=\'arrow-dropleft\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveDown(clip)" [disabled]="clip.clipOrder === highlight.clips.length - 1">\n\n              <ion-icon name=\'arrow-dropright\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveBottom(clip)" [disabled]="clip.clipOrder === highlight.clips.length - 1">\n\n                <ion-icon name=\'arrow-dropright-circle\' is-active="false"></ion-icon>\n\n              </button>\n\n            <button ion-button clear icon-only (click)="remove(clip)">\n\n              <ion-icon name=\'trash\' is-active="false"></ion-icon>\n\n            </button>\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlightclips\highlightclips.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
