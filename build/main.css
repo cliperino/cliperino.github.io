@@ -27988,6 +27988,20 @@ ion-icon.icon.smaller {
   padding-left: 0px;
 }
 
+ion-item.no-border .item-inner {
+  border-bottom: 0px !important;
+}
+
+ion-item.wide {
+  cursor: pointer;
+  height: 64px !important;
+  font-size: 1.3em;
+}
+
+div.scroll-content {
+  overflow-y: auto !important;
+}
+
 @media (max-width: 576px) {
   following-channel-thumbnail-component .no-margin-xs {
     margin: 0 !important;

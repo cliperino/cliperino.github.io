@@ -681,7 +681,7 @@ webpackEmptyAsyncContext.id = 202;
 
 var map = {
 	"../pages/addhighlightclip/addhighlightclip.module": [
-		306
+		244
 	],
 	"../pages/clip-popover/clip-popover.module": [
 		767,
@@ -703,22 +703,22 @@ var map = {
 		8
 	],
 	"../pages/following/following.module": [
-		771,
+		776,
 		4
 	],
 	"../pages/games/games.module": [
-		772,
+		771,
 		2
 	],
 	"../pages/highlightclips/highlightclips.module": [
-		773,
+		772,
 		7
 	],
 	"../pages/highlights/highlights.module": [
 		433
 	],
 	"../pages/profile/profile.module": [
-		775,
+		773,
 		3
 	],
 	"../pages/trending-channel/trending-channel.module": [
@@ -726,7 +726,7 @@ var map = {
 		6
 	],
 	"../pages/trending-game/trending-game.module": [
-		776,
+		775,
 		5
 	],
 	"../pages/trending/trending.module": [
@@ -750,6 +750,48 @@ module.exports = webpackAsyncContext;
 /***/ }),
 
 /***/ 244:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddHighlightClipPageModule", function() { return AddHighlightClipPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__addhighlightclip__ = __webpack_require__(482);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var AddHighlightClipPageModule = /** @class */ (function () {
+    function AddHighlightClipPageModule() {
+    }
+    AddHighlightClipPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__addhighlightclip__["a" /* AddHighlightClipPage */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__addhighlightclip__["a" /* AddHighlightClipPage */])
+            ],
+            providers: [],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_2__addhighlightclip__["a" /* AddHighlightClipPage */]
+            ]
+        })
+    ], AddHighlightClipPageModule);
+    return AddHighlightClipPageModule;
+}());
+
+//# sourceMappingURL=addhighlightclip.module.js.map
+
+/***/ }),
+
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -826,48 +868,6 @@ var LoggingService = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=logging.service.js.map
-
-/***/ }),
-
-/***/ 306:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddHighlightClipPageModule", function() { return AddHighlightClipPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__addhighlightclip__ = __webpack_require__(482);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var AddHighlightClipPageModule = /** @class */ (function () {
-    function AddHighlightClipPageModule() {
-    }
-    AddHighlightClipPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__addhighlightclip__["a" /* AddHighlightClipPage */]
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__addhighlightclip__["a" /* AddHighlightClipPage */])
-            ],
-            providers: [],
-            entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_2__addhighlightclip__["a" /* AddHighlightClipPage */]
-            ]
-        })
-    ], AddHighlightClipPageModule);
-    return AddHighlightClipPageModule;
-}());
-
-//# sourceMappingURL=addhighlightclip.module.js.map
 
 /***/ }),
 
@@ -1245,7 +1245,7 @@ var TrendingPage = /** @class */ (function () {
     };
     TrendingPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-trending',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending\trending.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title align-title="left">Trending</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="presentPopover($event);">\n\n          <ion-icon ios="ios-funnel" md="ios-funnel"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only *ngIf="!authService.loggedIn" (click)="authService.login()">\n\n          <ion-icon name="log-in"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n   <ion-grid>\n\n      <ion-row justify-content-center>\n\n         <div style="max-width: 100%" *ngFor="let clip of clips">\n\n            <thumbnail-component [clip]="clip"></thumbnail-component>\n\n         </div>\n\n         <!-- <div style="width: 280px; height: 260px;"></div>\n\n         <div style="width: 280px; height: 260px;"></div> -->\n\n      </ion-row>\n\n   </ion-grid>\n\n   <ion-row justify-content-center *ngIf="clips.length && showMore">\n\n     <button (click)="more()" ion-button clear>MORE</button>\n\n   </ion-row>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending\trending.html"*/
+            selector: 'page-trending',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending\trending.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title align-title="left">Trending</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="presentPopover($event);">\n\n          <ion-icon ios="ios-funnel" md="ios-funnel"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n   <ion-grid>\n\n      <ion-row justify-content-center>\n\n         <div style="max-width: 100%" *ngFor="let clip of clips">\n\n            <thumbnail-component [clip]="clip"></thumbnail-component>\n\n         </div>\n\n         <!-- <div style="width: 280px; height: 260px;"></div>\n\n         <div style="width: 280px; height: 260px;"></div> -->\n\n      </ion-row>\n\n   </ion-grid>\n\n   <ion-row justify-content-center *ngIf="clips.length && showMore">\n\n     <button (click)="more()" ion-button clear>MORE</button>\n\n   </ion-row>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\trending\trending.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */],
@@ -1659,8 +1659,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_highlights_service__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_highlights_highlights_module__ = __webpack_require__(433);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_createhighlight_createhighlight_module__ = __webpack_require__(431);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_addhighlightclip_addhighlightclip_module__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_logging_service__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_addhighlightclip_addhighlightclip_module__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_logging_service__ = __webpack_require__(306);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_authorities_service__ = __webpack_require__(480);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_authorities_model_service__ = __webpack_require__(193);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1714,20 +1714,20 @@ var AppModule = /** @class */ (function () {
                     iconMode: 'md'
                 }, {
                     links: [
-                        { loadChildren: '../pages/clip-popover/clip-popover.module#ClipPopoverPageModule', name: 'clip-popover', segment: 'clip-popover', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/addhighlightclip/addhighlightclip.module#AddHighlightClipPageModule', name: 'addhighlightclip', segment: 'addhighlightclip', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/clip-popover/clip-popover.module#ClipPopoverPageModule', name: 'clip-popover', segment: 'clip-popover', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clip/clip.module#ClipPageModule', name: 'clip', segment: 'clip/:slug', priority: 'low', defaultHistory: ['trending'] },
                         { loadChildren: '../pages/createhighlight/createhighlight.module#CreateHighlightPageModule', name: 'createhighlight', segment: 'createhighlight', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/favorite-clips/favorite-clips.module#FavoriteClipsPageModule', name: 'favorite-clips', segment: 'favorite-clips', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/filter-popover/filter-popover.module#FilterPopoverPageModule', name: 'filter-popover', segment: 'filter-popover', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/following/following.module#FollowingPageModule', name: 'following', segment: 'following', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/highlightclips/highlightclips.module#HighlightClipsPageModule', name: 'highlightclips', segment: 'highlightclips/:highlight', priority: 'low', defaultHistory: ['highlights'] },
-                        { loadChildren: '../pages/trending-channel/trending-channel.module#TrendingChannelPageModule', name: 'trending-channel', segment: 'trending/channel/:channel', priority: 'low', defaultHistory: ['following'] },
-                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'profile', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/highlights/highlights.module#HighlightsPageModule', name: 'highlights', segment: 'highlights', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'profile', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/trending-channel/trending-channel.module#TrendingChannelPageModule', name: 'trending-channel', segment: 'trending/channel/:channel', priority: 'low', defaultHistory: ['following'] },
                         { loadChildren: '../pages/trending-game/trending-game.module#TrendingGamePageModule', name: 'trending-game', segment: 'trending/game/:game', priority: 'low', defaultHistory: ['games'] },
-                        { loadChildren: '../pages/trending/trending.module#TrendingPageModule', name: 'trending', segment: 'trending', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/trending/trending.module#TrendingPageModule', name: 'trending', segment: 'trending', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/following/following.module#FollowingPageModule', name: 'following', segment: 'following', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_23__pages_addhighlightclip_addhighlightclip_module__["AddHighlightClipPageModule"],
@@ -2945,14 +2945,16 @@ var MyApp = /** @class */ (function () {
                     case 1:
                         _c.sent();
                         _c.label = 2;
-                    case 2:
-                        if (!(this.authService.loggedIn && (!this.authoritiesModelService.getAuthorityList() || !this.authoritiesModelService.getAuthorityList().length))) return [3 /*break*/, 4];
+                    case 2: return [4 /*yield*/, this.authService.initialized];
+                    case 3:
+                        _c.sent();
+                        if (!(this.authService.loggedIn && (!this.authoritiesModelService.getAuthorityList() || !this.authoritiesModelService.getAuthorityList().length))) return [3 /*break*/, 5];
                         _b = (_a = this.authoritiesModelService).setAuthorityList;
                         return [4 /*yield*/, this.authoritiesService.getList()];
-                    case 3:
+                    case 4:
                         _b.apply(_a, [_c.sent()]);
-                        _c.label = 4;
-                    case 4: return [2 /*return*/];
+                        _c.label = 5;
+                    case 5: return [2 /*return*/];
                 }
             });
         });
@@ -2991,7 +2993,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* MenuController */])
     ], MyApp.prototype, "menuCtrl", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\app.html"*/'<ion-menu #menu [content]="content" [type]="reveal">\n\n  <ion-content>\n\n    <ion-list>\n\n      <button ion-item (click)="goToPage(\'trending\')">\n\n        Trending\n\n      </button>\n\n      <button ion-item (click)="goToPage(\'games\')">\n\n        Games\n\n      </button>\n\n      <button ion-item *ngIf="authService.loggedIn" (click)="goToPage(\'favorite-clips\')">\n\n        Favorite clips\n\n      </button>\n\n      <!-- <button ion-item *ngIf="authService.loggedIn" (click)="goToPage(\'following\')">\n\n        Following\n\n      </button>\n\n      <button ion-item *ngIf="authService.loggedIn" (click)="goToPage(\'profile\')">\n\n        Profile\n\n      </button> -->\n\n\n\n      <button ion-item *ngIf="authService.loggedIn && authoritiesModelService.hasAuthority(\'HIGHLIGHTS\')" (click)="goToPage(\'highlights\')">\n\n        Highlights\n\n      </button>\n\n      <button ion-item *ngIf="authService.loggedIn" (click)="logout()">\n\n        Logout\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav #content [root]="rootPage" swipeBackEnabled="true"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\app.html"*/'<ion-menu #menu [content]="content" [type]="reveal">\n\n  <ion-content>\n\n    <ion-row (click)="goToPage(\'trending\')">\n\n      <ion-item class="no-border wide">\n\n        <ion-col col-3>\n\n          <ion-icon name="trending-up"></ion-icon>\n\n        </ion-col>\n\n        <ion-col col-9>\n\n          Trending\n\n        </ion-col>\n\n      </ion-item>\n\n    </ion-row>\n\n\n\n    <ion-row (click)="goToPage(\'games\')">\n\n      <ion-item class="no-border wide">\n\n        <ion-col col-3>\n\n          <ion-icon name="game-controller-a"></ion-icon>\n\n        </ion-col>\n\n        <ion-col col-9>\n\n          Games\n\n        </ion-col>\n\n      </ion-item>\n\n    </ion-row>\n\n\n\n    <ion-row *ngIf="authService.loggedIn" (click)="goToPage(\'favorite-clips\')">\n\n      <ion-item class="no-border wide">\n\n        <ion-col col-3>\n\n          <ion-icon name="star"></ion-icon>\n\n        </ion-col>\n\n        <ion-col col-9>\n\n          Favorite clips\n\n        </ion-col>\n\n      </ion-item>\n\n    </ion-row>\n\n\n\n    <ion-row *ngIf="authService.loggedIn && authoritiesModelService.hasAuthority(\'HIGHLIGHTS\')"\n\n      (click)="goToPage(\'highlights\')">\n\n      <ion-item class="no-border wide">\n\n        <ion-col col-3>\n\n          <ion-icon name="videocam"></ion-icon>\n\n        </ion-col>\n\n        <ion-col col-9>\n\n          Highlights\n\n        </ion-col>\n\n      </ion-item>\n\n    </ion-row>\n\n\n\n    <ion-row *ngIf="authService.loggedIn" (click)="logout()">\n\n      <ion-item class="no-border wide">\n\n        <ion-col col-3>\n\n          <ion-icon name="log-out"></ion-icon>\n\n        </ion-col>\n\n        <ion-col col-9>\n\n          Log out\n\n        </ion-col>\n\n      </ion-item>\n\n    </ion-row>\n\n\n\n    <ion-row *ngIf="!authService.loggedIn" (click)="authService.login()">\n\n      <ion-item class="no-border wide">\n\n        <ion-col col-3>\n\n          <ion-icon name="log-out"></ion-icon>\n\n        </ion-col>\n\n        <ion-col col-9>\n\n          Log in\n\n        </ion-col>\n\n      </ion-item>\n\n    </ion-row>\n\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav #content [root]="rootPage" swipeBackEnabled="true"></ion-nav>'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
@@ -3085,34 +3087,37 @@ var MobileAuthenticationService = /** @class */ (function () {
         this.Auth0 = new __WEBPACK_IMPORTED_MODULE_3_auth0_js__["WebAuth"](__WEBPACK_IMPORTED_MODULE_1__auth_config__["a" /* AUTH_CONFIG */]);
         this.Client = new __WEBPACK_IMPORTED_MODULE_2__auth0_cordova___default.a(__WEBPACK_IMPORTED_MODULE_1__auth_config__["a" /* AUTH_CONFIG */]);
         this.loading = true;
-        (function () { return __awaiter(_this, void 0, void 0, function () {
-            var _a, _b, _c, _d, _e, _f, _g;
-            return __generator(this, function (_h) {
-                switch (_h.label) {
-                    case 0:
-                        _a = this;
-                        return [4 /*yield*/, this.localStorageService.getItem('profile')];
-                    case 1:
-                        _a.user = _h.sent();
-                        _b = this;
-                        return [4 /*yield*/, this.localStorageService.getItem('access_token')];
-                    case 2:
-                        _b.accessToken = _h.sent();
-                        _c = this;
-                        return [4 /*yield*/, this.localStorageService.getItem('id_token')];
-                    case 3:
-                        _c.idToken = _h.sent();
-                        _d = this;
-                        _e = Date.now();
-                        _g = (_f = JSON).parse;
-                        return [4 /*yield*/, this.localStorageService.getItem('expires_at')];
-                    case 4:
-                        _d.loggedIn = _e < _g.apply(_f, [_h.sent()]);
-                        this.loading = false;
-                        return [2 /*return*/];
-                }
-            });
-        }); })();
+        this.initialized = new Promise(function (resolve) {
+            (function () { return __awaiter(_this, void 0, void 0, function () {
+                var _a, _b, _c, _d, _e, _f, _g;
+                return __generator(this, function (_h) {
+                    switch (_h.label) {
+                        case 0:
+                            _a = this;
+                            return [4 /*yield*/, this.localStorageService.getItem('profile')];
+                        case 1:
+                            _a.user = _h.sent();
+                            _b = this;
+                            return [4 /*yield*/, this.localStorageService.getItem('access_token')];
+                        case 2:
+                            _b.accessToken = _h.sent();
+                            _c = this;
+                            return [4 /*yield*/, this.localStorageService.getItem('id_token')];
+                        case 3:
+                            _c.idToken = _h.sent();
+                            _d = this;
+                            _e = Date.now();
+                            _g = (_f = JSON).parse;
+                            return [4 /*yield*/, this.localStorageService.getItem('expires_at')];
+                        case 4:
+                            _d.loggedIn = _e < _g.apply(_f, [_h.sent()]);
+                            resolve();
+                            this.loading = false;
+                            return [2 /*return*/];
+                    }
+                });
+            }); })();
+        });
     }
     MobileAuthenticationService.prototype.getToken = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -3306,21 +3311,24 @@ var WebAuthenticationService = /** @class */ (function () {
             redirectUri: "" + __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].authCallback,
             scope: 'openid'
         });
-        (function () { return __awaiter(_this, void 0, void 0, function () {
-            var _a, _b, _c, _d;
-            return __generator(this, function (_e) {
-                switch (_e.label) {
-                    case 0:
-                        _a = this;
-                        _b = Date.now();
-                        _d = (_c = JSON).parse;
-                        return [4 /*yield*/, this.localStorageService.getItem('expires_at')];
-                    case 1:
-                        _a.loggedIn = _b < _d.apply(_c, [_e.sent()]);
-                        return [2 /*return*/];
-                }
-            });
-        }); })();
+        this.initialized = new Promise(function (resolve) {
+            (function () { return __awaiter(_this, void 0, void 0, function () {
+                var _a, _b, _c, _d;
+                return __generator(this, function (_e) {
+                    switch (_e.label) {
+                        case 0:
+                            _a = this;
+                            _b = Date.now();
+                            _d = (_c = JSON).parse;
+                            return [4 /*yield*/, this.localStorageService.getItem('expires_at')];
+                        case 1:
+                            _a.loggedIn = _b < _d.apply(_c, [_e.sent()]);
+                            resolve();
+                            return [2 /*return*/];
+                    }
+                });
+            }); })();
+        });
     }
     WebAuthenticationService.prototype.getToken = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -3430,7 +3438,7 @@ var WebAuthenticationService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToastService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__logging_service__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__logging_service__ = __webpack_require__(306);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

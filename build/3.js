@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 775:
+/***/ 773:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(790);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(788);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__ = __webpack_require__(481);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -62,7 +62,7 @@ var Constants = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 790:
+/***/ 788:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
