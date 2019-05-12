@@ -1,15 +1,15 @@
 webpackJsonp([7],{
 
-/***/ 772:
+/***/ 780:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HighlightClipsPageModule", function() { return HighlightClipsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_pipes_pipes_module__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__highlightclips__ = __webpack_require__(787);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_pipes_pipes_module__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__highlightclips__ = __webpack_require__(795);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,7 +29,7 @@ var HighlightClipsPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__highlightclips__["a" /* HighlightClipsPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__highlightclips__["a" /* HighlightClipsPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__highlightclips__["a" /* HighlightClipsPage */]),
                 __WEBPACK_IMPORTED_MODULE_2__app_pipes_pipes_module__["a" /* PipesModule */].forRoot()
             ],
             providers: [],
@@ -45,18 +45,18 @@ var HighlightClipsPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 787:
+/***/ 795:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HighlightClipsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_loader_service__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_loader_service__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_toast_service__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_highlights_service__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_clips_service__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_models_highlightclip_model__ = __webpack_require__(483);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_highlights_service__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_clips_service__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_models_highlightclip_model__ = __webpack_require__(487);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -385,10 +385,10 @@ var HighlightClipsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-highlightclips',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlightclips\highlightclips.html"*/'<ion-header>\n\n   <ion-navbar>\n\n      <ion-title *ngIf="highlight" align-title="left">{{highlight.name}}</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button *ngIf="!isEditing" (click)="edit()">\n\n          EDIT\n\n        </button>\n\n        <button ion-button *ngIf="isEditing" (click)="save()">\n\n          SAVE\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list *ngIf="clipsReady | async">\n\n    <ion-item *ngFor="let clip of highlight.clips">\n\n      <ion-row>\n\n        <ion-col col-12><ion-thumbnail item-start>\n\n              <img src="{{clip.thumbnail}}">\n\n          </ion-thumbnail>\n\n        </ion-col>\n\n        \n\n        <ion-col col-12>\n\n          <p *ngIf="clip.broadcaster" class="title">{{clip.broadcaster.displayName}}</p>\n\n          <p>{{clip.title}}</p>\n\n          <p>{{clip.startTime | seconds}} - {{clip.startTime + clip.duration | seconds}} ({{clip.duration || clip.originalDuration}} seconds)</p>\n\n          <p>Clip added {{clip.createdAt | timeAgo}}</p>\n\n          <p>{{clip.description}}</p>\n\n          <div *ngIf="isEditing">\n\n            <button ion-button clear icon-only (click)="moveTop(clip)" [disabled]="clip.clipOrder === 0">\n\n              <ion-icon name=\'arrow-dropleft-circle\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveUp(clip)" [disabled]="clip.clipOrder === 0">\n\n              <ion-icon name=\'arrow-dropleft\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveDown(clip)" [disabled]="clip.clipOrder === highlight.clips.length - 1">\n\n              <ion-icon name=\'arrow-dropright\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveBottom(clip)" [disabled]="clip.clipOrder === highlight.clips.length - 1">\n\n                <ion-icon name=\'arrow-dropright-circle\' is-active="false"></ion-icon>\n\n              </button>\n\n            <button ion-button clear icon-only (click)="remove(clip)">\n\n              <ion-icon name=\'trash\' is-active="false"></ion-icon>\n\n            </button>\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlightclips\highlightclips.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_4__app_services_highlights_service__["a" /* HighlightsService */],
             __WEBPACK_IMPORTED_MODULE_5__app_services_clips_service__["a" /* ClipsService */],
             __WEBPACK_IMPORTED_MODULE_2__app_services_loader_service__["a" /* LoaderService */],

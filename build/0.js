@@ -1,17 +1,17 @@
 webpackJsonp([0],{
 
-/***/ 768:
+/***/ 772:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClipPageModule", function() { return ClipPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clip__ = __webpack_require__(781);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__ = __webpack_require__(481);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_clipboard__ = __webpack_require__(777);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clip__ = __webpack_require__(785);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_clipboard__ = __webpack_require__(782);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -33,7 +33,7 @@ var ClipPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__clip__["a" /* ClipPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clip__["a" /* ClipPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clip__["a" /* ClipPage */]),
                 __WEBPACK_IMPORTED_MODULE_3__app_pipes_pipes_module__["a" /* PipesModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_4__app_components_component_module__["a" /* ComponentModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_5_ngx_clipboard__["a" /* ClipboardModule */]
@@ -51,7 +51,7 @@ var ClipPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 777:
+/***/ 782:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -61,8 +61,8 @@ var ClipPageModule = /** @class */ (function () {
 /* unused harmony export ClipboardDirective */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClipboardModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_window_token__ = __webpack_require__(778);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_window_token__ = __webpack_require__(783);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__(62);
 
 
@@ -374,7 +374,7 @@ var ClipboardModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 778:
+/***/ 783:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -425,24 +425,25 @@ var NgxWindowTokenModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 781:
+/***/ 785:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClipPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_clips_service__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_loader_service__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_clips_service__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_loader_service__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_toast_service__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__environments_environment__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__environments_environment__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_services_localStorage_service__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_clipboard__ = __webpack_require__(777);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_services_abstract_auth_service__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__addhighlightclip_addhighlightclip__ = __webpack_require__(482);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_services_highlights_service__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_services_authorities_model_service__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_clipboard__ = __webpack_require__(782);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_services_abstract_auth_service__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__addhighlightclip_addhighlightclip__ = __webpack_require__(486);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_services_highlights_service__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_services_authorities_model_service__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_services_current_channel_store_service__ = __webpack_require__(96);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -503,12 +504,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
+
 var ClipPage = /** @class */ (function () {
     function ClipPage(navCtrl, navParams, _ngZone, _sanitizer, popoverCtrl, clipboardService, modalCtrl, 
         /* Model Services */
         authoritiesModelService, 
         /* Services */
-        authService, clipsService, highlightsService, loaderService, localStorageService, toastService) {
+        authService, clipsService, highlightsService, loaderService, localStorageService, toastService, 
+        /* Stores*/
+        currentChannelStoreService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this._ngZone = _ngZone;
@@ -523,6 +527,7 @@ var ClipPage = /** @class */ (function () {
         this.loaderService = loaderService;
         this.localStorageService = localStorageService;
         this.toastService = toastService;
+        this.currentChannelStoreService = currentChannelStoreService;
         this.commentsCount = 0;
         this.isFavorite = false;
         this.isLiked = false;
@@ -705,6 +710,8 @@ var ClipPage = /** @class */ (function () {
     };
     ClipPage.prototype.goToChannel = function () {
         var that = this;
+        this.currentChannelStoreService.setId(that.clip.broadcaster.id);
+        this.currentChannelStoreService.setName(that.clip.broadcaster.displayName);
         that.navCtrl.push('trending-channel', { channel: that.clip.broadcaster.displayName });
     };
     ClipPage.prototype.presentPopover = function (myEvent) {
@@ -722,20 +729,21 @@ var ClipPage = /** @class */ (function () {
             selector: 'page-clip',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip\clip.html"*/'<!-- <meta property="og:title" content="European Travel Destinations"> -->\n\n<!-- <meta property="og:description" content="Offering tour packages for individuals or groups."> -->\n\n<!-- <meta property="og:url" content="http://euro-travel-example.com/index.htm"> -->\n\n\n\n<ion-header>\n\n   <ion-navbar>\n\n      <ion-title align-title="left">Clip</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only *ngIf="!isFavorite && authService.loggedIn" (click)="addFavorite()">\n\n          <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>\n\n        </button>\n\n        <button ion-button icon-only *ngIf="isFavorite && authService.loggedIn" (click)="removeFavorite()">\n\n          <ion-icon ios="ios-star" md="md-star"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n<ion-content class="no-padding-xs" padding *ngIf="clip">\n\n    <meta property="og:image" content="{{clip.thumbnails.medium}}">\n\n   <ion-grid class="no-padding-xs">\n\n      <ion-row justify-content-center>\n\n         <ion-col class="no-padding-xs" col-12 col-xl-9>\n\n            <ion-card class="max-width no-margin-xs">\n\n               <ion-row>\n\n                  <ion-col>\n\n                     <ion-item style="cursor: pointer;" (click)="goToChannel()">\n\n                        <ion-avatar item-start>\n\n                           <img src="{{clip.broadcaster.logo}}">\n\n                        </ion-avatar>\n\n                        <h2 ion-text color="light">{{clip.broadcaster.displayName}}</h2>\n\n                        <p>{{clip.views | views}} views &#183; {{clip.createdAt | timeAgo}}</p>\n\n                     </ion-item>\n\n                  </ion-col>\n\n               </ion-row>\n\n               <span [innerHTML]="clip.embedHtml"></span>\n\n               <ion-card-content>\n\n                  <ion-row>\n\n                    <button ion-button clear icon-only *ngIf="!isLiked" (click)="like()">\n\n                      <ion-icon name=\'heart-outline\' is-active="false"></ion-icon>\n\n                      {{likesCount}}\n\n                    </button>\n\n\n\n                    <button ion-button clear icon-only *ngIf="isLiked" (click)="unlike()">\n\n                      <ion-icon color="danger" name=\'heart\' is-active="false"></ion-icon>\n\n                      {{likesCount}}\n\n                    </button>\n\n\n\n                    <button ion-button clear icon-only>\n\n                      <ion-icon name=\'chatboxes\' is-active="false"></ion-icon>\n\n                      {{commentsCount}}\n\n                    </button>\n\n\n\n                    <ion-col style="padding: 0;" text-right>\n\n                      <button ion-button clear icon-only (click)="presentPopover($event)">\n\n                        <ion-icon name=\'share-alt\' is-active="false"></ion-icon>\n\n                        Share\n\n                      </button>\n\n\n\n                      <button *ngIf="authoritiesModelService.hasAuthority(\'HIGHLIGHTS\')" ion-button clear icon-only (click)="addClipToHighlight($event)">\n\n                        <ion-icon name=\'add\' is-active="false"></ion-icon>\n\n                        Add to highlight\n\n                      </button>\n\n                    </ion-col>\n\n                  </ion-row>\n\n\n\n                  <ion-row>\n\n                    <ion-col>\n\n                       <p ion-text color="light" style="font-weight: bold;">{{clip.title}}</p>\n\n                       <p ion-text color="lightdark">{{clip.game}}</p>\n\n                    </ion-col>\n\n                  </ion-row>\n\n               </ion-card-content>\n\n            </ion-card>\n\n\n\n            <ion-col>\n\n              <ion-row>\n\n                <ion-col col-12 col-xl-9>\n\n                  <div style="padding-left: 16px;">\n\n                    <p ion-text color="lightdark">Comments</p>\n\n                  </div>\n\n                </ion-col>\n\n              </ion-row>\n\n\n\n              <ion-row *ngIf="authService.loggedIn">\n\n                <ion-col col-12>\n\n                  <ion-item class="no-border" style="background-color: inherit; padding-right: 16px;">\n\n                     <ion-avatar item-start>\n\n                      <img src="https://ui-avatars.com/api/?name={{username}}">\n\n                     </ion-avatar>\n\n                     <ion-textarea [(ngModel)]="userComment" style="border-bottom: 1px;" placeholder="Add a public comment..."></ion-textarea>\n\n                  </ion-item>\n\n                </ion-col>\n\n                <ion-col text-right>\n\n                  <div>\n\n                    <button (click)="addComment()" *ngIf="userComment" ion-button clear>Add comment</button>\n\n                  </div>\n\n                </ion-col>\n\n              </ion-row>\n\n              <ion-row *ngIf="comments.length">\n\n                <ion-col col-12>\n\n                  <ion-item *ngFor="let comment of comments | userCommentsSort" class="no-border" style="background-color: inherit;">\n\n                     <ion-avatar item-start>\n\n                        <img src="https://ui-avatars.com/api/?name={{comment.twitchUsername}}">\n\n                     </ion-avatar>\n\n                     <h2 ion-text color="light">{{comment.twitchUsername}} &nbsp;<p style="display: inline;" color="lightdark">{{comment.createdAt | timeAgo}}</p></h2>\n\n                     <p style="color: white;">{{comment.comment}}</p>\n\n                  </ion-item>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-col>\n\n         </ion-col>\n\n      </ion-row>\n\n   </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\clip\clip.html"*/,
             styles: ['.no-padding {padding: 0;} .no-margin {margin: 0;}']
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
             __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* PopoverController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PopoverController */],
             __WEBPACK_IMPORTED_MODULE_8_ngx_clipboard__["b" /* ClipboardService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_12__app_services_authorities_model_service__["a" /* AuthoritiesModelService */],
             __WEBPACK_IMPORTED_MODULE_9__app_services_abstract_auth_service__["a" /* AbstractAuthenticationService */],
             __WEBPACK_IMPORTED_MODULE_3__app_services_clips_service__["a" /* ClipsService */],
             __WEBPACK_IMPORTED_MODULE_11__app_services_highlights_service__["a" /* HighlightsService */],
             __WEBPACK_IMPORTED_MODULE_4__app_services_loader_service__["a" /* LoaderService */],
             __WEBPACK_IMPORTED_MODULE_7__app_services_localStorage_service__["a" /* LocalStorageService */],
-            __WEBPACK_IMPORTED_MODULE_5__app_services_toast_service__["a" /* ToastService */]])
+            __WEBPACK_IMPORTED_MODULE_5__app_services_toast_service__["a" /* ToastService */],
+            __WEBPACK_IMPORTED_MODULE_13__app_services_current_channel_store_service__["a" /* CurrentChannelStoreService */]])
     ], ClipPage);
     return ClipPage;
 }());

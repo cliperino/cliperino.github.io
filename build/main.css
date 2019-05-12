@@ -28003,6 +28003,25 @@ div.scroll-content {
 }
 
 @media (max-width: 576px) {
+  channel-thumbnail-component .no-margin-xs {
+    margin: 0 !important;
+  }
+  channel-thumbnail-component .no-padding-xs {
+    padding: 0 !important;
+  }
+  channel-thumbnail-component .scroll-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  channel-thumbnail-component .max-width {
+    width: 100% !important;
+  }
+  channel-thumbnail-component .display-none-xs {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
   following-channel-thumbnail-component .no-margin-xs {
     margin: 0 !important;
   }
@@ -28047,6 +28066,11 @@ game-thumbnail-component p.title {
 
 page-addhighlightclip ion-title {
   margin-left: 16px;
+}
+
+page-channels ion-searchbar {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 page-clip ion-content div.fixed-content, page-clip ion-content div.scroll-content {
