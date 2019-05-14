@@ -28064,6 +28064,25 @@ game-thumbnail-component p.title {
   }
 }
 
+@media (max-width: 576px) {
+  live-stream-thumbnail-component .no-margin-xs {
+    margin: 0 !important;
+  }
+  live-stream-thumbnail-component .no-padding-xs {
+    padding: 0 !important;
+  }
+  live-stream-thumbnail-component .scroll-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  live-stream-thumbnail-component .max-width {
+    width: 100% !important;
+  }
+  live-stream-thumbnail-component .display-none-xs {
+    display: none;
+  }
+}
+
 page-addhighlightclip ion-title {
   margin-left: 16px;
 }
