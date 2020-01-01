@@ -1,14 +1,14 @@
 webpackJsonp([8],{
 
-/***/ 782:
+/***/ 781:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterPopoverPageModule", function() { return FilterPopoverPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filter_popover__ = __webpack_require__(795);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filter_popover__ = __webpack_require__(794);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27,7 +27,7 @@ var FilterPopoverPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__filter_popover__["a" /* FilterPopoverPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__filter_popover__["a" /* FilterPopoverPage */])
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__filter_popover__["a" /* FilterPopoverPage */])
             ],
             providers: [],
             entryComponents: [
@@ -42,13 +42,13 @@ var FilterPopoverPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 795:
+/***/ 794:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilterPopoverPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -103,7 +103,7 @@ var FilterPopoverPage = /** @class */ (function () {
     FilterPopoverPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\filter-popover\filter-popover.html"*/'<ion-list radio-group style="margin-bottom: 0px;" [(ngModel)]="period">\n\n	<ion-item-divider color="light">Period</ion-item-divider>\n\n	<ion-item>\n\n	  <ion-label>24 hours</ion-label>\n\n	  <ion-radio checked="true" value="day"></ion-radio>\n\n	</ion-item>\n\n		<ion-item>\n\n		  <ion-label>7 days</ion-label>\n\n		  <ion-radio value="week"></ion-radio>\n\n		</ion-item>\n\n		<ion-item>\n\n		  <ion-label>30 days</ion-label>\n\n		  <ion-radio value="month"></ion-radio>\n\n		</ion-item>\n\n		<ion-item>\n\n		  <ion-label>All</ion-label>\n\n		  <ion-radio value="all"></ion-radio>\n\n		</ion-item>\n\n	<!-- <ion-item-divider *ngIf="displayLanguages" color="light">Languages</ion-item-divider>\n\n	<ion-item *ngIf="displayLanguages">\n\n	  <ion-label>English</ion-label>\n\n	  <ion-checkbox [(ngModel)]="langEn"></ion-checkbox>\n\n	</ion-item>\n\n	<ion-item *ngIf="displayLanguages">\n\n	  <ion-label>French</ion-label>\n\n	  <ion-checkbox [(ngModel)]="langFr"></ion-checkbox>\n\n	</ion-item> -->\n\n</ion-list>\n\n<button (click)="onSave()" ion-button clear>Save</button>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\filter-popover\filter-popover.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
     ], FilterPopoverPage);
     return FilterPopoverPage;
 }());
