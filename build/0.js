@@ -715,7 +715,7 @@ var ClipPage = /** @class */ (function () {
         var promise;
         var that = this;
         promise = this.clipsService.getBySlug(this.slug).then(function (clip) {
-            var src = 'https://clips.twitch.tv/embed?clip=' + clip.slug + '&tt_medium=clips_api&tt_content=embed&autoplay=true&parent=cliperino.com';
+            var src = 'https://clips.twitch.tv/embed?clip=' + clip.slug + '&tt_medium=clips_api&tt_content=embed&autoplay=true&parent=www.cliperino.com';
             clip.embedHtml = that._sanitizer.bypassSecurityTrustHtml("<div style='overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0;' class='video-responsive'><iframe style='left: 0; top: 0; height: 100%; width: 100%; position: absolute;' src='" + src + "' width='100%' height='100%' muted='false' frameborder='0' scrolling='no' allowfullscreen='true' preload='metadata'></iframe></div>");
             that._ngZone.run(function () {
                 that.clip = clip;
