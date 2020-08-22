@@ -1,4 +1,4 @@
-webpackJsonp([11],{
+webpackJsonp([10],{
 
 /***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -7,11 +7,11 @@ webpackJsonp([11],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__thumbnail_thumbnail_component__ = __webpack_require__(770);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__thumbnail_thumbnail_component__ = __webpack_require__(780);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__following_channel_thumbnail_following_channel_thumbnail_component__ = __webpack_require__(780);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__channel_thumbnail_channel_thumbnail_component__ = __webpack_require__(781);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__live_stream_thumbnail_live_stream_thumbnail_component__ = __webpack_require__(782);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__following_channel_thumbnail_following_channel_thumbnail_component__ = __webpack_require__(782);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__channel_thumbnail_channel_thumbnail_component__ = __webpack_require__(783);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__live_stream_thumbnail_live_stream_thumbnail_component__ = __webpack_require__(784);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -271,6 +271,22 @@ var HighlightsService = /** @class */ (function () {
                         authorization = _a + (_b.sent());
                         url = __WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].apiAddress + ("/api/v1/protected/highlights/" + uuid + "/clips/" + highlightClip.uuid);
                         return [2 /*return*/, this.restService.postProtected(url, authorization, JSON.stringify(highlightClip))];
+                }
+            });
+        });
+    };
+    HighlightsService.prototype.update = function (highlight) {
+        return __awaiter(this, void 0, void 0, function () {
+            var authorization, _a, url;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = "Bearer ";
+                        return [4 /*yield*/, this.authService.getToken()];
+                    case 1:
+                        authorization = _a + (_b.sent());
+                        url = __WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].apiAddress + ("/api/v1/protected/highlights/" + highlight.uuid);
+                        return [2 /*return*/, this.restService.putProtected(url, authorization, JSON.stringify(highlight))];
                 }
             });
         });
@@ -675,37 +691,33 @@ var map = {
 	"../pages/addhighlightclip/addhighlightclip.module": [
 		256
 	],
-	"../pages/auth-callback/auth-callback.module": [
-		828,
-		10
-	],
 	"../pages/channels/channels.module": [
-		323
+		460
 	],
 	"../pages/clip-popover/clip-popover.module": [
 		829,
 		1
 	],
 	"../pages/clip/clip.module": [
-		830,
+		828,
 		0
 	],
 	"../pages/createhighlight/createhighlight.module": [
-		460
+		458
 	],
 	"../pages/favorite-clips/favorite-clips.module": [
-		831,
+		830,
 		9
 	],
 	"../pages/feed/feed.module": [
 		462
 	],
 	"../pages/filter-popover/filter-popover.module": [
-		835,
+		837,
 		8
 	],
 	"../pages/following/following.module": [
-		832,
+		831,
 		4
 	],
 	"../pages/games/games.module": [
@@ -713,22 +725,22 @@ var map = {
 		2
 	],
 	"../pages/highlightclips/highlightclips.module": [
-		834,
+		832,
 		7
 	],
 	"../pages/highlights/highlights.module": [
 		464
 	],
 	"../pages/profile/profile.module": [
-		836,
+		834,
 		3
 	],
 	"../pages/trending-channel/trending-channel.module": [
-		837,
+		835,
 		6
 	],
 	"../pages/trending-game/trending-game.module": [
-		838,
+		836,
 		5
 	],
 	"../pages/trending/trending.module": [
@@ -827,61 +839,6 @@ var AbstractAuthenticationService = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChannelsPageModule", function() { return ChannelsPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__channels__ = __webpack_require__(769);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_pipes_pipes_module__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_channels_service__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_services_streams_service__ = __webpack_require__(325);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-
-
-var ChannelsPageModule = /** @class */ (function () {
-    function ChannelsPageModule() {
-    }
-    ChannelsPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__channels__["a" /* ChannelsPage */]
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__channels__["a" /* ChannelsPage */]),
-                __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__["a" /* ComponentModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_4__app_pipes_pipes_module__["a" /* PipesModule */].forRoot()
-            ],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_5__app_services_channels_service__["a" /* ChannelsService */],
-                __WEBPACK_IMPORTED_MODULE_6__app_services_streams_service__["a" /* StreamsService */]
-            ],
-            entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_2__channels__["a" /* ChannelsPage */]
-            ]
-        })
-    ], ChannelsPageModule);
-    return ChannelsPageModule;
-}());
-
-//# sourceMappingURL=channels.module.js.map
-
-/***/ }),
-
-/***/ 324:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoggingService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rest_service__ = __webpack_require__(38);
@@ -953,7 +910,273 @@ var LoggingService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 325:
+/***/ 38:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_bluebird__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_unirest__);
+
+
+var RestService = /** @class */ (function () {
+    function RestService() {
+    }
+    RestService.prototype.delete = function (url, authorization) {
+        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
+            __WEBPACK_IMPORTED_MODULE_1_unirest__["delete"](url)
+                .headers({ 'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': authorization })
+                .send()
+                .end(function (resp) {
+                _unwrapResponse(resp, resolve, reject);
+            });
+        });
+    };
+    RestService.prototype.get = function (url) {
+        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
+            __WEBPACK_IMPORTED_MODULE_1_unirest__["get"](url)
+                .headers({ 'Accept': 'application/json' })
+                .send()
+                .end(function (resp) {
+                _unwrapResponse(resp, resolve, reject);
+            });
+        });
+    };
+    RestService.prototype.getProtected = function (url, authorization) {
+        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
+            __WEBPACK_IMPORTED_MODULE_1_unirest__["get"](url)
+                .headers({ 'Accept': 'application/json', 'Authorization': authorization })
+                .send()
+                .end(function (resp) {
+                _unwrapResponse(resp, resolve, reject);
+            });
+        });
+    };
+    RestService.prototype.post = function (url, obj) {
+        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
+            __WEBPACK_IMPORTED_MODULE_1_unirest__["post"](url)
+                .headers({ 'Accept': 'application/json', 'Content-Type': 'application/json' })
+                .send(obj)
+                .end(function (resp) {
+                _unwrapResponse(resp, resolve, reject);
+            });
+        });
+    };
+    RestService.prototype.postProtected = function (url, authorization, obj) {
+        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
+            __WEBPACK_IMPORTED_MODULE_1_unirest__["post"](url)
+                .headers({ 'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': authorization })
+                .send(obj)
+                .end(function (resp) {
+                _unwrapResponse(resp, resolve, reject);
+            });
+        });
+    };
+    RestService.prototype.putProtected = function (url, authorization, obj) {
+        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
+            __WEBPACK_IMPORTED_MODULE_1_unirest__["put"](url)
+                .headers({ 'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': authorization })
+                .send(obj)
+                .end(function (resp) {
+                _unwrapResponse(resp, resolve, reject);
+            });
+        });
+    };
+    return RestService;
+}());
+
+var _unwrapResponse = function (response, resolve, reject) {
+    if (response.code === 404) {
+        reject(new Error('HTTP URL not found.'));
+    }
+    else if (response.code === 401) {
+        reject(new Error('User is not authorized.'));
+    }
+    else if (response && response.body) {
+        var body = void 0;
+        if (typeof response.body === 'string') {
+            body = JSON.parse(response.body);
+        }
+        else {
+            body = response.body;
+        }
+        if (body.success !== undefined && body.success === true) {
+            if (typeof body.response === 'undefined') {
+                body.response = {};
+            }
+            resolve(body.response);
+        }
+        else {
+            reject(new Error(body.message || 'The response contains no message.'));
+        }
+    }
+    else {
+        reject(new Error('The response contains no body.'));
+    }
+};
+//# sourceMappingURL=rest.service.js.map
+
+/***/ }),
+
+/***/ 457:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Channel; });
+var Channel = /** @class */ (function () {
+    function Channel() {
+    }
+    return Channel;
+}());
+
+//# sourceMappingURL=channel.model.js.map
+
+/***/ }),
+
+/***/ 458:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateHighlightPageModule", function() { return CreateHighlightPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createhighlight__ = __webpack_require__(459);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var CreateHighlightPageModule = /** @class */ (function () {
+    function CreateHighlightPageModule() {
+    }
+    CreateHighlightPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__createhighlight__["a" /* CreateHighlightPage */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__createhighlight__["a" /* CreateHighlightPage */])
+            ],
+            providers: [],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_2__createhighlight__["a" /* CreateHighlightPage */]
+            ]
+        })
+    ], CreateHighlightPageModule);
+    return CreateHighlightPageModule;
+}());
+
+//# sourceMappingURL=createhighlight.module.js.map
+
+/***/ }),
+
+/***/ 459:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateHighlightPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+/* Core */
+
+
+var CreateHighlightPage = /** @class */ (function () {
+    function CreateHighlightPage(viewCtrl) {
+        this.viewCtrl = viewCtrl;
+    }
+    CreateHighlightPage.prototype.ngOnInit = function () {
+    };
+    CreateHighlightPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    CreateHighlightPage.prototype.add = function () {
+        this.viewCtrl.dismiss(this.highlightName);
+    };
+    CreateHighlightPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-createhighlight',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\createhighlight\createhighlight.html"*/'<ion-header>\n\n   <ion-navbar>\n\n      <ion-buttons start>\n\n        <button ion-button (click)="dismiss()">\n\n          CLOSE\n\n        </button>\n\n      </ion-buttons>\n\n      <ion-title align-title="left">New highlight</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button [disabled]="!highlightName" (click)="add()">\n\n          ADD\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item>\n\n      <ion-label color="primary" stacked>Name</ion-label>\n\n      <ion-input [(ngModel)]="highlightName" placeholder="Name"></ion-input>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\createhighlight\createhighlight.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
+    ], CreateHighlightPage);
+    return CreateHighlightPage;
+}());
+
+//# sourceMappingURL=createhighlight.js.map
+
+/***/ }),
+
+/***/ 460:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChannelsPageModule", function() { return ChannelsPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__channels__ = __webpack_require__(786);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_pipes_pipes_module__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_channels_service__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_services_streams_service__ = __webpack_require__(461);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+var ChannelsPageModule = /** @class */ (function () {
+    function ChannelsPageModule() {
+    }
+    ChannelsPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__channels__["a" /* ChannelsPage */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__channels__["a" /* ChannelsPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__app_components_component_module__["a" /* ComponentModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_4__app_pipes_pipes_module__["a" /* PipesModule */].forRoot()
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_5__app_services_channels_service__["a" /* ChannelsService */],
+                __WEBPACK_IMPORTED_MODULE_6__app_services_streams_service__["a" /* StreamsService */]
+            ],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_2__channels__["a" /* ChannelsPage */]
+            ]
+        })
+    ], ChannelsPageModule);
+    return ChannelsPageModule;
+}());
+
+//# sourceMappingURL=channels.module.js.map
+
+/***/ }),
+
+/***/ 461:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1032,207 +1255,6 @@ var StreamsService = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=streams.service.js.map
-
-/***/ }),
-
-/***/ 38:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bluebird___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_bluebird__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unirest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_unirest__);
-
-
-var RestService = /** @class */ (function () {
-    function RestService() {
-    }
-    RestService.prototype.delete = function (url, authorization) {
-        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
-            __WEBPACK_IMPORTED_MODULE_1_unirest__["delete"](url)
-                .headers({ 'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': authorization })
-                .send()
-                .end(function (resp) {
-                _unwrapResponse(resp, resolve, reject);
-            });
-        });
-    };
-    RestService.prototype.get = function (url) {
-        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
-            __WEBPACK_IMPORTED_MODULE_1_unirest__["get"](url)
-                .headers({ 'Accept': 'application/json' })
-                .send()
-                .end(function (resp) {
-                _unwrapResponse(resp, resolve, reject);
-            });
-        });
-    };
-    RestService.prototype.getProtected = function (url, authorization) {
-        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
-            __WEBPACK_IMPORTED_MODULE_1_unirest__["get"](url)
-                .headers({ 'Accept': 'application/json', 'Authorization': authorization })
-                .send()
-                .end(function (resp) {
-                _unwrapResponse(resp, resolve, reject);
-            });
-        });
-    };
-    RestService.prototype.post = function (url, obj) {
-        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
-            __WEBPACK_IMPORTED_MODULE_1_unirest__["post"](url)
-                .headers({ 'Accept': 'application/json', 'Content-Type': 'application/json' })
-                .send(obj)
-                .end(function (resp) {
-                _unwrapResponse(resp, resolve, reject);
-            });
-        });
-    };
-    RestService.prototype.postProtected = function (url, authorization, obj) {
-        return new __WEBPACK_IMPORTED_MODULE_0_bluebird__(function (resolve, reject) {
-            __WEBPACK_IMPORTED_MODULE_1_unirest__["post"](url)
-                .headers({ 'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': authorization })
-                .send(obj)
-                .end(function (resp) {
-                _unwrapResponse(resp, resolve, reject);
-            });
-        });
-    };
-    return RestService;
-}());
-
-var _unwrapResponse = function (response, resolve, reject) {
-    if (response.code === 404) {
-        reject(new Error('HTTP URL not found.'));
-    }
-    else if (response.code === 401) {
-        reject(new Error('User is not authorized.'));
-    }
-    else if (response && response.body) {
-        var body = void 0;
-        if (typeof response.body === 'string') {
-            body = JSON.parse(response.body);
-        }
-        else {
-            body = response.body;
-        }
-        if (body.success !== undefined && body.success === true) {
-            if (typeof body.response === 'undefined') {
-                body.response = {};
-            }
-            resolve(body.response);
-        }
-        else {
-            reject(new Error(body.message || 'The response contains no message.'));
-        }
-    }
-    else {
-        reject(new Error('The response contains no body.'));
-    }
-};
-//# sourceMappingURL=rest.service.js.map
-
-/***/ }),
-
-/***/ 458:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Channel; });
-var Channel = /** @class */ (function () {
-    function Channel() {
-    }
-    return Channel;
-}());
-
-//# sourceMappingURL=channel.model.js.map
-
-/***/ }),
-
-/***/ 460:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateHighlightPageModule", function() { return CreateHighlightPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createhighlight__ = __webpack_require__(461);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var CreateHighlightPageModule = /** @class */ (function () {
-    function CreateHighlightPageModule() {
-    }
-    CreateHighlightPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__createhighlight__["a" /* CreateHighlightPage */]
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__createhighlight__["a" /* CreateHighlightPage */])
-            ],
-            providers: [],
-            entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_2__createhighlight__["a" /* CreateHighlightPage */]
-            ]
-        })
-    ], CreateHighlightPageModule);
-    return CreateHighlightPageModule;
-}());
-
-//# sourceMappingURL=createhighlight.module.js.map
-
-/***/ }),
-
-/***/ 461:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateHighlightPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-/* Core */
-
-
-var CreateHighlightPage = /** @class */ (function () {
-    function CreateHighlightPage(viewCtrl) {
-        this.viewCtrl = viewCtrl;
-    }
-    CreateHighlightPage.prototype.ngOnInit = function () {
-    };
-    CreateHighlightPage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    CreateHighlightPage.prototype.add = function () {
-        this.viewCtrl.dismiss(this.highlightName);
-    };
-    CreateHighlightPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-createhighlight',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\createhighlight\createhighlight.html"*/'<ion-header>\n\n   <ion-navbar>\n\n      <ion-buttons start>\n\n        <button ion-button (click)="dismiss()">\n\n          CLOSE\n\n        </button>\n\n      </ion-buttons>\n\n      <ion-title align-title="left">New highlight</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button [disabled]="!highlightName" (click)="add()">\n\n          ADD\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item>\n\n      <ion-label color="primary" stacked>Name</ion-label>\n\n      <ion-input [(ngModel)]="highlightName" placeholder="Name"></ion-input>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\createhighlight\createhighlight.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
-    ], CreateHighlightPage);
-    return CreateHighlightPage;
-}());
-
-//# sourceMappingURL=createhighlight.js.map
 
 /***/ }),
 
@@ -2044,19 +2066,19 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_loader_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_toast_service__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_rest_service__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_storage__ = __webpack_require__(459);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_storage__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_abstract_auth_service__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__environments_environment__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_web_auth_service__ = __webpack_require__(827);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_common__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_highlights_service__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_highlights_highlights_module__ = __webpack_require__(464);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_createhighlight_createhighlight_module__ = __webpack_require__(460);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_createhighlight_createhighlight_module__ = __webpack_require__(458);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_addhighlightclip_addhighlightclip_module__ = __webpack_require__(256);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_logging_service__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_logging_service__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_authorities_service__ = __webpack_require__(511);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_authorities_model_service__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_channels_channels_module__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_channels_channels_module__ = __webpack_require__(460);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__services_channels_service__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__services_current_channel_store_service__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_feed_feed_module__ = __webpack_require__(462);
@@ -2118,22 +2140,21 @@ var AppModule = /** @class */ (function () {
                 }, {
                     links: [
                         { loadChildren: '../pages/addhighlightclip/addhighlightclip.module#AddHighlightClipPageModule', name: 'addhighlightclip', segment: 'addhighlightclip', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/channels/channels.module#ChannelsPageModule', name: 'channels', segment: 'channels', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/auth-callback/auth-callback.module#AuthCallbackPageModule', name: 'auth-callback', segment: 'auth-callback', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/clip-popover/clip-popover.module#ClipPopoverPageModule', name: 'clip-popover', segment: 'clip-popover', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clip/clip.module#ClipPageModule', name: 'clip', segment: 'clip/:slug', priority: 'low', defaultHistory: ['trending'] },
+                        { loadChildren: '../pages/clip-popover/clip-popover.module#ClipPopoverPageModule', name: 'clip-popover', segment: 'clip-popover', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/createhighlight/createhighlight.module#CreateHighlightPageModule', name: 'createhighlight', segment: 'createhighlight', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/favorite-clips/favorite-clips.module#FavoriteClipsPageModule', name: 'favorite-clips', segment: 'favorite-clips', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/channels/channels.module#ChannelsPageModule', name: 'channels', segment: 'channels', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/feed/feed.module#FeedPageModule', name: 'feed', segment: 'feed', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/favorite-clips/favorite-clips.module#FavoriteClipsPageModule', name: 'favorite-clips', segment: 'favorite-clips', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/following/following.module#FollowingPageModule', name: 'following', segment: 'following', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/highlightclips/highlightclips.module#HighlightClipsPageModule', name: 'highlightclips', segment: 'highlightclips/:highlight', priority: 'low', defaultHistory: ['highlights'] },
-                        { loadChildren: '../pages/filter-popover/filter-popover.module#FilterPopoverPageModule', name: 'filter-popover', segment: 'filter-popover', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/games/games.module#GamesPageModule', name: 'games', segment: 'games', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/highlights/highlights.module#HighlightsPageModule', name: 'highlights', segment: 'highlights', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'profile', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trending-channel/trending-channel.module#TrendingChannelPageModule', name: 'trending-channel', segment: 'trending/channel/:channel', priority: 'low', defaultHistory: ['channels'] },
                         { loadChildren: '../pages/trending-game/trending-game.module#TrendingGamePageModule', name: 'trending-game', segment: 'trending/game/:game', priority: 'low', defaultHistory: ['games'] },
-                        { loadChildren: '../pages/trending/trending.module#TrendingPageModule', name: 'trending', segment: 'trending', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/trending/trending.module#TrendingPageModule', name: 'trending', segment: 'trending', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/filter-popover/filter-popover.module#FilterPopoverPageModule', name: 'filter-popover', segment: 'filter-popover', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_23__pages_addhighlightclip_addhighlightclip_module__["AddHighlightClipPageModule"],
@@ -2200,7 +2221,7 @@ var AppModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToastService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__logging_service__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__logging_service__ = __webpack_require__(323);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2403,7 +2424,7 @@ var PipesModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalStorageService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__environments_environment__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(459);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(324);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2568,367 +2589,6 @@ var HighlightModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 769:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChannelsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_services_channels_service__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_abstract_auth_service__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_loader_service__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_toast_service__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_streams_service__ = __webpack_require__(325);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-/* Core */
-
-
-
-
-
-
-/* Models */
-/* Services */
-var ChannelsPage = /** @class */ (function () {
-    function ChannelsPage(channelsService, loaderService, authService, streamsService, toastService) {
-        this.channelsService = channelsService;
-        this.loaderService = loaderService;
-        this.authService = authService;
-        this.streamsService = streamsService;
-        this.toastService = toastService;
-        this.channels = [];
-        this.favoriteChannels = [];
-        this.favoriteChannelsLoading = true;
-        this.liveStreams = [];
-    }
-    ChannelsPage.prototype.ngOnInit = function () {
-        this.getFavorites();
-        this.getLiveStreams();
-    };
-    ChannelsPage.prototype.getLiveStreams = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var liveStreams;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.streamsService.getLiveStreams()];
-                    case 1:
-                        liveStreams = _a.sent();
-                        this.liveStreams = liveStreams.streams;
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    ChannelsPage.prototype.getFavorites = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            var promise, channels, promises_1;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        promise = null;
-                        this.favoriteChannelsLoading = true;
-                        if (!this.authService.loggedIn) return [3 /*break*/, 2];
-                        promise = this.channelsService.getFavorites();
-                        return [4 /*yield*/, promise];
-                    case 1:
-                        channels = _a.sent();
-                        promises_1 = [];
-                        channels.forEach(function (channel) {
-                            promises_1.push(_this.getChannel(channel));
-                        });
-                        Promise.all(promises_1).then(function () {
-                            _this.favoriteChannelsLoading = false;
-                        });
-                        return [3 /*break*/, 3];
-                    case 2:
-                        promise = Promise.resolve();
-                        _a.label = 3;
-                    case 3:
-                        this.toastService.onFailure(promise);
-                        this.loaderService.show(promise);
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    ChannelsPage.prototype.getChannel = function (channel) {
-        return __awaiter(this, void 0, void 0, function () {
-            var promise, twitchChannel;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        promise = this.channelsService.getById(channel.channelId);
-                        return [4 /*yield*/, promise];
-                    case 1:
-                        twitchChannel = _a.sent();
-                        this.favoriteChannels.push(twitchChannel);
-                        return [2 /*return*/, twitchChannel];
-                }
-            });
-        });
-    };
-    ChannelsPage.prototype.favorite = function (channel) {
-        var _this = this;
-        (function () { return __awaiter(_this, void 0, void 0, function () {
-            var promise;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        promise = this.channelsService.addFavorite(channel._id);
-                        return [4 /*yield*/, promise];
-                    case 1:
-                        _a.sent();
-                        this.toastService.onFailure(promise);
-                        this.toastService.show("Added channel to favorites.");
-                        this.favoriteChannels.push(channel);
-                        return [2 /*return*/];
-                }
-            });
-        }); })();
-    };
-    ChannelsPage.prototype.unfavorite = function (channel) {
-        var _this = this;
-        (function () { return __awaiter(_this, void 0, void 0, function () {
-            var promise, index;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        promise = this.channelsService.removeFavorite(channel._id);
-                        return [4 /*yield*/, promise];
-                    case 1:
-                        _a.sent();
-                        this.toastService.onFailure(promise);
-                        this.toastService.show("Removed channel from favorites.");
-                        index = this.favoriteChannels.findIndex(function (el) { return el._id === channel._id; });
-                        this.favoriteChannels.splice(index, 1);
-                        return [2 /*return*/];
-                }
-            });
-        }); })();
-    };
-    ChannelsPage.prototype.onInput = function () {
-        var _this = this;
-        if (this.searchValue) {
-            var promise = this.channelsService.search(this.searchValue);
-            this.toastService.onFailure(promise);
-            promise.then(function (channels) {
-                _this.channels = channels.channels;
-            });
-        }
-        else {
-            this.channels = [];
-        }
-    };
-    ChannelsPage.prototype.onCancel = function () {
-    };
-    ChannelsPage.prototype.isInFavorites = function (channel) {
-        return !!this.favoriteChannels.find(function (favoriteChannel) {
-            return channel._id == favoriteChannel._id;
-        });
-    };
-    ChannelsPage.prototype.refresh = function (refresher) {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        this.favoriteChannels = [];
-                        this.liveStreams = [];
-                        return [4 /*yield*/, this.getFavorites()];
-                    case 1:
-                        _a.sent();
-                        return [4 /*yield*/, this.getLiveStreams()];
-                    case 2:
-                        _a.sent();
-                        refresher.complete();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    ChannelsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-channels',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\channels\channels.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title align-title="left">Channels</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-refresher (ionRefresh)="refresh($event)">\n\n  </ion-refresher>\n\n  <h5>Search</h5>\n\n  <ion-searchbar [(ngModel)]="searchValue" [debounce]="250" [showCancelButton]="true" (ionInput)="onInput($event)"\n\n    (ionCancel)="onCancel($event)">\n\n  </ion-searchbar>\n\n  <ion-list>\n\n    <div *ngFor="let channel of channels">\n\n      <channel-thumbnail-component [isFavorite]="isInFavorites(channel)" (unfavorite)="unfavorite(channel)"\n\n        (favorite)="favorite(channel)" [channel]="channel">\n\n      </channel-thumbnail-component>\n\n    </div>\n\n  </ion-list>\n\n\n\n  <h5>Favorites</h5>\n\n  <p *ngIf="!authService.loggedIn">You must log in to be able to add channels to your favorites.</p>\n\n  <div *ngIf="authService.loggedIn">\n\n    <p *ngIf="favoriteChannelsLoading === false && !favoriteChannels.length">There are no channels in your favorites.\n\n      Swipe left on any channel to add or remove it from the favorites. You can also search for channels with the search\n\n      bar.</p>\n\n    <ion-list>\n\n      <div *ngFor="let channel of favoriteChannels">\n\n        <channel-thumbnail-component [isFavorite]="true" (unfavorite)="unfavorite(channel)" [channel]="channel">\n\n        </channel-thumbnail-component>\n\n      </div>\n\n    </ion-list>\n\n  </div>\n\n  <h5>Discover</h5>\n\n  <ion-list>\n\n    <div *ngFor="let stream of liveStreams">\n\n      <live-stream-thumbnail-component [isFavorite]="isInFavorites(stream.channel)"\n\n        (unfavorite)="unfavorite(stream.channel)" (favorite)="favorite(stream.channel)" [stream]="stream">\n\n      </live-stream-thumbnail-component>\n\n    </div>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\channels\channels.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__app_services_channels_service__["a" /* ChannelsService */],
-            __WEBPACK_IMPORTED_MODULE_3__app_services_loader_service__["a" /* LoaderService */],
-            __WEBPACK_IMPORTED_MODULE_2__app_services_abstract_auth_service__["a" /* AbstractAuthenticationService */],
-            __WEBPACK_IMPORTED_MODULE_5__app_services_streams_service__["a" /* StreamsService */],
-            __WEBPACK_IMPORTED_MODULE_4__app_services_toast_service__["a" /* ToastService */]])
-    ], ChannelsPage);
-    return ChannelsPage;
-}());
-
-//# sourceMappingURL=channels.js.map
-
-/***/ }),
-
-/***/ 770:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ThumbnailComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_clip_model__ = __webpack_require__(771);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_current_channel_store_service__ = __webpack_require__(75);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-
-
-
-
-var ThumbnailComponent = /** @class */ (function () {
-    function ThumbnailComponent(navCtrl, 
-        /* Stores*/
-        currentChannelStoreService) {
-        this.navCtrl = navCtrl;
-        this.currentChannelStoreService = currentChannelStoreService;
-        this.onFavoriteRemoved = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
-    }
-    ThumbnailComponent.prototype.goToClip = function (slug) {
-        this.navCtrl.push('clip', { slug: slug });
-    };
-    ThumbnailComponent.prototype.goToChannel = function () {
-        var that = this;
-        this.currentChannelStoreService.setId(that.clip.broadcaster.id);
-        this.currentChannelStoreService.setName(that.clip.broadcaster.displayName);
-        that.navCtrl.push('trending-channel', { channel: that.clip.broadcaster.displayName });
-    };
-    ThumbnailComponent.prototype.removeFavorite = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                this.onFavoriteRemoved.emit(this.clip);
-                return [2 /*return*/];
-            });
-        });
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__models_clip_model__["a" /* Clip */])
-    ], ThumbnailComponent.prototype, "clip", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", Boolean)
-    ], ThumbnailComponent.prototype, "allowRemoveFavorite", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Output */])(),
-        __metadata("design:type", Object)
-    ], ThumbnailComponent.prototype, "onFavoriteRemoved", void 0);
-    ThumbnailComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'thumbnail-component',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\thumbnail\thumbnail.component.html"*/'<ion-card class="max-width no-margin-xs" style="cursor: pointer; max-width: 480px;" (click)="goToClip(clip.slug)">\n\n   <img src="{{clip.thumbnails.medium}}" />\n\n   <ion-row>\n\n      <ion-col col-9>\n\n         <ion-item style="padding-left: 3px;">\n\n            <ion-avatar style="margin-right: 10px;" item-start (click)="$event.stopPropagation(); goToChannel();">\n\n               <img src="{{clip.broadcaster.logo}}">\n\n            </ion-avatar>\n\n            <p ion-text color="light" style="font-weight:bold;">{{clip.title}}</p>\n\n            <p>{{clip.broadcaster.displayName}}</p>\n\n            <p>{{clip.views | views}} views &#183; {{clip.createdAt | timeAgo}}</p>\n\n         </ion-item>\n\n      </ion-col>\n\n      <ion-col *ngIf="allowRemoveFavorite">\n\n         <ion-item>\n\n            <button ion-button clear icon-only (click)="removeFavorite(); $event.stopPropagation();">\n\n               <ion-icon name=\'star\' is-active="false"></ion-icon>\n\n            </button>\n\n         </ion-item>\n\n      </ion-col>\n\n   </ion-row>\n\n</ion-card>'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\thumbnail\thumbnail.component.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3__services_current_channel_store_service__["a" /* CurrentChannelStoreService */]])
-    ], ThumbnailComponent);
-    return ThumbnailComponent;
-}());
-
-//# sourceMappingURL=thumbnail.component.js.map
-
-/***/ }),
-
-/***/ 771:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Clip; });
-var Clip = /** @class */ (function () {
-    function Clip() {
-    }
-    return Clip;
-}());
-
-//# sourceMappingURL=clip.model.js.map
-
-/***/ }),
-
 /***/ 772:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2972,270 +2632,270 @@ var FavoriteClipsPipe = /** @class */ (function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 326,
-	"./af.js": 326,
-	"./ar": 327,
-	"./ar-dz": 328,
-	"./ar-dz.js": 328,
-	"./ar-kw": 329,
-	"./ar-kw.js": 329,
-	"./ar-ly": 330,
-	"./ar-ly.js": 330,
-	"./ar-ma": 331,
-	"./ar-ma.js": 331,
-	"./ar-sa": 332,
-	"./ar-sa.js": 332,
-	"./ar-tn": 333,
-	"./ar-tn.js": 333,
-	"./ar.js": 327,
-	"./az": 334,
-	"./az.js": 334,
-	"./be": 335,
-	"./be.js": 335,
-	"./bg": 336,
-	"./bg.js": 336,
-	"./bm": 337,
-	"./bm.js": 337,
-	"./bn": 338,
-	"./bn.js": 338,
-	"./bo": 339,
-	"./bo.js": 339,
-	"./br": 340,
-	"./br.js": 340,
-	"./bs": 341,
-	"./bs.js": 341,
-	"./ca": 342,
-	"./ca.js": 342,
-	"./cs": 343,
-	"./cs.js": 343,
-	"./cv": 344,
-	"./cv.js": 344,
-	"./cy": 345,
-	"./cy.js": 345,
-	"./da": 346,
-	"./da.js": 346,
-	"./de": 347,
-	"./de-at": 348,
-	"./de-at.js": 348,
-	"./de-ch": 349,
-	"./de-ch.js": 349,
-	"./de.js": 347,
-	"./dv": 350,
-	"./dv.js": 350,
-	"./el": 351,
-	"./el.js": 351,
-	"./en-au": 352,
-	"./en-au.js": 352,
-	"./en-ca": 353,
-	"./en-ca.js": 353,
-	"./en-gb": 354,
-	"./en-gb.js": 354,
-	"./en-ie": 355,
-	"./en-ie.js": 355,
-	"./en-il": 356,
-	"./en-il.js": 356,
-	"./en-in": 357,
-	"./en-in.js": 357,
-	"./en-nz": 358,
-	"./en-nz.js": 358,
-	"./en-sg": 359,
-	"./en-sg.js": 359,
-	"./eo": 360,
-	"./eo.js": 360,
-	"./es": 361,
-	"./es-do": 362,
-	"./es-do.js": 362,
-	"./es-us": 363,
-	"./es-us.js": 363,
-	"./es.js": 361,
-	"./et": 364,
-	"./et.js": 364,
-	"./eu": 365,
-	"./eu.js": 365,
-	"./fa": 366,
-	"./fa.js": 366,
-	"./fi": 367,
-	"./fi.js": 367,
-	"./fil": 368,
-	"./fil.js": 368,
-	"./fo": 369,
-	"./fo.js": 369,
-	"./fr": 370,
-	"./fr-ca": 371,
-	"./fr-ca.js": 371,
-	"./fr-ch": 372,
-	"./fr-ch.js": 372,
-	"./fr.js": 370,
-	"./fy": 373,
-	"./fy.js": 373,
-	"./ga": 374,
-	"./ga.js": 374,
-	"./gd": 375,
-	"./gd.js": 375,
-	"./gl": 376,
-	"./gl.js": 376,
-	"./gom-deva": 377,
-	"./gom-deva.js": 377,
-	"./gom-latn": 378,
-	"./gom-latn.js": 378,
-	"./gu": 379,
-	"./gu.js": 379,
-	"./he": 380,
-	"./he.js": 380,
-	"./hi": 381,
-	"./hi.js": 381,
-	"./hr": 382,
-	"./hr.js": 382,
-	"./hu": 383,
-	"./hu.js": 383,
-	"./hy-am": 384,
-	"./hy-am.js": 384,
-	"./id": 385,
-	"./id.js": 385,
-	"./is": 386,
-	"./is.js": 386,
-	"./it": 387,
-	"./it-ch": 388,
-	"./it-ch.js": 388,
-	"./it.js": 387,
-	"./ja": 389,
-	"./ja.js": 389,
-	"./jv": 390,
-	"./jv.js": 390,
-	"./ka": 391,
-	"./ka.js": 391,
-	"./kk": 392,
-	"./kk.js": 392,
-	"./km": 393,
-	"./km.js": 393,
-	"./kn": 394,
-	"./kn.js": 394,
-	"./ko": 395,
-	"./ko.js": 395,
-	"./ku": 396,
-	"./ku.js": 396,
-	"./ky": 397,
-	"./ky.js": 397,
-	"./lb": 398,
-	"./lb.js": 398,
-	"./lo": 399,
-	"./lo.js": 399,
-	"./lt": 400,
-	"./lt.js": 400,
-	"./lv": 401,
-	"./lv.js": 401,
-	"./me": 402,
-	"./me.js": 402,
-	"./mi": 403,
-	"./mi.js": 403,
-	"./mk": 404,
-	"./mk.js": 404,
-	"./ml": 405,
-	"./ml.js": 405,
-	"./mn": 406,
-	"./mn.js": 406,
-	"./mr": 407,
-	"./mr.js": 407,
-	"./ms": 408,
-	"./ms-my": 409,
-	"./ms-my.js": 409,
-	"./ms.js": 408,
-	"./mt": 410,
-	"./mt.js": 410,
-	"./my": 411,
-	"./my.js": 411,
-	"./nb": 412,
-	"./nb.js": 412,
-	"./ne": 413,
-	"./ne.js": 413,
-	"./nl": 414,
-	"./nl-be": 415,
-	"./nl-be.js": 415,
-	"./nl.js": 414,
-	"./nn": 416,
-	"./nn.js": 416,
-	"./oc-lnc": 417,
-	"./oc-lnc.js": 417,
-	"./pa-in": 418,
-	"./pa-in.js": 418,
-	"./pl": 419,
-	"./pl.js": 419,
-	"./pt": 420,
-	"./pt-br": 421,
-	"./pt-br.js": 421,
-	"./pt.js": 420,
-	"./ro": 422,
-	"./ro.js": 422,
-	"./ru": 423,
-	"./ru.js": 423,
-	"./sd": 424,
-	"./sd.js": 424,
-	"./se": 425,
-	"./se.js": 425,
-	"./si": 426,
-	"./si.js": 426,
-	"./sk": 427,
-	"./sk.js": 427,
-	"./sl": 428,
-	"./sl.js": 428,
-	"./sq": 429,
-	"./sq.js": 429,
-	"./sr": 430,
-	"./sr-cyrl": 431,
-	"./sr-cyrl.js": 431,
-	"./sr.js": 430,
-	"./ss": 432,
-	"./ss.js": 432,
-	"./sv": 433,
-	"./sv.js": 433,
-	"./sw": 434,
-	"./sw.js": 434,
-	"./ta": 435,
-	"./ta.js": 435,
-	"./te": 436,
-	"./te.js": 436,
-	"./tet": 437,
-	"./tet.js": 437,
-	"./tg": 438,
-	"./tg.js": 438,
-	"./th": 439,
-	"./th.js": 439,
-	"./tl-ph": 440,
-	"./tl-ph.js": 440,
-	"./tlh": 441,
-	"./tlh.js": 441,
-	"./tr": 442,
-	"./tr.js": 442,
-	"./tzl": 443,
-	"./tzl.js": 443,
-	"./tzm": 444,
-	"./tzm-latn": 445,
-	"./tzm-latn.js": 445,
-	"./tzm.js": 444,
-	"./ug-cn": 446,
-	"./ug-cn.js": 446,
-	"./uk": 447,
-	"./uk.js": 447,
-	"./ur": 448,
-	"./ur.js": 448,
-	"./uz": 449,
-	"./uz-latn": 450,
-	"./uz-latn.js": 450,
-	"./uz.js": 449,
-	"./vi": 451,
-	"./vi.js": 451,
-	"./x-pseudo": 452,
-	"./x-pseudo.js": 452,
-	"./yo": 453,
-	"./yo.js": 453,
-	"./zh-cn": 454,
-	"./zh-cn.js": 454,
-	"./zh-hk": 455,
-	"./zh-hk.js": 455,
-	"./zh-mo": 456,
-	"./zh-mo.js": 456,
-	"./zh-tw": 457,
-	"./zh-tw.js": 457
+	"./af": 325,
+	"./af.js": 325,
+	"./ar": 326,
+	"./ar-dz": 327,
+	"./ar-dz.js": 327,
+	"./ar-kw": 328,
+	"./ar-kw.js": 328,
+	"./ar-ly": 329,
+	"./ar-ly.js": 329,
+	"./ar-ma": 330,
+	"./ar-ma.js": 330,
+	"./ar-sa": 331,
+	"./ar-sa.js": 331,
+	"./ar-tn": 332,
+	"./ar-tn.js": 332,
+	"./ar.js": 326,
+	"./az": 333,
+	"./az.js": 333,
+	"./be": 334,
+	"./be.js": 334,
+	"./bg": 335,
+	"./bg.js": 335,
+	"./bm": 336,
+	"./bm.js": 336,
+	"./bn": 337,
+	"./bn.js": 337,
+	"./bo": 338,
+	"./bo.js": 338,
+	"./br": 339,
+	"./br.js": 339,
+	"./bs": 340,
+	"./bs.js": 340,
+	"./ca": 341,
+	"./ca.js": 341,
+	"./cs": 342,
+	"./cs.js": 342,
+	"./cv": 343,
+	"./cv.js": 343,
+	"./cy": 344,
+	"./cy.js": 344,
+	"./da": 345,
+	"./da.js": 345,
+	"./de": 346,
+	"./de-at": 347,
+	"./de-at.js": 347,
+	"./de-ch": 348,
+	"./de-ch.js": 348,
+	"./de.js": 346,
+	"./dv": 349,
+	"./dv.js": 349,
+	"./el": 350,
+	"./el.js": 350,
+	"./en-au": 351,
+	"./en-au.js": 351,
+	"./en-ca": 352,
+	"./en-ca.js": 352,
+	"./en-gb": 353,
+	"./en-gb.js": 353,
+	"./en-ie": 354,
+	"./en-ie.js": 354,
+	"./en-il": 355,
+	"./en-il.js": 355,
+	"./en-in": 356,
+	"./en-in.js": 356,
+	"./en-nz": 357,
+	"./en-nz.js": 357,
+	"./en-sg": 358,
+	"./en-sg.js": 358,
+	"./eo": 359,
+	"./eo.js": 359,
+	"./es": 360,
+	"./es-do": 361,
+	"./es-do.js": 361,
+	"./es-us": 362,
+	"./es-us.js": 362,
+	"./es.js": 360,
+	"./et": 363,
+	"./et.js": 363,
+	"./eu": 364,
+	"./eu.js": 364,
+	"./fa": 365,
+	"./fa.js": 365,
+	"./fi": 366,
+	"./fi.js": 366,
+	"./fil": 367,
+	"./fil.js": 367,
+	"./fo": 368,
+	"./fo.js": 368,
+	"./fr": 369,
+	"./fr-ca": 370,
+	"./fr-ca.js": 370,
+	"./fr-ch": 371,
+	"./fr-ch.js": 371,
+	"./fr.js": 369,
+	"./fy": 372,
+	"./fy.js": 372,
+	"./ga": 373,
+	"./ga.js": 373,
+	"./gd": 374,
+	"./gd.js": 374,
+	"./gl": 375,
+	"./gl.js": 375,
+	"./gom-deva": 376,
+	"./gom-deva.js": 376,
+	"./gom-latn": 377,
+	"./gom-latn.js": 377,
+	"./gu": 378,
+	"./gu.js": 378,
+	"./he": 379,
+	"./he.js": 379,
+	"./hi": 380,
+	"./hi.js": 380,
+	"./hr": 381,
+	"./hr.js": 381,
+	"./hu": 382,
+	"./hu.js": 382,
+	"./hy-am": 383,
+	"./hy-am.js": 383,
+	"./id": 384,
+	"./id.js": 384,
+	"./is": 385,
+	"./is.js": 385,
+	"./it": 386,
+	"./it-ch": 387,
+	"./it-ch.js": 387,
+	"./it.js": 386,
+	"./ja": 388,
+	"./ja.js": 388,
+	"./jv": 389,
+	"./jv.js": 389,
+	"./ka": 390,
+	"./ka.js": 390,
+	"./kk": 391,
+	"./kk.js": 391,
+	"./km": 392,
+	"./km.js": 392,
+	"./kn": 393,
+	"./kn.js": 393,
+	"./ko": 394,
+	"./ko.js": 394,
+	"./ku": 395,
+	"./ku.js": 395,
+	"./ky": 396,
+	"./ky.js": 396,
+	"./lb": 397,
+	"./lb.js": 397,
+	"./lo": 398,
+	"./lo.js": 398,
+	"./lt": 399,
+	"./lt.js": 399,
+	"./lv": 400,
+	"./lv.js": 400,
+	"./me": 401,
+	"./me.js": 401,
+	"./mi": 402,
+	"./mi.js": 402,
+	"./mk": 403,
+	"./mk.js": 403,
+	"./ml": 404,
+	"./ml.js": 404,
+	"./mn": 405,
+	"./mn.js": 405,
+	"./mr": 406,
+	"./mr.js": 406,
+	"./ms": 407,
+	"./ms-my": 408,
+	"./ms-my.js": 408,
+	"./ms.js": 407,
+	"./mt": 409,
+	"./mt.js": 409,
+	"./my": 410,
+	"./my.js": 410,
+	"./nb": 411,
+	"./nb.js": 411,
+	"./ne": 412,
+	"./ne.js": 412,
+	"./nl": 413,
+	"./nl-be": 414,
+	"./nl-be.js": 414,
+	"./nl.js": 413,
+	"./nn": 415,
+	"./nn.js": 415,
+	"./oc-lnc": 416,
+	"./oc-lnc.js": 416,
+	"./pa-in": 417,
+	"./pa-in.js": 417,
+	"./pl": 418,
+	"./pl.js": 418,
+	"./pt": 419,
+	"./pt-br": 420,
+	"./pt-br.js": 420,
+	"./pt.js": 419,
+	"./ro": 421,
+	"./ro.js": 421,
+	"./ru": 422,
+	"./ru.js": 422,
+	"./sd": 423,
+	"./sd.js": 423,
+	"./se": 424,
+	"./se.js": 424,
+	"./si": 425,
+	"./si.js": 425,
+	"./sk": 426,
+	"./sk.js": 426,
+	"./sl": 427,
+	"./sl.js": 427,
+	"./sq": 428,
+	"./sq.js": 428,
+	"./sr": 429,
+	"./sr-cyrl": 430,
+	"./sr-cyrl.js": 430,
+	"./sr.js": 429,
+	"./ss": 431,
+	"./ss.js": 431,
+	"./sv": 432,
+	"./sv.js": 432,
+	"./sw": 433,
+	"./sw.js": 433,
+	"./ta": 434,
+	"./ta.js": 434,
+	"./te": 435,
+	"./te.js": 435,
+	"./tet": 436,
+	"./tet.js": 436,
+	"./tg": 437,
+	"./tg.js": 437,
+	"./th": 438,
+	"./th.js": 438,
+	"./tl-ph": 439,
+	"./tl-ph.js": 439,
+	"./tlh": 440,
+	"./tlh.js": 440,
+	"./tr": 441,
+	"./tr.js": 441,
+	"./tzl": 442,
+	"./tzl.js": 442,
+	"./tzm": 443,
+	"./tzm-latn": 444,
+	"./tzm-latn.js": 444,
+	"./tzm.js": 443,
+	"./ug-cn": 445,
+	"./ug-cn.js": 445,
+	"./uk": 446,
+	"./uk.js": 446,
+	"./ur": 447,
+	"./ur.js": 447,
+	"./uz": 448,
+	"./uz-latn": 449,
+	"./uz-latn.js": 449,
+	"./uz.js": 448,
+	"./vi": 450,
+	"./vi.js": 450,
+	"./x-pseudo": 451,
+	"./x-pseudo.js": 451,
+	"./yo": 452,
+	"./yo.js": 452,
+	"./zh-cn": 453,
+	"./zh-cn.js": 453,
+	"./zh-hk": 454,
+	"./zh-hk.js": 454,
+	"./zh-mo": 455,
+	"./zh-mo.js": 455,
+	"./zh-tw": 456,
+	"./zh-tw.js": 456
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -3463,10 +3123,133 @@ var HighlightClipsSortPipe = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ThumbnailComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_clip_model__ = __webpack_require__(781);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_current_channel_store_service__ = __webpack_require__(75);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+var ThumbnailComponent = /** @class */ (function () {
+    function ThumbnailComponent(navCtrl, 
+        /* Stores*/
+        currentChannelStoreService) {
+        this.navCtrl = navCtrl;
+        this.currentChannelStoreService = currentChannelStoreService;
+        this.onFavoriteRemoved = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+    }
+    ThumbnailComponent.prototype.goToClip = function (slug) {
+        this.navCtrl.push('clip', { slug: slug });
+    };
+    ThumbnailComponent.prototype.goToChannel = function () {
+        var that = this;
+        this.currentChannelStoreService.setId(that.clip.broadcaster.id);
+        this.currentChannelStoreService.setName(that.clip.broadcaster.displayName);
+        that.navCtrl.push('trending-channel', { channel: that.clip.broadcaster.displayName });
+    };
+    ThumbnailComponent.prototype.removeFavorite = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.onFavoriteRemoved.emit(this.clip);
+                return [2 /*return*/];
+            });
+        });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__models_clip_model__["a" /* Clip */])
+    ], ThumbnailComponent.prototype, "clip", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", Boolean)
+    ], ThumbnailComponent.prototype, "allowRemoveFavorite", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Output */])(),
+        __metadata("design:type", Object)
+    ], ThumbnailComponent.prototype, "onFavoriteRemoved", void 0);
+    ThumbnailComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'thumbnail-component',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\thumbnail\thumbnail.component.html"*/'<ion-card class="max-width no-margin-xs" style="cursor: pointer; max-width: 480px;" (click)="goToClip(clip.slug)">\n\n   <img src="{{clip.thumbnails.medium}}" />\n\n   <ion-row>\n\n      <ion-col col-9>\n\n         <ion-item style="padding-left: 3px;">\n\n            <ion-avatar style="margin-right: 10px;" item-start (click)="$event.stopPropagation(); goToChannel();">\n\n               <img src="{{clip.broadcaster.logo}}">\n\n            </ion-avatar>\n\n            <p ion-text color="light" style="font-weight:bold;">{{clip.title}}</p>\n\n            <p>{{clip.broadcaster.displayName}}</p>\n\n            <p>{{clip.views | views}} views &#183; {{clip.createdAt | timeAgo}}</p>\n\n         </ion-item>\n\n      </ion-col>\n\n      <ion-col *ngIf="allowRemoveFavorite">\n\n         <ion-item>\n\n            <button ion-button clear icon-only (click)="removeFavorite(); $event.stopPropagation();">\n\n               <ion-icon name=\'star\' is-active="false"></ion-icon>\n\n            </button>\n\n         </ion-item>\n\n      </ion-col>\n\n   </ion-row>\n\n</ion-card>'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\app\components\thumbnail\thumbnail.component.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3__services_current_channel_store_service__["a" /* CurrentChannelStoreService */]])
+    ], ThumbnailComponent);
+    return ThumbnailComponent;
+}());
+
+//# sourceMappingURL=thumbnail.component.js.map
+
+/***/ }),
+
+/***/ 781:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Clip; });
+var Clip = /** @class */ (function () {
+    function Clip() {
+    }
+    return Clip;
+}());
+
+//# sourceMappingURL=clip.model.js.map
+
+/***/ }),
+
+/***/ 782:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FollowingChannelThumbnailComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_channel_model__ = __webpack_require__(458);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_channel_model__ = __webpack_require__(457);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_current_channel_store_service__ = __webpack_require__(75);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3508,14 +3291,14 @@ var FollowingChannelThumbnailComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 781:
+/***/ 783:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChannelThumbnailComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_channel_model__ = __webpack_require__(458);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_channel_model__ = __webpack_require__(457);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_current_channel_store_service__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_abstract_auth_service__ = __webpack_require__(29);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3583,7 +3366,7 @@ var ChannelThumbnailComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 782:
+/***/ 784:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3591,7 +3374,7 @@ var ChannelThumbnailComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_current_channel_store_service__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_live_stream_model__ = __webpack_require__(783);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_live_stream_model__ = __webpack_require__(785);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_abstract_auth_service__ = __webpack_require__(29);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3658,7 +3441,7 @@ var LiveStreamThumbnailComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 783:
+/***/ 785:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3670,6 +3453,244 @@ var StreamModel = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=live-stream.model.js.map
+
+/***/ }),
+
+/***/ 786:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChannelsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_services_channels_service__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_abstract_auth_service__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_loader_service__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_toast_service__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_services_streams_service__ = __webpack_require__(461);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+/* Core */
+
+
+
+
+
+
+/* Models */
+/* Services */
+var ChannelsPage = /** @class */ (function () {
+    function ChannelsPage(channelsService, loaderService, authService, streamsService, toastService) {
+        this.channelsService = channelsService;
+        this.loaderService = loaderService;
+        this.authService = authService;
+        this.streamsService = streamsService;
+        this.toastService = toastService;
+        this.channels = [];
+        this.favoriteChannels = [];
+        this.favoriteChannelsLoading = true;
+        this.liveStreams = [];
+    }
+    ChannelsPage.prototype.ngOnInit = function () {
+        this.getFavorites();
+        this.getLiveStreams();
+    };
+    ChannelsPage.prototype.getLiveStreams = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var liveStreams;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.streamsService.getLiveStreams()];
+                    case 1:
+                        liveStreams = _a.sent();
+                        this.liveStreams = liveStreams.streams;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ChannelsPage.prototype.getFavorites = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var promise, channels, promises_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        promise = null;
+                        this.favoriteChannelsLoading = true;
+                        if (!this.authService.loggedIn) return [3 /*break*/, 2];
+                        promise = this.channelsService.getFavorites();
+                        return [4 /*yield*/, promise];
+                    case 1:
+                        channels = _a.sent();
+                        promises_1 = [];
+                        channels.forEach(function (channel) {
+                            promises_1.push(_this.getChannel(channel));
+                        });
+                        Promise.all(promises_1).then(function () {
+                            _this.favoriteChannelsLoading = false;
+                        });
+                        return [3 /*break*/, 3];
+                    case 2:
+                        promise = Promise.resolve();
+                        _a.label = 3;
+                    case 3:
+                        this.toastService.onFailure(promise);
+                        this.loaderService.show(promise);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ChannelsPage.prototype.getChannel = function (channel) {
+        return __awaiter(this, void 0, void 0, function () {
+            var promise, twitchChannel;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        promise = this.channelsService.getById(channel.channelId);
+                        return [4 /*yield*/, promise];
+                    case 1:
+                        twitchChannel = _a.sent();
+                        this.favoriteChannels.push(twitchChannel);
+                        return [2 /*return*/, twitchChannel];
+                }
+            });
+        });
+    };
+    ChannelsPage.prototype.favorite = function (channel) {
+        var _this = this;
+        (function () { return __awaiter(_this, void 0, void 0, function () {
+            var promise;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        promise = this.channelsService.addFavorite(channel._id);
+                        return [4 /*yield*/, promise];
+                    case 1:
+                        _a.sent();
+                        this.toastService.onFailure(promise);
+                        this.toastService.show("Added channel to favorites.");
+                        this.favoriteChannels.push(channel);
+                        return [2 /*return*/];
+                }
+            });
+        }); })();
+    };
+    ChannelsPage.prototype.unfavorite = function (channel) {
+        var _this = this;
+        (function () { return __awaiter(_this, void 0, void 0, function () {
+            var promise, index;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        promise = this.channelsService.removeFavorite(channel._id);
+                        return [4 /*yield*/, promise];
+                    case 1:
+                        _a.sent();
+                        this.toastService.onFailure(promise);
+                        this.toastService.show("Removed channel from favorites.");
+                        index = this.favoriteChannels.findIndex(function (el) { return el._id === channel._id; });
+                        this.favoriteChannels.splice(index, 1);
+                        return [2 /*return*/];
+                }
+            });
+        }); })();
+    };
+    ChannelsPage.prototype.onInput = function () {
+        var _this = this;
+        if (this.searchValue) {
+            var promise = this.channelsService.search(this.searchValue);
+            this.toastService.onFailure(promise);
+            promise.then(function (channels) {
+                _this.channels = channels.channels;
+            });
+        }
+        else {
+            this.channels = [];
+        }
+    };
+    ChannelsPage.prototype.onCancel = function () {
+    };
+    ChannelsPage.prototype.isInFavorites = function (channel) {
+        return !!this.favoriteChannels.find(function (favoriteChannel) {
+            return channel._id == favoriteChannel._id;
+        });
+    };
+    ChannelsPage.prototype.refresh = function (refresher) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.favoriteChannels = [];
+                        this.liveStreams = [];
+                        return [4 /*yield*/, this.getFavorites()];
+                    case 1:
+                        _a.sent();
+                        return [4 /*yield*/, this.getLiveStreams()];
+                    case 2:
+                        _a.sent();
+                        refresher.complete();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ChannelsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-channels',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\channels\channels.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title align-title="left">Channels</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-refresher (ionRefresh)="refresh($event)">\n\n  </ion-refresher>\n\n  <h5>Search</h5>\n\n  <ion-searchbar [(ngModel)]="searchValue" [debounce]="250" [showCancelButton]="true" (ionInput)="onInput($event)"\n\n    (ionCancel)="onCancel($event)">\n\n  </ion-searchbar>\n\n  <ion-list>\n\n    <div *ngFor="let channel of channels">\n\n      <channel-thumbnail-component [isFavorite]="isInFavorites(channel)" (unfavorite)="unfavorite(channel)"\n\n        (favorite)="favorite(channel)" [channel]="channel">\n\n      </channel-thumbnail-component>\n\n    </div>\n\n  </ion-list>\n\n\n\n  <h5>Favorites</h5>\n\n  <p *ngIf="!authService.loggedIn">You must log in to be able to add channels to your favorites.</p>\n\n  <div *ngIf="authService.loggedIn">\n\n    <p *ngIf="favoriteChannelsLoading === false && !favoriteChannels.length">There are no channels in your favorites.\n\n      Swipe left on any channel to add or remove it from the favorites. You can also search for channels with the search\n\n      bar.</p>\n\n    <ion-list>\n\n      <div *ngFor="let channel of favoriteChannels">\n\n        <channel-thumbnail-component [isFavorite]="true" (unfavorite)="unfavorite(channel)" [channel]="channel">\n\n        </channel-thumbnail-component>\n\n      </div>\n\n    </ion-list>\n\n  </div>\n\n  <h5>Discover</h5>\n\n  <ion-list>\n\n    <div *ngFor="let stream of liveStreams">\n\n      <live-stream-thumbnail-component [isFavorite]="isInFavorites(stream.channel)"\n\n        (unfavorite)="unfavorite(stream.channel)" (favorite)="favorite(stream.channel)" [stream]="stream">\n\n      </live-stream-thumbnail-component>\n\n    </div>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\channels\channels.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__app_services_channels_service__["a" /* ChannelsService */],
+            __WEBPACK_IMPORTED_MODULE_3__app_services_loader_service__["a" /* LoaderService */],
+            __WEBPACK_IMPORTED_MODULE_2__app_services_abstract_auth_service__["a" /* AbstractAuthenticationService */],
+            __WEBPACK_IMPORTED_MODULE_5__app_services_streams_service__["a" /* StreamsService */],
+            __WEBPACK_IMPORTED_MODULE_4__app_services_toast_service__["a" /* ToastService */]])
+    ], ChannelsPage);
+    return ChannelsPage;
+}());
+
+//# sourceMappingURL=channels.js.map
 
 /***/ }),
 
@@ -3800,7 +3821,9 @@ var FeedPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_loader_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_services_toast_service__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_highlights_service__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__createhighlight_createhighlight__ = __webpack_require__(461);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__createhighlight_createhighlight__ = __webpack_require__(459);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3853,6 +3876,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
+
 var HighlightsPage = /** @class */ (function () {
     function HighlightsPage(navCtrl, ngZone, modalCtrl, 
         /* Services */
@@ -3864,6 +3888,7 @@ var HighlightsPage = /** @class */ (function () {
         this.loaderService = loaderService;
         this.toastService = toastService;
         this.highlights = [];
+        this.highlightsMap = new Map();
     }
     HighlightsPage.prototype.ngOnInit = function () {
         this.getHighlights();
@@ -3876,6 +3901,7 @@ var HighlightsPage = /** @class */ (function () {
                 highlights.forEach(function (highlight) {
                     that.highlights.push(highlight);
                 });
+                that.sort();
             });
         });
         that.loaderService.show(promise);
@@ -3897,12 +3923,30 @@ var HighlightsPage = /** @class */ (function () {
                         highlight_1 = _a.sent();
                         this.ngZone.run(function () {
                             that.highlights.push(highlight_1);
+                            that.sort();
                         });
                         _a.label = 2;
                     case 2: return [2 /*return*/];
                 }
             });
         });
+    };
+    HighlightsPage.prototype.sort = function () {
+        var _this = this;
+        this.highlightsMap.clear();
+        this.highlights = this.highlights.sort(function (a, b) {
+            return a.createdAt - b.createdAt;
+        }).reverse();
+        this.highlights.forEach(function (highlight) {
+            var createdAtFromNow = __WEBPACK_IMPORTED_MODULE_6_moment__(highlight.createdAt).fromNow();
+            var highlightsArr = _this.highlightsMap.get(createdAtFromNow);
+            if (!highlightsArr) {
+                highlightsArr = new Array();
+                _this.highlightsMap.set(createdAtFromNow, highlightsArr);
+            }
+            highlightsArr.push(highlight);
+        });
+        console.log(this.highlightsMap.entries());
     };
     HighlightsPage.prototype.create = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -3918,9 +3962,15 @@ var HighlightsPage = /** @class */ (function () {
     HighlightsPage.prototype.goToHighlight = function (uuid) {
         this.navCtrl.push('highlightclips', { highlight: uuid });
     };
+    HighlightsPage.prototype.getHighlightsMapKeys = function () {
+        return Array.from(this.highlightsMap.keys());
+    };
+    HighlightsPage.prototype.getHighlightsMapValue = function (key) {
+        return this.highlightsMap.get(key);
+    };
     HighlightsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-highlights',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlights\highlights.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title align-title="left">Highlights</ion-title>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item (click)="goToHighlight(highlight.uuid)" *ngFor="let highlight of highlights">\n\n      {{highlight.name}} ({{highlight.createdAt | timeAgo}})\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n  <ion-fab right bottom>\n\n    <button ion-fab color="primary" (click)="create()"><ion-icon name="add"></ion-icon></button>\n\n  </ion-fab>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlights\highlights.html"*/
+            selector: 'page-highlights',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlights\highlights.html"*/'<ion-header>\n\n   <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n      <ion-title align-title="left">Highlights</ion-title>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n<!--    <ion-list-header lines="inset">\n\n      <ion-label>Today</ion-label>\n\n    </ion-list-header>\n\n    <ion-list-header lines="inset">\n\n      <ion-label>This week</ion-label>\n\n    </ion-list-header>\n\n    <ion-list-header lines="inset">\n\n      <ion-label>This month</ion-label>\n\n    </ion-list-header>\n\n    <ion-list-header lines="inset">\n\n      <ion-label>Over a month ago</ion-label>\n\n    </ion-list-header>\n\n    <ion-item (click)="goToHighlight(highlight.uuid)" *ngFor="let highlight of highlights">\n\n      {{highlight.name}} ({{highlight.createdAt | timeAgo}})\n\n    </ion-item>\n\n  -->\n\n\n\n  <div *ngFor="let key of getHighlightsMapKeys()">\n\n    <ion-list-header lines="inset">\n\n      <ion-label>{{key}}</ion-label>\n\n    </ion-list-header>\n\n    <ion-item (click)="goToHighlight(highlight.uuid)" *ngFor="let highlight of getHighlightsMapValue(key)">\n\n      {{highlight.name}} ({{highlight.createdAt | timeAgo}})\n\n    </ion-item>\n\n  </div>\n\n\n\n  </ion-list>\n\n\n\n  <ion-fab right bottom>\n\n    <button ion-fab color="primary" (click)="create()"><ion-icon name="add"></ion-icon></button>\n\n  </ion-fab>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlights\highlights.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],

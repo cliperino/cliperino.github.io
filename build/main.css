@@ -28190,6 +28190,14 @@ page-highlightclips img {
   width: auto !important;
 }
 
+page-highlightclips ion-content div.fixed-content, page-highlightclips ion-content div.scroll-content {
+  margin-top: 56px;
+}
+
+page-highlightclips ion-icon {
+  font-size: 25.2px;
+}
+
 @media (max-width: 576px) {
   page-highlights .game-wrapper {
     margin-bottom: 10px;
@@ -28200,6 +28208,17 @@ page-highlightclips img {
   page-highlights .game-wrapper {
     margin: 0px 5px 5px 5px;
   }
+}
+
+page-highlights .item-inner {
+  border-bottom-width: 0 !important;
+}
+
+page-highlights .item.list-header {
+  background-color: inherit !important;
+  border-top-width: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 13px;
 }
 
 @media (max-width: 576px) {

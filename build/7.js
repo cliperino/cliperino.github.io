@@ -1,6 +1,6 @@
 webpackJsonp([7],{
 
-/***/ 834:
+/***/ 832:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,7 +9,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_pipes_pipes_module__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__highlightclips__ = __webpack_require__(850);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__highlightclips__ = __webpack_require__(845);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -45,7 +45,7 @@ var HighlightClipsPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 850:
+/***/ 845:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -177,17 +177,26 @@ var HighlightClipsPage = /** @class */ (function () {
             });
         });
     };
+    HighlightClipsPage.prototype.update = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, this.highlightsService.update(this.highlight)];
+            });
+        });
+    };
     HighlightClipsPage.prototype.save = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var allPromise, deletePromise, updatePromise;
+            var allPromise, deletePromise, updateClipOrdersPromise, updateHighlightPromise;
             return __generator(this, function (_a) {
                 allPromise = null;
                 deletePromise = null;
-                updatePromise = null;
+                updateClipOrdersPromise = null;
+                updateHighlightPromise = null;
                 this.isEditing = false;
                 deletePromise = this.deleteClips();
-                updatePromise = this.updateClipOrders();
-                allPromise = Promise.all([deletePromise, updatePromise]);
+                updateClipOrdersPromise = this.updateClipOrders();
+                updateHighlightPromise = this.update();
+                allPromise = Promise.all([deletePromise, updateClipOrdersPromise, updateHighlightPromise]);
                 this.loaderService.show(allPromise);
                 this.toastService.onFailure(allPromise);
                 return [2 /*return*/];
@@ -414,7 +423,7 @@ var HighlightClipsPage = /** @class */ (function () {
     };
     HighlightClipsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-highlightclips',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlightclips\highlightclips.html"*/'<ion-header>\n\n   <ion-navbar>\n\n      <ion-title *ngIf="highlight" align-title="left">{{highlight.name}}</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button *ngIf="!isEditing" (click)="edit()">\n\n          EDIT\n\n        </button>\n\n        <button ion-button *ngIf="isEditing" (click)="save()">\n\n          SAVE\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content *ngIf="clipsReady | async" padding>\n\n  <ion-list>\n\n    <ion-item *ngFor="let clip of highlight.clips">\n\n      <ion-row>\n\n        <ion-col col-12><ion-thumbnail item-start>\n\n              <img src="{{clip.thumbnail}}">\n\n          </ion-thumbnail>\n\n        </ion-col>\n\n\n\n        <ion-col col-12>\n\n          <p *ngIf="clip.broadcaster" class="title">{{clip.broadcaster.displayName}}</p>\n\n          <p>{{clip.title}}</p>\n\n          <p>{{clip.startTime | seconds}} - {{clip.startTime + clip.duration | seconds}} ({{clip.duration || clip.originalDuration}} seconds)</p>\n\n          <p>Clip added {{clip.createdAt | timeAgo}}</p>\n\n          <p>{{clip.description}}</p>\n\n          <div *ngIf="isEditing">\n\n            <button ion-button clear icon-only (click)="moveTop(clip)" [disabled]="clip.clipOrder === 0">\n\n              <ion-icon name=\'arrow-dropleft-circle\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveUp(clip)" [disabled]="clip.clipOrder === 0">\n\n              <ion-icon name=\'arrow-dropleft\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveDown(clip)" [disabled]="clip.clipOrder === highlight.clips.length - 1">\n\n              <ion-icon name=\'arrow-dropright\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveBottom(clip)" [disabled]="clip.clipOrder === highlight.clips.length - 1">\n\n                <ion-icon name=\'arrow-dropright-circle\' is-active="false"></ion-icon>\n\n              </button>\n\n            <button ion-button clear icon-only (click)="remove(clip)">\n\n              <ion-icon name=\'trash\' is-active="false"></ion-icon>\n\n            </button>\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </ion-list>\n\n  <button ion-button *ngIf="highlight.clips" (click)="generate()">GENERATE</button>\n\n  <ion-list *ngIf="highlightLinks">\n\n    <ion-item *ngFor="let highlightLink of highlightLinks">\n\n      <ion-row>\n\n        <ion-col>{{highlightLink.createdAt | timeAgo}}</ion-col>\n\n        <ion-col><a href="{{highlightLink.highlightlink}}">Download</a></ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlightclips\highlightclips.html"*/
+            selector: 'page-highlightclips',template:/*ion-inline-start:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlightclips\highlightclips.html"*/'<ion-header>\n\n   <ion-navbar>\n\n      <ion-title *ngIf="highlight" align-title="left">{{highlight.name}}</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button *ngIf="!isEditing" (click)="edit()">\n\n          <ion-icon name="create"></ion-icon>\n\n        </button>\n\n        <button ion-button *ngIf="isEditing" (click)="save()">\n\n          <ion-icon name="checkmark"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n   </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content *ngIf="clipsReady | async" padding>\n\n  <ion-card *ngIf="isEditing">\n\n    <ion-list>\n\n      <ion-item>\n\n        <ion-label color="primary" stacked>Name</ion-label>\n\n        <ion-input [(ngModel)]="highlight.name" placeholder="Name"></ion-input>\n\n      </ion-item>\n\n    </ion-list>\n\n  </ion-card>\n\n  <ion-card *ngIf="!(highlight.clips && highlight.clips.length)">\n\n    <ion-card-header>\n\n      <p style="color: rgb(117, 117, 117);">Start by adding a few clips to your highlight.</p>\n\n    </ion-card-header>\n\n</ion-card>\n\n  \n\n  <ion-list *ngIf="highlight.clips && highlight.clips.length">\n\n    <ion-item *ngFor="let clip of highlight.clips">\n\n      <ion-row>\n\n        <ion-col col-12><ion-thumbnail item-start>\n\n              <img src="{{clip.thumbnail}}">\n\n          </ion-thumbnail>\n\n        </ion-col>\n\n\n\n        <ion-col col-12>\n\n          <p *ngIf="clip.broadcaster" class="title">{{clip.broadcaster.displayName}}</p>\n\n          <p>{{clip.title}}</p>\n\n          <p>{{clip.startTime | seconds}} - {{clip.startTime + clip.duration | seconds}} ({{clip.duration || clip.originalDuration}} seconds)</p>\n\n          <p>Clip added {{clip.createdAt | timeAgo}}</p>\n\n          <p>{{clip.description}}</p>\n\n          <div *ngIf="isEditing">\n\n            <button ion-button clear icon-only (click)="moveTop(clip)" [disabled]="clip.clipOrder === 0">\n\n              <ion-icon name=\'arrow-dropleft-circle\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveUp(clip)" [disabled]="clip.clipOrder === 0">\n\n              <ion-icon name=\'arrow-dropleft\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveDown(clip)" [disabled]="clip.clipOrder === highlight.clips.length - 1">\n\n              <ion-icon name=\'arrow-dropright\' is-active="false"></ion-icon>\n\n            </button>\n\n            <button ion-button clear icon-only (click)="moveBottom(clip)" [disabled]="clip.clipOrder === highlight.clips.length - 1">\n\n                <ion-icon name=\'arrow-dropright-circle\' is-active="false"></ion-icon>\n\n              </button>\n\n            <button ion-button clear icon-only (click)="remove(clip)">\n\n              <ion-icon name=\'trash\' is-active="false"></ion-icon>\n\n            </button>\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </ion-list>\n\n  <button ion-button *ngIf="highlight.clips && highlight.clips.length > 1" (click)="generate()">GENERATE</button>\n\n  <ion-list *ngIf="highlightLinks">\n\n    <ion-item *ngFor="let highlightLink of highlightLinks">\n\n      <ion-row>\n\n        <ion-col>{{highlightLink.createdAt | timeAgo}}</ion-col>\n\n        <ion-col><a href="{{highlightLink.highlightlink}}">Download</a></ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\clout\Documents\boilerplate\ionic3-angular5\src\pages\highlightclips\highlightclips.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
