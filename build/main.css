@@ -28002,6 +28002,13 @@ div.scroll-content {
   overflow-y: auto !important;
 }
 
+span.version {
+  color: grey;
+  float: right;
+  font-size: 12px;
+  margin: 8px;
+}
+
 @media (max-width: 576px) {
   channel-thumbnail-component .no-margin-xs {
     margin: 0 !important;
